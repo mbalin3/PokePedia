@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PokemonVault/View/HomeViewController.swift"
+            timestampString = "578709918.170922"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "viewWillAppear(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PokemonVault/BaseViewController.swift"
+            timestampString = "578256328.4714971"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "15"
+            endingLineNumber = "15"
+            landmarkName = "BaseViewController"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PokemonVault/BaseViewController.swift"
+            timestampString = "578256328.471945"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
+            landmarkName = "BaseViewController"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PokemonVaultTests/HomeViewModelTests.swift"
+            timestampString = "578709918.1711299"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
+            landmarkName = "testWhenPokemonsArrayIsPopulatedThenReturnsPokemonAtIndex()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PokemonVault/HomeViewModel.swift"
+            timestampString = "578709918.171222"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "fetchPokemonList()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PokemonVault/PokemonListCacheDecorator.swift"
+            timestampString = "578709918.171288"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "fetchPokemonList(numberOfPokemons:success:failure:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PokemonVaultTests/Mocks/GeneratedMocks.swift"
+            timestampString = "578512087.853789"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "463"
+            endingLineNumber = "463"
+            landmarkName = "fetchPokemonList(numberOfPokemons:success:failure:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PokemonVaultTests.MockPokemonListCacheDecorator.__StubbingProxy_PokemonListCacheDecorator.fetchPokemonList&lt;A, B, C where A: Cuckoo.Matchable, B: Cuckoo.Matchable, C: Cuckoo.Matchable, A.MatchedType == Swift.String, B.MatchedType == (Swift.Optional&lt;Swift.Array&lt;PokemonVault.Pokemons.Results&gt;&gt;) -&gt; (), C.MatchedType == (__C.NSError) -&gt; ()&gt;(numberOfPokemons: A, success: B, failure: C) -&gt; Cuckoo.ProtocolStubNoReturnFunction&lt;(Swift.String, (Swift.Optional&lt;Swift.Array&lt;PokemonVault.Pokemons.Results&gt;&gt;) -&gt; (), (__C.NSError) -&gt; ())&gt;"
+                  moduleName = "PokemonVaultTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/user/Downloads/PokemonVault/PokemonVaultTests/Mocks/GeneratedMocks.swift"
+                  timestampString = "578519778.8971421"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "463"
+                  endingLineNumber = "463"
+                  offsetFromSymbolStart = "113">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 ((Swift.String, (Swift.Optional&lt;Swift.Array&lt;PokemonVault.Pokemons.Results&gt;&gt;) -&gt; (), (__C.NSError) -&gt; ())) -&gt; Swift.String in PokemonVaultTests.MockPokemonListCacheDecorator.__StubbingProxy_PokemonListCacheDecorator.fetchPokemonList&lt;A, B, C where A: Cuckoo.Matchable, B: Cuckoo.Matchable, C: Cuckoo.Matchable, A.MatchedType == Swift.String, B.MatchedType == (Swift.Optional&lt;Swift.Array&lt;PokemonVault.Pokemons.Results&gt;&gt;) -&gt; (), C.MatchedType == (__C.NSError) -&gt; ()&gt;(numberOfPokemons: A, success: B, failure: C) -&gt; Cuckoo.ProtocolStubNoReturnFunction&lt;(Swift.String, (Swift.Optional&lt;Swift.Array&lt;PokemonVault.Pokemons.Results&gt;&gt;) -&gt; (), (__C.NSError) -&gt; ())&gt;"
+                  moduleName = "PokemonVaultTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/user/Downloads/PokemonVault/PokemonVaultTests/Mocks/GeneratedMocks.swift"
+                  timestampString = "578519778.899222"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "463"
+                  endingLineNumber = "463"
+                  offsetFromSymbolStart = "47">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 ((Swift.String, (Swift.Optional&lt;Swift.Array&lt;PokemonVault.Pokemons.Results&gt;&gt;) -&gt; (), (__C.NSError) -&gt; ())) -&gt; (Swift.Optional&lt;Swift.Array&lt;PokemonVault.Pokemons.Results&gt;&gt;) -&gt; () in PokemonVaultTests.MockPokemonListCacheDecorator.__StubbingProxy_PokemonListCacheDecorator.fetchPokemonList&lt;A, B, C where A: Cuckoo.Matchable, B: Cuckoo.Matchable, C: Cuckoo.Matchable, A.MatchedType == Swift.String, B.MatchedType == (Swift.Optional&lt;Swift.Array&lt;PokemonVault.Pokemons.Results&gt;&gt;) -&gt; (), C.MatchedType == (__C.NSError) -&gt; ()&gt;(numberOfPokemons: A, success: B, failure: C) -&gt; Cuckoo.ProtocolStubNoReturnFunction&lt;(Swift.String, (Swift.Optional&lt;Swift.Array&lt;PokemonVault.Pokemons.Results&gt;&gt;) -&gt; (), (__C.NSError) -&gt; ())&gt;"
+                  moduleName = "PokemonVaultTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/user/Downloads/PokemonVault/PokemonVaultTests/Mocks/GeneratedMocks.swift"
+                  timestampString = "578519778.901157"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "463"
+                  endingLineNumber = "463"
+                  offsetFromSymbolStart = "47">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #3 ((Swift.String, (Swift.Optional&lt;Swift.Array&lt;PokemonVault.Pokemons.Results&gt;&gt;) -&gt; (), (__C.NSError) -&gt; ())) -&gt; (__C.NSError) -&gt; () in PokemonVaultTests.MockPokemonListCacheDecorator.__StubbingProxy_PokemonListCacheDecorator.fetchPokemonList&lt;A, B, C where A: Cuckoo.Matchable, B: Cuckoo.Matchable, C: Cuckoo.Matchable, A.MatchedType == Swift.String, B.MatchedType == (Swift.Optional&lt;Swift.Array&lt;PokemonVault.Pokemons.Results&gt;&gt;) -&gt; (), C.MatchedType == (__C.NSError) -&gt; ()&gt;(numberOfPokemons: A, success: B, failure: C) -&gt; Cuckoo.ProtocolStubNoReturnFunction&lt;(Swift.String, (Swift.Optional&lt;Swift.Array&lt;PokemonVault.Pokemons.Results&gt;&gt;) -&gt; (), (__C.NSError) -&gt; ())&gt;"
+                  moduleName = "PokemonVaultTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/user/Downloads/PokemonVault/PokemonVaultTests/Mocks/GeneratedMocks.swift"
+                  timestampString = "578519778.903501"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "463"
+                  endingLineNumber = "463"
+                  offsetFromSymbolStart = "47">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PokemonVaultTests/HomeViewModelTests.swift"
+            timestampString = "578709918.171456"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
+            landmarkName = "testWhenPokemonsArrayIsPopulatedThenReturnsError()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PokemonVaultTests/HomeViewModelTests.swift"
+            timestampString = "578709918.171524"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "testWhenPokemonsArrayIsNilThenReturnsNil()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PokemonVaultTests/HomeViewModelTests.swift"
+            timestampString = "578709918.171581"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
+            landmarkName = "testWhenPokemonsArrayIsPopulatedThenReturnsPokemonAtIndex()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PokemonVaultTests.HomeViewModelTests.testWhenPokemonsArrayIsPopulatedThenReturnsPokemonAtIndex() -&gt; ()"
+                  moduleName = "PokemonVaultTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/user/Downloads/PokemonVault/PokemonVaultTests/HomeViewModelTests.swift"
+                  timestampString = "578519778.912496"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "40"
+                  endingLineNumber = "40"
+                  offsetFromSymbolStart = "500">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (PokemonVaultTests.MockPokemonListCacheDecorator.__StubbingProxy_PokemonListCacheDecorator) -&gt; () in PokemonVaultTests.HomeViewModelTests.testWhenPokemonsArrayIsPopulatedThenReturnsPokemonAtIndex() -&gt; ()"
+                  moduleName = "PokemonVaultTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/user/Downloads/PokemonVault/PokemonVaultTests/HomeViewModelTests.swift"
+                  timestampString = "578519778.914894"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "41"
+                  endingLineNumber = "41"
+                  offsetFromSymbolStart = "38">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PokemonVault/HomeViewModel.swift"
+            timestampString = "578709918.171643"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
+            landmarkName = "fetchPokemonList()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PokemonVault.HomeViewModel.fetchPokemonList() -&gt; ()"
+                  moduleName = "PokemonVault"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/user/Downloads/PokemonVault/PokemonVault/HomeViewModel.swift"
+                  timestampString = "578519778.17281"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "42">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Array&lt;PokemonVault.Pokemons.Results&gt;&gt;) -&gt; () in PokemonVault.HomeViewModel.fetchPokemonList() -&gt; ()"
+                  moduleName = "PokemonVault"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/user/Downloads/PokemonVault/PokemonVault/HomeViewModel.swift"
+                  timestampString = "578519778.175805"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "148">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
