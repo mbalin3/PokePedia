@@ -7,58 +7,58 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		01D5ECA899CC46F3014A94097178B547 /* __DoNotUse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28993B3DD2CB3886EC7677BCC5141133 /* __DoNotUse.swift */; };
-		059855DDD7B2639EC83956324319D3F8 /* CallMatcherFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D9176EA715D8CC29ED9D789D7EE498 /* CallMatcherFunctions.swift */; };
-		06DDE57F7F52D8B4206993462406992E /* StubNoReturnThrowingFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5B9B09C8E71DD762FC919C058F0121 /* StubNoReturnThrowingFunction.swift */; };
+		0043A8FEF1A2311C0E443C3CC1C7D14C /* StubNoReturnThrowingFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE71EDAB862B833CDE5BB93D175DC795 /* StubNoReturnThrowingFunction.swift */; };
+		05B76651D063A4ED6B898D174BDD6072 /* CallMatcherFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF05372ACAB5762B12386521153DD09 /* CallMatcherFunctions.swift */; };
 		07593079F4BE5E131F128541597A1D1D /* Pods-PokemonVault-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F1F407001088214E3F4C0F8AB50A542 /* Pods-PokemonVault-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		08D21CABC8DA0043C2962159B12C79B1 /* VerificationProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4F644C64B2565D3E354AFC9EA8ECCD /* VerificationProxy.swift */; };
+		0A9D4D9297BE3E2CA5CC02BF50F9EF07 /* ParameterMatcherFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25643CE052351D15C89AC0648139644B /* ParameterMatcherFunctions.swift */; };
 		0B6A1B3E25520EFB44D3C50D4FF39209 /* Pods-PokemonVault-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BA12926182EAE8E1337AAA290E0116F3 /* Pods-PokemonVault-dummy.m */; };
-		0EB39626F2C3B7FF48F4697D68D1FF9C /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8996122869D481249BF78CD2467F2736 /* Utils.swift */; };
-		1019D70545ACD5E8E218DB8B8871B96D /* ReachabilitySwift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E6EF4720C64D28EFD5A5FED551C8BCC /* ReachabilitySwift-dummy.m */; };
+		1019D70545ACD5E8E218DB8B8871B96D /* ReachabilitySwift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A5B37716F75BC4ECD9A57452285D844 /* ReachabilitySwift-dummy.m */; };
 		105BF020D7FD36A4A82789158FB42729 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDB97D3B220160173BFACA91705C56C6 /* Foundation.framework */; };
-		11601A7A4C318280EEE725E42176C7BD /* StubAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8F4715EDD05019F250EBEF830C3750 /* StubAction.swift */; };
-		15F284DAA5FECC16987D7E41DF41089F /* ThreadLocal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068A18234F77B26CE52596FA5665D00C /* ThreadLocal.swift */; };
-		1731CF695E179724A173239FB22822CB /* ParameterMatcherFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18A5A2EE0E1CC7A755B5B3EB66D1B96 /* ParameterMatcherFunctions.swift */; };
-		1EDB82A77386D1BCADD5F57F785D38F0 /* VerifyProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B8393D9F87EB1BCBE9AEFC29DA78AA /* VerifyProperty.swift */; };
-		24FF3254EA5D7A241AF553F0C72C515B /* StubbingProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB90F4CF6B50DCFC36BA088BCE716A2 /* StubbingProxy.swift */; };
-		288166A19BA06F129CD0D6C4FB767472 /* CreateMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85C0412EB8A83C7927D827FC9AB4247 /* CreateMock.swift */; };
-		29435B8DAE2B5370AB37962026B5BBD9 /* ParameterMatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74AEAA83245F7032F1F59F4EF7F32595 /* ParameterMatcher.swift */; };
-		39E6F8D42B1C4307788893B8B9D97D67 /* MockManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3A58FC7B11A291F91CAB1A75C6718F /* MockManager.swift */; };
-		3AD44338F3C4DC1ED6762370CF15A562 /* StubFunctionThenDoNothingTrait.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94C1AFAA8CC65964C6C29C2D9339BE39 /* StubFunctionThenDoNothingTrait.swift */; };
+		1B360F6BF297A367EEE9AE7D566D752E /* StubFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71ACB1EF7C21FE1B01BC9E874DC73B0 /* StubFunction.swift */; };
+		1BDBC49CF472AF7101BE17E158F4DEB8 /* MockManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D50DD5FDFA5EB0FBE68A61856240C8 /* MockManager.swift */; };
+		3012E9DBFE74B33BC71D05400D0959E3 /* Stub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168443E8BE19A9F8357DC37D6C72C6CF /* Stub.swift */; };
+		3FE905E4884CF8BB090457F7A6DB1251 /* StubFunctionThenCallRealImplementationTrait.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F25BCED561648B5BFB78910E0A949D /* StubFunctionThenCallRealImplementationTrait.swift */; };
+		4104E6A88D920E4CF51F63DEF796A33F /* MockManager+preconfigured.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263834700F717B2A6D3A4401C338F320 /* MockManager+preconfigured.swift */; };
 		485CDC67BD12D37CD2A3AD7393404D3B /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB868B0A7FFFDE1750FC133F8B08E7CC /* CoreTelephony.framework */; };
-		4BAC6A63B092BA832B1EB59BBEFA4307 /* Cuckoo-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = BB96BA7B09DC3136E50846BB64DAE06C /* Cuckoo-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4BAC6A63B092BA832B1EB59BBEFA4307 /* Cuckoo-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1ABBE1DCC47FB9F2D30530E5CA8AC8BF /* Cuckoo-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4C3A2D7F4B159D5C446CD0F960CAB734 /* MockBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35803DBF5A61DF8BC58AB4440010804D /* MockBuilder.swift */; };
 		4DAC188789C21DF5E0B630C4CE6ED56F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDB97D3B220160173BFACA91705C56C6 /* Foundation.framework */; };
+		4ED7F7A42CE25996FE12D99F8F434E5A /* Cuckoo-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B958D33ED7AF10E87DD4C60BC474BC9B /* Cuckoo-dummy.m */; };
+		4EE641940E812853D8ABF6592576296E /* ToBeStubbedReadOnlyProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4D6D3291458EF5112C52C56D334017 /* ToBeStubbedReadOnlyProperty.swift */; };
+		558D8C6CA9812740C414DFB04E677403 /* ToBeStubbedProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC2FCB7874119ADA250C90B0DA0BBB5 /* ToBeStubbedProperty.swift */; };
 		57A25222E1EF186B5E0455493E63EB78 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7526EA855259408665C4CC2BC843120 /* XCTest.framework */; };
-		5B3A2C92152E46DFEE022EC99D40D95E /* VerificationProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B661760A2BD9272821C9F0FD1A957B1 /* VerificationProxy.swift */; };
-		6542D60771BC223E11487059EF009BB4 /* VerifyReadOnlyProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F149AA91CA3CC2CEA8B883F80B6026D /* VerifyReadOnlyProperty.swift */; };
-		68C5A7B46932B28C079DE55BD58783D0 /* StubFunctionThenTrait.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E8650D05DC3CF09EBE5397B68A7A38 /* StubFunctionThenTrait.swift */; };
+		5EED9083E41279E5C3F6FE98CABE1FE1 /* StubThrowingFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18AC31B11DD57E246B5459E065CCBF2E /* StubThrowingFunction.swift */; };
+		60EFBFAF21C6FB288B540E0678415A52 /* StubFunctionThenDoNothingTrait.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05541F670DC5FF2A4F04D7A1C85A7378 /* StubFunctionThenDoNothingTrait.swift */; };
+		64F8A283A5173CC6C0E8FFC7D2EA346E /* StubFunctionThenReturnTrait.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222DF6221E4029356E79582B1DF4AA2D /* StubFunctionThenReturnTrait.swift */; };
+		681EE946E48F57F4D1FEF663975E1B38 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B757B774EC0EB7A3977126234F8DD9 /* Utils.swift */; };
+		6977652A099CCCDCBE0E84AC3EE28715 /* BaseStubFunctionTrait.swift in Sources */ = {isa = PBXBuildFile; fileRef = B32A9F51463DF932138D28D297AE83A0 /* BaseStubFunctionTrait.swift */; };
 		6AAA439861389B91AC66E639686FA4E7 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8387957479EE01B82FB63E5FF783E57C /* SystemConfiguration.framework */; };
-		76DE92987FFF769796FF741127E35126 /* DefaultValueRegistry.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF73C1AEA6D76FD4C361C00B409B6C3 /* DefaultValueRegistry.swift */; };
-		7CC9B91F0EE84936AFCF74C2FE1805EC /* ToBeStubbedReadOnlyProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EAC48C3332CA0C3E9DA30993EAB1519 /* ToBeStubbedReadOnlyProperty.swift */; };
-		83091BB1506BD7EA21C910A87D42F3F2 /* StubNoReturnFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5F846D23E5F1B3FC94D089E01E873E /* StubNoReturnFunction.swift */; };
-		85DA2E00962B9473244681A945FDDF34 /* MockBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B8464CC5145249FF643601AC4FA3B9 /* MockBuilder.swift */; };
-		86685BC6045C6C7FABA597EEBC7B75C3 /* CallMatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 544CDB494AF570E331DB4135F271E0E7 /* CallMatcher.swift */; };
-		870AE233E7536D027B91A4B58D3F74B5 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E9806F5F95124D0AE75C367C8F146C /* Reachability.swift */; };
-		8C121A3878678DB5025CC6E35C0420A2 /* Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72528D9CCC59F123B7CE224302C680BD /* Mock.swift */; };
+		6BE9489BDBF42C41CD26EF55D8B9A74E /* StubFunctionThenThrowTrait.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5399960DA967337A84FBCF90BC9D6385 /* StubFunctionThenThrowTrait.swift */; };
+		6C02A35AC6B0EA61357599B6165675CB /* ArgumentCaptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFBA60163E61F1D273C0E2D2CA986E73 /* ArgumentCaptor.swift */; };
+		6F04C55ABC45A1A23D99BCB75B0FE827 /* ParameterMatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBE29049F1C2575053D5431F67966AC /* ParameterMatcher.swift */; };
+		70EADC19C75FD6733F67F2BB459EEB3C /* Mocked.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645B7F2121CA290836736C037AAEBDF3 /* Mocked.swift */; };
+		71596484A858440174BBB20565007AD0 /* StubbingProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 697BC32A37857149F813EF3F85B81EBD /* StubbingProxy.swift */; };
+		7C5DB908CEC9A2C8FE6D048176378FE7 /* CallMatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5077476904C9561B19EBCACB6A87C2A3 /* CallMatcher.swift */; };
+		802511A54C72F7DA34E9E6FAF43A193B /* StubNoReturnFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68AF2F2FA22028410048D3F844876C91 /* StubNoReturnFunction.swift */; };
+		8481B3775D7BEA47BF4664A699A90677 /* ThreadLocal.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C8198D88472439078FF82049BAEC6D /* ThreadLocal.swift */; };
+		870AE233E7536D027B91A4B58D3F74B5 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4904C2121D407349697EEC458E7A2C0 /* Reachability.swift */; };
 		8CBA559CBD9A92188F91F53415186DE3 /* Pods-PokemonVaultTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C481FDC9F6D6ADD5E585251E6BCD69A /* Pods-PokemonVaultTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8D4C15C73E08F80CBF48656BA3841336 /* StubThrowingFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FD8243AF1F58BC1948960A014FD626 /* StubThrowingFunction.swift */; };
-		9ADEBCE1DF4F185C9B580EADEBB20DF0 /* StubCall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6154E2C66571B976EFD7DC14F52AE5C6 /* StubCall.swift */; };
+		8D4E36811D67F5D12B625B34F5B92D5E /* CuckooFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE77E9E12BF53408FBC8B8F595097B0D /* CuckooFunctions.swift */; };
+		8F5CB7795DA26633F430332A60401A87 /* VerifyProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = B78133295964623811705EC015BCEACE /* VerifyProperty.swift */; };
+		98B27E572114DF91195D8A3A90BFD97C /* StubAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E30DF02F12C587F6807BA6C3E818EA3 /* StubAction.swift */; };
 		A1688E71C3B1159756C4875844D8FC00 /* Pods-PokemonVaultTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = AB1B5905B708B7E995F7FA58DC90C7FF /* Pods-PokemonVaultTests-dummy.m */; };
-		A4454D39B58978AB024A961FE61AA398 /* StubFunctionThenCallRealImplementationTrait.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15AAB54427B67C265C725574C40B9342 /* StubFunctionThenCallRealImplementationTrait.swift */; };
-		A71C66133DCF85CFF9E5DD98AC7BE291 /* ToBeStubbedProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD0889A54C2C3D99925C6BED8967156 /* ToBeStubbedProperty.swift */; };
-		A902474B07C896D4752A58B7EBF53AD7 /* Cuckoo-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = AE1DBC46F365FB67AC863A5656D47DDD /* Cuckoo-dummy.m */; };
-		A9AED0E79AB2949C1610028286B9C350 /* ReachabilitySwift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 30C68082BA2F561E6563B33926D73571 /* ReachabilitySwift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B758B07EDE0D643AAFC13AA51A38075D /* Matchable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120D473FEFB06B5DA09B086BC275B170 /* Matchable.swift */; };
-		BF977691308CA59C14DDFAED0D98099D /* StubFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1689D847152F3469EB467C0B0489241B /* StubFunction.swift */; };
-		CDD9DA1A5565195D3EEC395E4071E9DA /* MockManager+preconfigured.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E033EE9E49FEFE4B199A871E43798D3 /* MockManager+preconfigured.swift */; };
-		D4EBC661635F83EBB2B8FEFAF0507594 /* StubFunctionThenThrowTrait.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A92ED4E95C6739A4DDE03F18EC75E80 /* StubFunctionThenThrowTrait.swift */; };
-		DCFD599E1890364A03EF5AEE8A440170 /* Mocked.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B7F0B1B32139D25EB7AC6186B0EC8D /* Mocked.swift */; };
+		A962E2FECA2BD41FD28AB26066F85997 /* Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC1D6ED0C67C55E9B1BB89C59E6CDAB /* Mock.swift */; };
+		A9AED0E79AB2949C1610028286B9C350 /* ReachabilitySwift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = ABE7C16C7B5BD69DB9F7337064A64489 /* ReachabilitySwift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B83BBBC4D8FD42C3E5531072C790AF3D /* CreateMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B745C50892E292EF0D82D63299BC2B /* CreateMock.swift */; };
+		C49C51292CF69FC1A0167D92F9A1B2EC /* VerifyReadOnlyProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF6CE0C9C8551D0512C2B8CBE47584A /* VerifyReadOnlyProperty.swift */; };
+		C544558AC367AFD31D9D9E76E31DC2D9 /* __DoNotUse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5570021CC3F67502ED3729FF3C48691B /* __DoNotUse.swift */; };
+		D1495B97D2F92224A2855C0CFD3FD902 /* Matchable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950B50F18ED197364844775F9CD477D0 /* Matchable.swift */; };
 		E18411E8DE2C045723510972C5BB38B6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDB97D3B220160173BFACA91705C56C6 /* Foundation.framework */; };
-		E3A9005CF5751F38D55B1D4C5A3ECA51 /* Stub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA66D1514A031CE56DE1AE5B93CF6E8 /* Stub.swift */; };
-		E3B86074E753544882B4C5CD4F63D4D7 /* ArgumentCaptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C3EC239642FB0956405BA2FBE1A52E /* ArgumentCaptor.swift */; };
-		E7B3784F876E5ECA567DF61147ECAB8B /* CuckooFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E17304454AA418C78F324CB6EFE63B /* CuckooFunctions.swift */; };
-		E8F529F9140024D5E87040087BF8171F /* BaseStubFunctionTrait.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FE3D8136B71772A36E0B615D145316 /* BaseStubFunctionTrait.swift */; };
+		E3FB23E51897ADC65090B2B01FD2FE4C /* StubFunctionThenTrait.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CBAF1CD51A3BAFB66EB4A5AE15D825 /* StubFunctionThenTrait.swift */; };
+		EB7621A8BE47AACB5EB7A6588D836B3B /* StubCall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E742BF5F5FA4D273B5A58FC33D2B577 /* StubCall.swift */; };
 		EF2D17E290370A903F9A3F4FA78FDBFB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDB97D3B220160173BFACA91705C56C6 /* Foundation.framework */; };
-		FDF8F8DB13C208C92AFD1A8D0C0679B6 /* StubFunctionThenReturnTrait.swift in Sources */ = {isa = PBXBuildFile; fileRef = D751CFC60D21957B0DE85E5149ECB316 /* StubFunctionThenReturnTrait.swift */; };
+		FD27CD8FF065956D3A96FA255AF99FA3 /* DefaultValueRegistry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375A45F72076EAACBF69BAB1E43EAA9B /* DefaultValueRegistry.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,81 +86,84 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		068A18234F77B26CE52596FA5665D00C /* ThreadLocal.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ThreadLocal.swift; path = Source/Initialization/ThreadLocal.swift; sourceTree = "<group>"; };
-		0CB90F4CF6B50DCFC36BA088BCE716A2 /* StubbingProxy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StubbingProxy.swift; path = Source/Mock/StubbingProxy.swift; sourceTree = "<group>"; };
-		0D5B9B09C8E71DD762FC919C058F0121 /* StubNoReturnThrowingFunction.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StubNoReturnThrowingFunction.swift; path = Source/Stubbing/StubFunction/StubNoReturnThrowingFunction.swift; sourceTree = "<group>"; };
-		120D473FEFB06B5DA09B086BC275B170 /* Matchable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Matchable.swift; path = Source/Matching/Matchable.swift; sourceTree = "<group>"; };
-		15AAB54427B67C265C725574C40B9342 /* StubFunctionThenCallRealImplementationTrait.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StubFunctionThenCallRealImplementationTrait.swift; path = Source/Stubbing/StubFunction/Trait/StubFunctionThenCallRealImplementationTrait.swift; sourceTree = "<group>"; };
-		1689D847152F3469EB467C0B0489241B /* StubFunction.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StubFunction.swift; path = Source/Stubbing/StubFunction/StubFunction.swift; sourceTree = "<group>"; };
+		05541F670DC5FF2A4F04D7A1C85A7378 /* StubFunctionThenDoNothingTrait.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StubFunctionThenDoNothingTrait.swift; sourceTree = "<group>"; };
+		0FF6CE0C9C8551D0512C2B8CBE47584A /* VerifyReadOnlyProperty.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = VerifyReadOnlyProperty.swift; sourceTree = "<group>"; };
+		168443E8BE19A9F8357DC37D6C72C6CF /* Stub.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Stub.swift; sourceTree = "<group>"; };
+		18AC31B11DD57E246B5459E065CCBF2E /* StubThrowingFunction.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StubThrowingFunction.swift; sourceTree = "<group>"; };
+		1A32E8E48A1581E0A8E6BFCB67059771 /* Cuckoo.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Cuckoo.xcconfig; sourceTree = "<group>"; };
 		1A8DAC9516967E61D420FD4D667A0E13 /* Pods-PokemonVaultTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PokemonVaultTests.release.xcconfig"; sourceTree = "<group>"; };
-		20B8393D9F87EB1BCBE9AEFC29DA78AA /* VerifyProperty.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = VerifyProperty.swift; path = Source/Verification/VerifyProperty/VerifyProperty.swift; sourceTree = "<group>"; };
+		1ABBE1DCC47FB9F2D30530E5CA8AC8BF /* Cuckoo-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Cuckoo-umbrella.h"; sourceTree = "<group>"; };
 		216D4FF7143C1593F7DE6AD97A542851 /* Pods_PokemonVaultTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_PokemonVaultTests.framework; path = "Pods-PokemonVaultTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		21C3EC239642FB0956405BA2FBE1A52E /* ArgumentCaptor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ArgumentCaptor.swift; path = Source/Verification/ArgumentCaptor.swift; sourceTree = "<group>"; };
-		23E8650D05DC3CF09EBE5397B68A7A38 /* StubFunctionThenTrait.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StubFunctionThenTrait.swift; path = Source/Stubbing/StubFunction/Trait/StubFunctionThenTrait.swift; sourceTree = "<group>"; };
+		222DF6221E4029356E79582B1DF4AA2D /* StubFunctionThenReturnTrait.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StubFunctionThenReturnTrait.swift; sourceTree = "<group>"; };
 		2526558012C0460EE5EB95029AFC648F /* Reachability.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Reachability.framework; path = ReachabilitySwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		28993B3DD2CB3886EC7677BCC5141133 /* __DoNotUse.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = __DoNotUse.swift; path = Source/Verification/__DoNotUse.swift; sourceTree = "<group>"; };
-		2EA66D1514A031CE56DE1AE5B93CF6E8 /* Stub.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Stub.swift; path = Source/Stubbing/Stub.swift; sourceTree = "<group>"; };
-		2F149AA91CA3CC2CEA8B883F80B6026D /* VerifyReadOnlyProperty.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = VerifyReadOnlyProperty.swift; path = Source/Verification/VerifyProperty/VerifyReadOnlyProperty.swift; sourceTree = "<group>"; };
-		30C68082BA2F561E6563B33926D73571 /* ReachabilitySwift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ReachabilitySwift-umbrella.h"; sourceTree = "<group>"; };
+		25643CE052351D15C89AC0648139644B /* ParameterMatcherFunctions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ParameterMatcherFunctions.swift; sourceTree = "<group>"; };
+		263834700F717B2A6D3A4401C338F320 /* MockManager+preconfigured.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "MockManager+preconfigured.swift"; sourceTree = "<group>"; };
+		2A5B37716F75BC4ECD9A57452285D844 /* ReachabilitySwift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ReachabilitySwift-dummy.m"; sourceTree = "<group>"; };
+		35803DBF5A61DF8BC58AB4440010804D /* MockBuilder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MockBuilder.swift; sourceTree = "<group>"; };
+		375A45F72076EAACBF69BAB1E43EAA9B /* DefaultValueRegistry.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DefaultValueRegistry.swift; path = Source/DefaultValueRegistry.swift; sourceTree = "<group>"; };
+		379AC1179771D9B048E51F46CBACF82D /* Cuckoo-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Cuckoo-Info.plist"; sourceTree = "<group>"; };
 		394A37F227DC48C5CF8E9462ABCB533B /* Pods-PokemonVault-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-PokemonVault-frameworks.sh"; sourceTree = "<group>"; };
-		3B661760A2BD9272821C9F0FD1A957B1 /* VerificationProxy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = VerificationProxy.swift; path = Source/Mock/VerificationProxy.swift; sourceTree = "<group>"; };
 		3CE2378290D3477FC05B6DAFFBFEC478 /* Pods-PokemonVault-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-PokemonVault-acknowledgements.markdown"; sourceTree = "<group>"; };
-		3E6EF4720C64D28EFD5A5FED551C8BCC /* ReachabilitySwift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ReachabilitySwift-dummy.m"; sourceTree = "<group>"; };
-		43FD8243AF1F58BC1948960A014FD626 /* StubThrowingFunction.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StubThrowingFunction.swift; path = Source/Stubbing/StubFunction/StubThrowingFunction.swift; sourceTree = "<group>"; };
-		4B0D885DAE51538CAD0F2BF119299B85 /* Cuckoo-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Cuckoo-Info.plist"; sourceTree = "<group>"; };
+		46464C5AB6264ED282E2B771896E0ECF /* ReachabilitySwift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ReachabilitySwift-prefix.pch"; sourceTree = "<group>"; };
+		4AC2FCB7874119ADA250C90B0DA0BBB5 /* ToBeStubbedProperty.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ToBeStubbedProperty.swift; sourceTree = "<group>"; };
 		4B6D481C98B7FC10CA087FB8C2A3DC15 /* Pods-PokemonVaultTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PokemonVaultTests-acknowledgements.plist"; sourceTree = "<group>"; };
-		4BBAE70120B58947E3D8822F0751086E /* ReachabilitySwift-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ReachabilitySwift-Info.plist"; sourceTree = "<group>"; };
-		4EAC48C3332CA0C3E9DA30993EAB1519 /* ToBeStubbedReadOnlyProperty.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ToBeStubbedReadOnlyProperty.swift; path = Source/Stubbing/ToBeStubbedProperty/ToBeStubbedReadOnlyProperty.swift; sourceTree = "<group>"; };
-		544CDB494AF570E331DB4135F271E0E7 /* CallMatcher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CallMatcher.swift; path = Source/Matching/CallMatcher.swift; sourceTree = "<group>"; };
-		57FE3D8136B71772A36E0B615D145316 /* BaseStubFunctionTrait.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BaseStubFunctionTrait.swift; path = Source/Stubbing/StubFunction/Trait/BaseStubFunctionTrait.swift; sourceTree = "<group>"; };
-		5A67E188D8414CA1DA77A79A0E7E07FE /* ReachabilitySwift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ReachabilitySwift-prefix.pch"; sourceTree = "<group>"; };
-		5A92ED4E95C6739A4DDE03F18EC75E80 /* StubFunctionThenThrowTrait.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StubFunctionThenThrowTrait.swift; path = Source/Stubbing/StubFunction/Trait/StubFunctionThenThrowTrait.swift; sourceTree = "<group>"; };
+		4E742BF5F5FA4D273B5A58FC33D2B577 /* StubCall.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StubCall.swift; sourceTree = "<group>"; };
+		4E747AFC0183DD5D17C1E981B5F405F3 /* ReachabilitySwift-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ReachabilitySwift-Info.plist"; sourceTree = "<group>"; };
+		5077476904C9561B19EBCACB6A87C2A3 /* CallMatcher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CallMatcher.swift; sourceTree = "<group>"; };
+		50B757B774EC0EB7A3977126234F8DD9 /* Utils.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Utils.swift; path = Source/Utils.swift; sourceTree = "<group>"; };
+		5399960DA967337A84FBCF90BC9D6385 /* StubFunctionThenThrowTrait.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StubFunctionThenThrowTrait.swift; sourceTree = "<group>"; };
+		5570021CC3F67502ED3729FF3C48691B /* __DoNotUse.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = __DoNotUse.swift; sourceTree = "<group>"; };
+		5AF05372ACAB5762B12386521153DD09 /* CallMatcherFunctions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CallMatcherFunctions.swift; sourceTree = "<group>"; };
 		5BA02A365F739B452CA63085BB31D3BB /* Pods-PokemonVault-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PokemonVault-acknowledgements.plist"; sourceTree = "<group>"; };
-		5DB4004F2F6EE4FA157EE3D86AD05F5F /* ReachabilitySwift.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ReachabilitySwift.xcconfig; sourceTree = "<group>"; };
-		6154E2C66571B976EFD7DC14F52AE5C6 /* StubCall.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StubCall.swift; path = Source/Stubbing/StubCall.swift; sourceTree = "<group>"; };
+		645B7F2121CA290836736C037AAEBDF3 /* Mocked.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Mocked.swift; sourceTree = "<group>"; };
+		68AF2F2FA22028410048D3F844876C91 /* StubNoReturnFunction.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StubNoReturnFunction.swift; sourceTree = "<group>"; };
+		697BC32A37857149F813EF3F85B81EBD /* StubbingProxy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StubbingProxy.swift; sourceTree = "<group>"; };
 		6AC2D11EEAF61A1D9A5D0E276CDC0F07 /* Pods-PokemonVaultTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PokemonVaultTests.debug.xcconfig"; sourceTree = "<group>"; };
-		6C8E905AAF1CFEBA852FCFEC7BDA0132 /* Cuckoo.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Cuckoo.xcconfig; sourceTree = "<group>"; };
-		6E033EE9E49FEFE4B199A871E43798D3 /* MockManager+preconfigured.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "MockManager+preconfigured.swift"; path = "Source/Initialization/MockManager+preconfigured.swift"; sourceTree = "<group>"; };
 		6F1F407001088214E3F4C0F8AB50A542 /* Pods-PokemonVault-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-PokemonVault-umbrella.h"; sourceTree = "<group>"; };
-		72528D9CCC59F123B7CE224302C680BD /* Mock.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Mock.swift; path = Source/Mock/Mock.swift; sourceTree = "<group>"; };
-		74AEAA83245F7032F1F59F4EF7F32595 /* ParameterMatcher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ParameterMatcher.swift; path = Source/Matching/ParameterMatcher.swift; sourceTree = "<group>"; };
-		77B7F0B1B32139D25EB7AC6186B0EC8D /* Mocked.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Mocked.swift; path = Source/Mock/Mocked.swift; sourceTree = "<group>"; };
-		7B4ABAF23F811FCDC9F83B219C64A76C /* Cuckoo-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Cuckoo-prefix.pch"; sourceTree = "<group>"; };
-		7D7D40CDC151CC518899E95282BA23BB /* ReachabilitySwift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = ReachabilitySwift.modulemap; sourceTree = "<group>"; };
+		72CBAF1CD51A3BAFB66EB4A5AE15D825 /* StubFunctionThenTrait.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StubFunctionThenTrait.swift; sourceTree = "<group>"; };
+		7D35933FA43CA6136FC37153D0FBAD1A /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		7E0FDAD915566FF4DE065CC7DB70E033 /* ReachabilitySwift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = ReachabilitySwift.modulemap; sourceTree = "<group>"; };
+		7E30DF02F12C587F6807BA6C3E818EA3 /* StubAction.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StubAction.swift; sourceTree = "<group>"; };
 		8387957479EE01B82FB63E5FF783E57C /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
-		8996122869D481249BF78CD2467F2736 /* Utils.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Utils.swift; path = Source/Utils.swift; sourceTree = "<group>"; };
-		94C1AFAA8CC65964C6C29C2D9339BE39 /* StubFunctionThenDoNothingTrait.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StubFunctionThenDoNothingTrait.swift; path = Source/Stubbing/StubFunction/Trait/StubFunctionThenDoNothingTrait.swift; sourceTree = "<group>"; };
-		9AD0889A54C2C3D99925C6BED8967156 /* ToBeStubbedProperty.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ToBeStubbedProperty.swift; path = Source/Stubbing/ToBeStubbedProperty/ToBeStubbedProperty.swift; sourceTree = "<group>"; };
+		912F3097F2D9FCE8D34F1777ADB014FD /* Cuckoo-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Cuckoo-prefix.pch"; sourceTree = "<group>"; };
+		92D50DD5FDFA5EB0FBE68A61856240C8 /* MockManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MockManager.swift; path = Source/MockManager.swift; sourceTree = "<group>"; };
+		93499D00FDE6F22588824808E7ACE49C /* Cuckoo.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Cuckoo.modulemap; sourceTree = "<group>"; };
+		950B50F18ED197364844775F9CD477D0 /* Matchable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Matchable.swift; sourceTree = "<group>"; };
 		9C481FDC9F6D6ADD5E585251E6BCD69A /* Pods-PokemonVaultTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-PokemonVaultTests-umbrella.h"; sourceTree = "<group>"; };
-		9D8F4715EDD05019F250EBEF830C3750 /* StubAction.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StubAction.swift; path = Source/Stubbing/StubAction.swift; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A0B745C50892E292EF0D82D63299BC2B /* CreateMock.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CreateMock.swift; sourceTree = "<group>"; };
+		A0F25BCED561648B5BFB78910E0A949D /* StubFunctionThenCallRealImplementationTrait.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StubFunctionThenCallRealImplementationTrait.swift; sourceTree = "<group>"; };
 		A12A87B80F03801F35F7B4653582B833 /* Pods-PokemonVaultTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-PokemonVaultTests.modulemap"; sourceTree = "<group>"; };
 		AB1B5905B708B7E995F7FA58DC90C7FF /* Pods-PokemonVaultTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-PokemonVaultTests-dummy.m"; sourceTree = "<group>"; };
-		AE1DBC46F365FB67AC863A5656D47DDD /* Cuckoo-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Cuckoo-dummy.m"; sourceTree = "<group>"; };
+		ABE7C16C7B5BD69DB9F7337064A64489 /* ReachabilitySwift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ReachabilitySwift-umbrella.h"; sourceTree = "<group>"; };
+		AE57990B5F6763E45A9A89B6A61101F1 /* ReachabilitySwift.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ReachabilitySwift.xcconfig; sourceTree = "<group>"; };
+		B1C8198D88472439078FF82049BAEC6D /* ThreadLocal.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ThreadLocal.swift; sourceTree = "<group>"; };
 		B2E8F45CC0DC3B461B0D1C25FCACD1E8 /* Cuckoo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Cuckoo.framework; path = Cuckoo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B32A9F51463DF932138D28D297AE83A0 /* BaseStubFunctionTrait.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BaseStubFunctionTrait.swift; sourceTree = "<group>"; };
+		B78133295964623811705EC015BCEACE /* VerifyProperty.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = VerifyProperty.swift; sourceTree = "<group>"; };
+		B958D33ED7AF10E87DD4C60BC474BC9B /* Cuckoo-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Cuckoo-dummy.m"; sourceTree = "<group>"; };
+		B97D2E3B2C7F2537978E6FED7EEBEBEF /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
 		B9E0BC1BCBC5EFF93145D93B88B2B22E /* Pods-PokemonVault.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PokemonVault.release.xcconfig"; sourceTree = "<group>"; };
 		BA12926182EAE8E1337AAA290E0116F3 /* Pods-PokemonVault-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-PokemonVault-dummy.m"; sourceTree = "<group>"; };
-		BB96BA7B09DC3136E50846BB64DAE06C /* Cuckoo-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Cuckoo-umbrella.h"; sourceTree = "<group>"; };
+		BB4D6D3291458EF5112C52C56D334017 /* ToBeStubbedReadOnlyProperty.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ToBeStubbedReadOnlyProperty.swift; sourceTree = "<group>"; };
 		BC8776572258A57F68AD0505AE206F98 /* Pods-PokemonVaultTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-PokemonVaultTests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		BE5F846D23E5F1B3FC94D089E01E873E /* StubNoReturnFunction.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StubNoReturnFunction.swift; path = Source/Stubbing/StubFunction/StubNoReturnFunction.swift; sourceTree = "<group>"; };
-		C8E9806F5F95124D0AE75C367C8F146C /* Reachability.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Reachability.swift; path = Sources/Reachability.swift; sourceTree = "<group>"; };
 		CB868B0A7FFFDE1750FC133F8B08E7CC /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/CoreTelephony.framework; sourceTree = DEVELOPER_DIR; };
 		CDB97D3B220160173BFACA91705C56C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		D18A5A2EE0E1CC7A755B5B3EB66D1B96 /* ParameterMatcherFunctions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ParameterMatcherFunctions.swift; path = Source/Matching/ParameterMatcherFunctions.swift; sourceTree = "<group>"; };
-		D5B8464CC5145249FF643601AC4FA3B9 /* MockBuilder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MockBuilder.swift; path = Source/Initialization/MockBuilder.swift; sourceTree = "<group>"; };
-		D751CFC60D21957B0DE85E5149ECB316 /* StubFunctionThenReturnTrait.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StubFunctionThenReturnTrait.swift; path = Source/Stubbing/StubFunction/Trait/StubFunctionThenReturnTrait.swift; sourceTree = "<group>"; };
-		E0E17304454AA418C78F324CB6EFE63B /* CuckooFunctions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CuckooFunctions.swift; path = Source/CuckooFunctions.swift; sourceTree = "<group>"; };
+		DE71EDAB862B833CDE5BB93D175DC795 /* StubNoReturnThrowingFunction.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StubNoReturnThrowingFunction.swift; sourceTree = "<group>"; };
+		DE77E9E12BF53408FBC8B8F595097B0D /* CuckooFunctions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CuckooFunctions.swift; path = Source/CuckooFunctions.swift; sourceTree = "<group>"; };
+		DF851E1F89C172DF333E084E9E940E32 /* Cuckoo.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = Cuckoo.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		DFBA60163E61F1D273C0E2D2CA986E73 /* ArgumentCaptor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ArgumentCaptor.swift; sourceTree = "<group>"; };
 		E13C1B6CDFE7EFE5407ACD9A974C9D8D /* Pods-PokemonVault.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PokemonVault.debug.xcconfig"; sourceTree = "<group>"; };
-		E85C0412EB8A83C7927D827FC9AB4247 /* CreateMock.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CreateMock.swift; path = Source/Initialization/CreateMock.swift; sourceTree = "<group>"; };
 		ECD7797DE0BE4294F660A07035FC1068 /* Pods-PokemonVault.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-PokemonVault.modulemap"; sourceTree = "<group>"; };
-		F2D9176EA715D8CC29ED9D789D7EE498 /* CallMatcherFunctions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CallMatcherFunctions.swift; path = Source/Matching/CallMatcherFunctions.swift; sourceTree = "<group>"; };
+		EDC1D6ED0C67C55E9B1BB89C59E6CDAB /* Mock.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Mock.swift; sourceTree = "<group>"; };
 		F345C039D3C1C00322FEA3CEB6D8ABA5 /* Pods_PokemonVault.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_PokemonVault.framework; path = "Pods-PokemonVault.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		F47BD919D78DBE2FF40BC82352AC7B2D /* Cuckoo.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Cuckoo.modulemap; sourceTree = "<group>"; };
+		F4904C2121D407349697EEC458E7A2C0 /* Reachability.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Reachability.swift; path = Sources/Reachability.swift; sourceTree = "<group>"; };
 		F587B512C9197606066BCF84B4011BBB /* Pods-PokemonVault-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PokemonVault-Info.plist"; sourceTree = "<group>"; };
+		F71ACB1EF7C21FE1B01BC9E874DC73B0 /* StubFunction.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StubFunction.swift; sourceTree = "<group>"; };
 		F7526EA855259408665C4CC2BC843120 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		F80BE3A8B161F7029854D6B48EB625CC /* Pods-PokemonVaultTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PokemonVaultTests-Info.plist"; sourceTree = "<group>"; };
-		FD3A58FC7B11A291F91CAB1A75C6718F /* MockManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MockManager.swift; path = Source/MockManager.swift; sourceTree = "<group>"; };
-		FDF73C1AEA6D76FD4C361C00B409B6C3 /* DefaultValueRegistry.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DefaultValueRegistry.swift; path = Source/DefaultValueRegistry.swift; sourceTree = "<group>"; };
+		FC4F644C64B2565D3E354AFC9EA8ECCD /* VerificationProxy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = VerificationProxy.swift; sourceTree = "<group>"; };
+		FDBE29049F1C2575053D5431F67966AC /* ParameterMatcher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ParameterMatcher.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -202,6 +205,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0CF065E48B8998A92C6DF33694E44DE8 /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1BE50AF0A491A7D39A5DF3C8E4E93533 /* Cuckoo */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
 		110DCE823CDAA72EEE8BB8CCC3DC5AC3 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
@@ -213,13 +224,45 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		480E7B2711C7A15F8F6419F9F11655FA /* Pods */ = {
+		1BE50AF0A491A7D39A5DF3C8E4E93533 /* Cuckoo */ = {
 			isa = PBXGroup;
 			children = (
-				D0CA4CC301EEC52171AA9A8649719A90 /* Cuckoo */,
-				6E6D842C8DC025C755D0B57AF323A528 /* ReachabilitySwift */,
+				DE77E9E12BF53408FBC8B8F595097B0D /* CuckooFunctions.swift */,
+				375A45F72076EAACBF69BAB1E43EAA9B /* DefaultValueRegistry.swift */,
+				92D50DD5FDFA5EB0FBE68A61856240C8 /* MockManager.swift */,
+				50B757B774EC0EB7A3977126234F8DD9 /* Utils.swift */,
+				A6BAD2F7EE353EBC40CBF623A42E0534 /* Initialization */,
+				67CAF56EC4FD09624CAA0BB403D5D711 /* Matching */,
+				361E62774E550B40B30A4A236884A072 /* Mock */,
+				FD4832727CEBBEEE7CF0A7C106CC68E2 /* Pod */,
+				654348C7EBC180AF95D9B2E91922B266 /* Stubbing */,
+				B8D1E9DF786E422825411BA29C3C57C3 /* Support Files */,
+				C9ADF258F25B7456FB139C97061A1B99 /* Verification */,
 			);
-			name = Pods;
+			name = Cuckoo;
+			path = ../../Cuckoo;
+			sourceTree = "<group>";
+		};
+		361E62774E550B40B30A4A236884A072 /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				EDC1D6ED0C67C55E9B1BB89C59E6CDAB /* Mock.swift */,
+				645B7F2121CA290836736C037AAEBDF3 /* Mocked.swift */,
+				697BC32A37857149F813EF3F85B81EBD /* StubbingProxy.swift */,
+				FC4F644C64B2565D3E354AFC9EA8ECCD /* VerificationProxy.swift */,
+			);
+			name = Mock;
+			path = Source/Mock;
+			sourceTree = "<group>";
+		};
+		4F5A9B31011C1AE82D2DD19F123942EB /* VerifyProperty */ = {
+			isa = PBXGroup;
+			children = (
+				B78133295964623811705EC015BCEACE /* VerifyProperty.swift */,
+				0FF6CE0C9C8551D0512C2B8CBE47584A /* VerifyReadOnlyProperty.swift */,
+			);
+			name = VerifyProperty;
+			path = VerifyProperty;
 			sourceTree = "<group>";
 		};
 		5218ACFF5F4CFDACC7768CCB6FB9DFC0 /* Pods-PokemonVault */ = {
@@ -239,14 +282,66 @@
 			path = "Target Support Files/Pods-PokemonVault";
 			sourceTree = "<group>";
 		};
-		6E6D842C8DC025C755D0B57AF323A528 /* ReachabilitySwift */ = {
+		5D0AA215FB49F5F6E11902E9E88FDB66 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				C8E9806F5F95124D0AE75C367C8F146C /* Reachability.swift */,
-				E2384788AC7DC17938F561C7CEC707C3 /* Support Files */,
+				AB141DEEC5EED015062C5277880ECC86 /* ReachabilitySwift */,
 			);
-			name = ReachabilitySwift;
-			path = ReachabilitySwift;
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		654348C7EBC180AF95D9B2E91922B266 /* Stubbing */ = {
+			isa = PBXGroup;
+			children = (
+				168443E8BE19A9F8357DC37D6C72C6CF /* Stub.swift */,
+				7E30DF02F12C587F6807BA6C3E818EA3 /* StubAction.swift */,
+				4E742BF5F5FA4D273B5A58FC33D2B577 /* StubCall.swift */,
+				DD05FCA1A68AFA6E10D95168157AE875 /* StubFunction */,
+				E57D5F267ADCE7AA4F3939A52BFD310F /* ToBeStubbedProperty */,
+			);
+			name = Stubbing;
+			path = Source/Stubbing;
+			sourceTree = "<group>";
+		};
+		67CAF56EC4FD09624CAA0BB403D5D711 /* Matching */ = {
+			isa = PBXGroup;
+			children = (
+				5077476904C9561B19EBCACB6A87C2A3 /* CallMatcher.swift */,
+				5AF05372ACAB5762B12386521153DD09 /* CallMatcherFunctions.swift */,
+				950B50F18ED197364844775F9CD477D0 /* Matchable.swift */,
+				FDBE29049F1C2575053D5431F67966AC /* ParameterMatcher.swift */,
+				25643CE052351D15C89AC0648139644B /* ParameterMatcherFunctions.swift */,
+			);
+			name = Matching;
+			path = Source/Matching;
+			sourceTree = "<group>";
+		};
+		7EC823E20C821C032A52ABADD8657C15 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				7E0FDAD915566FF4DE065CC7DB70E033 /* ReachabilitySwift.modulemap */,
+				AE57990B5F6763E45A9A89B6A61101F1 /* ReachabilitySwift.xcconfig */,
+				2A5B37716F75BC4ECD9A57452285D844 /* ReachabilitySwift-dummy.m */,
+				4E747AFC0183DD5D17C1E981B5F405F3 /* ReachabilitySwift-Info.plist */,
+				46464C5AB6264ED282E2B771896E0ECF /* ReachabilitySwift-prefix.pch */,
+				ABE7C16C7B5BD69DB9F7337064A64489 /* ReachabilitySwift-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/ReachabilitySwift";
+			sourceTree = "<group>";
+		};
+		905AD3CBBB9DC2388B0D68F4B65E28E7 /* Trait */ = {
+			isa = PBXGroup;
+			children = (
+				B32A9F51463DF932138D28D297AE83A0 /* BaseStubFunctionTrait.swift */,
+				A0F25BCED561648B5BFB78910E0A949D /* StubFunctionThenCallRealImplementationTrait.swift */,
+				05541F670DC5FF2A4F04D7A1C85A7378 /* StubFunctionThenDoNothingTrait.swift */,
+				222DF6221E4029356E79582B1DF4AA2D /* StubFunctionThenReturnTrait.swift */,
+				5399960DA967337A84FBCF90BC9D6385 /* StubFunctionThenThrowTrait.swift */,
+				72CBAF1CD51A3BAFB66EB4A5AE15D825 /* StubFunctionThenTrait.swift */,
+			);
+			name = Trait;
+			path = Trait;
 			sourceTree = "<group>";
 		};
 		945AFBB959A8C46ABCEA519E2E46CF76 /* Pods-PokemonVaultTests */ = {
@@ -265,18 +360,40 @@
 			path = "Target Support Files/Pods-PokemonVaultTests";
 			sourceTree = "<group>";
 		};
-		A79859DF3DB7898311CBC5270373D796 /* Support Files */ = {
+		A6BAD2F7EE353EBC40CBF623A42E0534 /* Initialization */ = {
 			isa = PBXGroup;
 			children = (
-				F47BD919D78DBE2FF40BC82352AC7B2D /* Cuckoo.modulemap */,
-				6C8E905AAF1CFEBA852FCFEC7BDA0132 /* Cuckoo.xcconfig */,
-				AE1DBC46F365FB67AC863A5656D47DDD /* Cuckoo-dummy.m */,
-				4B0D885DAE51538CAD0F2BF119299B85 /* Cuckoo-Info.plist */,
-				7B4ABAF23F811FCDC9F83B219C64A76C /* Cuckoo-prefix.pch */,
-				BB96BA7B09DC3136E50846BB64DAE06C /* Cuckoo-umbrella.h */,
+				A0B745C50892E292EF0D82D63299BC2B /* CreateMock.swift */,
+				35803DBF5A61DF8BC58AB4440010804D /* MockBuilder.swift */,
+				263834700F717B2A6D3A4401C338F320 /* MockManager+preconfigured.swift */,
+				B1C8198D88472439078FF82049BAEC6D /* ThreadLocal.swift */,
+			);
+			name = Initialization;
+			path = Source/Initialization;
+			sourceTree = "<group>";
+		};
+		AB141DEEC5EED015062C5277880ECC86 /* ReachabilitySwift */ = {
+			isa = PBXGroup;
+			children = (
+				F4904C2121D407349697EEC458E7A2C0 /* Reachability.swift */,
+				7EC823E20C821C032A52ABADD8657C15 /* Support Files */,
+			);
+			name = ReachabilitySwift;
+			path = ReachabilitySwift;
+			sourceTree = "<group>";
+		};
+		B8D1E9DF786E422825411BA29C3C57C3 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				93499D00FDE6F22588824808E7ACE49C /* Cuckoo.modulemap */,
+				1A32E8E48A1581E0A8E6BFCB67059771 /* Cuckoo.xcconfig */,
+				B958D33ED7AF10E87DD4C60BC474BC9B /* Cuckoo-dummy.m */,
+				379AC1179771D9B048E51F46CBACF82D /* Cuckoo-Info.plist */,
+				912F3097F2D9FCE8D34F1777ADB014FD /* Cuckoo-prefix.pch */,
+				1ABBE1DCC47FB9F2D30530E5CA8AC8BF /* Cuckoo-umbrella.h */,
 			);
 			name = "Support Files";
-			path = "../Target Support Files/Cuckoo";
+			path = "../PokePedia/Pods/Target Support Files/Cuckoo";
 			sourceTree = "<group>";
 		};
 		BA4F31F07263C99FC76E66D632A59F09 /* Frameworks */ = {
@@ -287,74 +404,50 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		C9ADF258F25B7456FB139C97061A1B99 /* Verification */ = {
+			isa = PBXGroup;
+			children = (
+				5570021CC3F67502ED3729FF3C48691B /* __DoNotUse.swift */,
+				DFBA60163E61F1D273C0E2D2CA986E73 /* ArgumentCaptor.swift */,
+				4F5A9B31011C1AE82D2DD19F123942EB /* VerifyProperty */,
+			);
+			name = Verification;
+			path = Source/Verification;
+			sourceTree = "<group>";
+		};
 		CF1408CF629C7361332E53B88F7BD30C = {
 			isa = PBXGroup;
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				0CF065E48B8998A92C6DF33694E44DE8 /* Development Pods */,
 				BA4F31F07263C99FC76E66D632A59F09 /* Frameworks */,
-				480E7B2711C7A15F8F6419F9F11655FA /* Pods */,
+				5D0AA215FB49F5F6E11902E9E88FDB66 /* Pods */,
 				F9F62618A8CB16B968B44F847BDD7673 /* Products */,
 				EFEE3C69DE12B7A7B1D42721BA6E9300 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		D0CA4CC301EEC52171AA9A8649719A90 /* Cuckoo */ = {
+		DD05FCA1A68AFA6E10D95168157AE875 /* StubFunction */ = {
 			isa = PBXGroup;
 			children = (
-				28993B3DD2CB3886EC7677BCC5141133 /* __DoNotUse.swift */,
-				21C3EC239642FB0956405BA2FBE1A52E /* ArgumentCaptor.swift */,
-				57FE3D8136B71772A36E0B615D145316 /* BaseStubFunctionTrait.swift */,
-				544CDB494AF570E331DB4135F271E0E7 /* CallMatcher.swift */,
-				F2D9176EA715D8CC29ED9D789D7EE498 /* CallMatcherFunctions.swift */,
-				E85C0412EB8A83C7927D827FC9AB4247 /* CreateMock.swift */,
-				E0E17304454AA418C78F324CB6EFE63B /* CuckooFunctions.swift */,
-				FDF73C1AEA6D76FD4C361C00B409B6C3 /* DefaultValueRegistry.swift */,
-				120D473FEFB06B5DA09B086BC275B170 /* Matchable.swift */,
-				72528D9CCC59F123B7CE224302C680BD /* Mock.swift */,
-				D5B8464CC5145249FF643601AC4FA3B9 /* MockBuilder.swift */,
-				77B7F0B1B32139D25EB7AC6186B0EC8D /* Mocked.swift */,
-				FD3A58FC7B11A291F91CAB1A75C6718F /* MockManager.swift */,
-				6E033EE9E49FEFE4B199A871E43798D3 /* MockManager+preconfigured.swift */,
-				74AEAA83245F7032F1F59F4EF7F32595 /* ParameterMatcher.swift */,
-				D18A5A2EE0E1CC7A755B5B3EB66D1B96 /* ParameterMatcherFunctions.swift */,
-				2EA66D1514A031CE56DE1AE5B93CF6E8 /* Stub.swift */,
-				9D8F4715EDD05019F250EBEF830C3750 /* StubAction.swift */,
-				0CB90F4CF6B50DCFC36BA088BCE716A2 /* StubbingProxy.swift */,
-				6154E2C66571B976EFD7DC14F52AE5C6 /* StubCall.swift */,
-				1689D847152F3469EB467C0B0489241B /* StubFunction.swift */,
-				15AAB54427B67C265C725574C40B9342 /* StubFunctionThenCallRealImplementationTrait.swift */,
-				94C1AFAA8CC65964C6C29C2D9339BE39 /* StubFunctionThenDoNothingTrait.swift */,
-				D751CFC60D21957B0DE85E5149ECB316 /* StubFunctionThenReturnTrait.swift */,
-				5A92ED4E95C6739A4DDE03F18EC75E80 /* StubFunctionThenThrowTrait.swift */,
-				23E8650D05DC3CF09EBE5397B68A7A38 /* StubFunctionThenTrait.swift */,
-				BE5F846D23E5F1B3FC94D089E01E873E /* StubNoReturnFunction.swift */,
-				0D5B9B09C8E71DD762FC919C058F0121 /* StubNoReturnThrowingFunction.swift */,
-				43FD8243AF1F58BC1948960A014FD626 /* StubThrowingFunction.swift */,
-				068A18234F77B26CE52596FA5665D00C /* ThreadLocal.swift */,
-				9AD0889A54C2C3D99925C6BED8967156 /* ToBeStubbedProperty.swift */,
-				4EAC48C3332CA0C3E9DA30993EAB1519 /* ToBeStubbedReadOnlyProperty.swift */,
-				8996122869D481249BF78CD2467F2736 /* Utils.swift */,
-				3B661760A2BD9272821C9F0FD1A957B1 /* VerificationProxy.swift */,
-				20B8393D9F87EB1BCBE9AEFC29DA78AA /* VerifyProperty.swift */,
-				2F149AA91CA3CC2CEA8B883F80B6026D /* VerifyReadOnlyProperty.swift */,
-				A79859DF3DB7898311CBC5270373D796 /* Support Files */,
+				F71ACB1EF7C21FE1B01BC9E874DC73B0 /* StubFunction.swift */,
+				68AF2F2FA22028410048D3F844876C91 /* StubNoReturnFunction.swift */,
+				DE71EDAB862B833CDE5BB93D175DC795 /* StubNoReturnThrowingFunction.swift */,
+				18AC31B11DD57E246B5459E065CCBF2E /* StubThrowingFunction.swift */,
+				905AD3CBBB9DC2388B0D68F4B65E28E7 /* Trait */,
 			);
-			name = Cuckoo;
-			path = Cuckoo;
+			name = StubFunction;
+			path = StubFunction;
 			sourceTree = "<group>";
 		};
-		E2384788AC7DC17938F561C7CEC707C3 /* Support Files */ = {
+		E57D5F267ADCE7AA4F3939A52BFD310F /* ToBeStubbedProperty */ = {
 			isa = PBXGroup;
 			children = (
-				7D7D40CDC151CC518899E95282BA23BB /* ReachabilitySwift.modulemap */,
-				5DB4004F2F6EE4FA157EE3D86AD05F5F /* ReachabilitySwift.xcconfig */,
-				3E6EF4720C64D28EFD5A5FED551C8BCC /* ReachabilitySwift-dummy.m */,
-				4BBAE70120B58947E3D8822F0751086E /* ReachabilitySwift-Info.plist */,
-				5A67E188D8414CA1DA77A79A0E7E07FE /* ReachabilitySwift-prefix.pch */,
-				30C68082BA2F561E6563B33926D73571 /* ReachabilitySwift-umbrella.h */,
+				4AC2FCB7874119ADA250C90B0DA0BBB5 /* ToBeStubbedProperty.swift */,
+				BB4D6D3291458EF5112C52C56D334017 /* ToBeStubbedReadOnlyProperty.swift */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/ReachabilitySwift";
+			name = ToBeStubbedProperty;
+			path = ToBeStubbedProperty;
 			sourceTree = "<group>";
 		};
 		EFEE3C69DE12B7A7B1D42721BA6E9300 /* Targets Support Files */ = {
@@ -375,6 +468,16 @@
 				2526558012C0460EE5EB95029AFC648F /* Reachability.framework */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		FD4832727CEBBEEE7CF0A7C106CC68E2 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				DF851E1F89C172DF333E084E9E940E32 /* Cuckoo.podspec */,
+				7D35933FA43CA6136FC37153D0FBAD1A /* LICENSE */,
+				B97D2E3B2C7F2537978E6FED7EEBEBEF /* README.md */,
+			);
+			name = Pod;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -420,7 +523,7 @@
 			buildConfigurationList = A76F9536DA68DD7948EE4CB9EF31BF5C /* Build configuration list for PBXNativeTarget "Cuckoo" */;
 			buildPhases = (
 				0C8785B704E4639F41878D29EF77094A /* Headers */,
-				526AAC4F9383E59632592C9C3A1DCCAD /* Sources */,
+				EA9EBBAC5E7578DA0740FBAE6461E4D6 /* Sources */,
 				2D760B8C50991BD3CA9E709CAD0BEEC8 /* Frameworks */,
 				1EF35069A8D127EA9E5D72B1791E368B /* Resources */,
 			);
@@ -567,56 +670,56 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		526AAC4F9383E59632592C9C3A1DCCAD /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				01D5ECA899CC46F3014A94097178B547 /* __DoNotUse.swift in Sources */,
-				E3B86074E753544882B4C5CD4F63D4D7 /* ArgumentCaptor.swift in Sources */,
-				E8F529F9140024D5E87040087BF8171F /* BaseStubFunctionTrait.swift in Sources */,
-				86685BC6045C6C7FABA597EEBC7B75C3 /* CallMatcher.swift in Sources */,
-				059855DDD7B2639EC83956324319D3F8 /* CallMatcherFunctions.swift in Sources */,
-				288166A19BA06F129CD0D6C4FB767472 /* CreateMock.swift in Sources */,
-				A902474B07C896D4752A58B7EBF53AD7 /* Cuckoo-dummy.m in Sources */,
-				E7B3784F876E5ECA567DF61147ECAB8B /* CuckooFunctions.swift in Sources */,
-				76DE92987FFF769796FF741127E35126 /* DefaultValueRegistry.swift in Sources */,
-				B758B07EDE0D643AAFC13AA51A38075D /* Matchable.swift in Sources */,
-				8C121A3878678DB5025CC6E35C0420A2 /* Mock.swift in Sources */,
-				85DA2E00962B9473244681A945FDDF34 /* MockBuilder.swift in Sources */,
-				DCFD599E1890364A03EF5AEE8A440170 /* Mocked.swift in Sources */,
-				CDD9DA1A5565195D3EEC395E4071E9DA /* MockManager+preconfigured.swift in Sources */,
-				39E6F8D42B1C4307788893B8B9D97D67 /* MockManager.swift in Sources */,
-				29435B8DAE2B5370AB37962026B5BBD9 /* ParameterMatcher.swift in Sources */,
-				1731CF695E179724A173239FB22822CB /* ParameterMatcherFunctions.swift in Sources */,
-				E3A9005CF5751F38D55B1D4C5A3ECA51 /* Stub.swift in Sources */,
-				11601A7A4C318280EEE725E42176C7BD /* StubAction.swift in Sources */,
-				24FF3254EA5D7A241AF553F0C72C515B /* StubbingProxy.swift in Sources */,
-				9ADEBCE1DF4F185C9B580EADEBB20DF0 /* StubCall.swift in Sources */,
-				BF977691308CA59C14DDFAED0D98099D /* StubFunction.swift in Sources */,
-				A4454D39B58978AB024A961FE61AA398 /* StubFunctionThenCallRealImplementationTrait.swift in Sources */,
-				3AD44338F3C4DC1ED6762370CF15A562 /* StubFunctionThenDoNothingTrait.swift in Sources */,
-				FDF8F8DB13C208C92AFD1A8D0C0679B6 /* StubFunctionThenReturnTrait.swift in Sources */,
-				D4EBC661635F83EBB2B8FEFAF0507594 /* StubFunctionThenThrowTrait.swift in Sources */,
-				68C5A7B46932B28C079DE55BD58783D0 /* StubFunctionThenTrait.swift in Sources */,
-				83091BB1506BD7EA21C910A87D42F3F2 /* StubNoReturnFunction.swift in Sources */,
-				06DDE57F7F52D8B4206993462406992E /* StubNoReturnThrowingFunction.swift in Sources */,
-				8D4C15C73E08F80CBF48656BA3841336 /* StubThrowingFunction.swift in Sources */,
-				15F284DAA5FECC16987D7E41DF41089F /* ThreadLocal.swift in Sources */,
-				A71C66133DCF85CFF9E5DD98AC7BE291 /* ToBeStubbedProperty.swift in Sources */,
-				7CC9B91F0EE84936AFCF74C2FE1805EC /* ToBeStubbedReadOnlyProperty.swift in Sources */,
-				0EB39626F2C3B7FF48F4697D68D1FF9C /* Utils.swift in Sources */,
-				5B3A2C92152E46DFEE022EC99D40D95E /* VerificationProxy.swift in Sources */,
-				1EDB82A77386D1BCADD5F57F785D38F0 /* VerifyProperty.swift in Sources */,
-				6542D60771BC223E11487059EF009BB4 /* VerifyReadOnlyProperty.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		BA10397A613ACC365EAB9BD158D898CA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				870AE233E7536D027B91A4B58D3F74B5 /* Reachability.swift in Sources */,
 				1019D70545ACD5E8E218DB8B8871B96D /* ReachabilitySwift-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EA9EBBAC5E7578DA0740FBAE6461E4D6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C544558AC367AFD31D9D9E76E31DC2D9 /* __DoNotUse.swift in Sources */,
+				6C02A35AC6B0EA61357599B6165675CB /* ArgumentCaptor.swift in Sources */,
+				6977652A099CCCDCBE0E84AC3EE28715 /* BaseStubFunctionTrait.swift in Sources */,
+				7C5DB908CEC9A2C8FE6D048176378FE7 /* CallMatcher.swift in Sources */,
+				05B76651D063A4ED6B898D174BDD6072 /* CallMatcherFunctions.swift in Sources */,
+				B83BBBC4D8FD42C3E5531072C790AF3D /* CreateMock.swift in Sources */,
+				4ED7F7A42CE25996FE12D99F8F434E5A /* Cuckoo-dummy.m in Sources */,
+				8D4E36811D67F5D12B625B34F5B92D5E /* CuckooFunctions.swift in Sources */,
+				FD27CD8FF065956D3A96FA255AF99FA3 /* DefaultValueRegistry.swift in Sources */,
+				D1495B97D2F92224A2855C0CFD3FD902 /* Matchable.swift in Sources */,
+				A962E2FECA2BD41FD28AB26066F85997 /* Mock.swift in Sources */,
+				4C3A2D7F4B159D5C446CD0F960CAB734 /* MockBuilder.swift in Sources */,
+				70EADC19C75FD6733F67F2BB459EEB3C /* Mocked.swift in Sources */,
+				4104E6A88D920E4CF51F63DEF796A33F /* MockManager+preconfigured.swift in Sources */,
+				1BDBC49CF472AF7101BE17E158F4DEB8 /* MockManager.swift in Sources */,
+				6F04C55ABC45A1A23D99BCB75B0FE827 /* ParameterMatcher.swift in Sources */,
+				0A9D4D9297BE3E2CA5CC02BF50F9EF07 /* ParameterMatcherFunctions.swift in Sources */,
+				3012E9DBFE74B33BC71D05400D0959E3 /* Stub.swift in Sources */,
+				98B27E572114DF91195D8A3A90BFD97C /* StubAction.swift in Sources */,
+				71596484A858440174BBB20565007AD0 /* StubbingProxy.swift in Sources */,
+				EB7621A8BE47AACB5EB7A6588D836B3B /* StubCall.swift in Sources */,
+				1B360F6BF297A367EEE9AE7D566D752E /* StubFunction.swift in Sources */,
+				3FE905E4884CF8BB090457F7A6DB1251 /* StubFunctionThenCallRealImplementationTrait.swift in Sources */,
+				60EFBFAF21C6FB288B540E0678415A52 /* StubFunctionThenDoNothingTrait.swift in Sources */,
+				64F8A283A5173CC6C0E8FFC7D2EA346E /* StubFunctionThenReturnTrait.swift in Sources */,
+				6BE9489BDBF42C41CD26EF55D8B9A74E /* StubFunctionThenThrowTrait.swift in Sources */,
+				E3FB23E51897ADC65090B2B01FD2FE4C /* StubFunctionThenTrait.swift in Sources */,
+				802511A54C72F7DA34E9E6FAF43A193B /* StubNoReturnFunction.swift in Sources */,
+				0043A8FEF1A2311C0E443C3CC1C7D14C /* StubNoReturnThrowingFunction.swift in Sources */,
+				5EED9083E41279E5C3F6FE98CABE1FE1 /* StubThrowingFunction.swift in Sources */,
+				8481B3775D7BEA47BF4664A699A90677 /* ThreadLocal.swift in Sources */,
+				558D8C6CA9812740C414DFB04E677403 /* ToBeStubbedProperty.swift in Sources */,
+				4EE641940E812853D8ABF6592576296E /* ToBeStubbedReadOnlyProperty.swift in Sources */,
+				681EE946E48F57F4D1FEF663975E1B38 /* Utils.swift in Sources */,
+				08D21CABC8DA0043C2962159B12C79B1 /* VerificationProxy.swift in Sources */,
+				8F5CB7795DA26633F430332A60401A87 /* VerifyProperty.swift in Sources */,
+				C49C51292CF69FC1A0167D92F9A1B2EC /* VerifyReadOnlyProperty.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -646,7 +749,7 @@
 /* Begin XCBuildConfiguration section */
 		0232724ED2396795DDCA538BFDF6DF33 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6C8E905AAF1CFEBA852FCFEC7BDA0132 /* Cuckoo.xcconfig */;
+			baseConfigurationReference = 1A32E8E48A1581E0A8E6BFCB67059771 /* Cuckoo.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -681,7 +784,7 @@
 		};
 		056DC3BD962B3430A2E1D10C2B1D7283 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6C8E905AAF1CFEBA852FCFEC7BDA0132 /* Cuckoo.xcconfig */;
+			baseConfigurationReference = 1A32E8E48A1581E0A8E6BFCB67059771 /* Cuckoo.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -794,7 +897,7 @@
 		};
 		6E4F0AFCCD0F0D0B47715BFEFC0B4CCB /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5DB4004F2F6EE4FA157EE3D86AD05F5F /* ReachabilitySwift.xcconfig */;
+			baseConfigurationReference = AE57990B5F6763E45A9A89B6A61101F1 /* ReachabilitySwift.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -1031,7 +1134,7 @@
 		};
 		FECDB1BC2F4E82E90F6FA2F27899F5C4 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5DB4004F2F6EE4FA157EE3D86AD05F5F /* ReachabilitySwift.xcconfig */;
+			baseConfigurationReference = AE57990B5F6763E45A9A89B6A61101F1 /* ReachabilitySwift.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";

@@ -8,10 +8,10 @@
 
 import Foundation
 
-typealias FetchPokemonDetailsSuccessBlock = (_ response: PokemonDetailsModel?) -> Void
+//typealias FetchPokemonDetailsSuccessBlock = (_ response: PokemonDetailsModel?) -> Void
 
 protocol PokemonDetailsBoundary {
     func fetchPokemonDetails(fromUrl: String,
-                             success: @escaping FetchPokemonDetailsSuccessBlock,
-                             failure: @escaping FailureBlock)
+                             success: @escaping (_ response: PokemonDetailsModel?) -> Void,
+                             failure: @escaping (_ error: NSError?) -> Void)
 }

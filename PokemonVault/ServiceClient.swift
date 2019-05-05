@@ -10,7 +10,8 @@ import Foundation
 
 protocol ServiceClient {
     func fetchData(from urlString: String,
-                   completionHandler: @escaping (_ responseData: Data?, _ error: NSError?) -> Void)
+                   success: @escaping (_ responseData: Data?) -> (),
+                   failure: @escaping (_ error: NSError?) -> ())
 }
 
 class ServiceClientImplementation: ServiceClient {
@@ -21,20 +22,21 @@ class ServiceClientImplementation: ServiceClient {
     }
     
     func fetchData(from urlString: String,
-                   completionHandler: @escaping (_ responseData: Data?, _ error: NSError?) -> Void) {
+                   success: @escaping (_ responseData: Data?) -> (),
+                   failure: @escaping (_ error: NSError?) -> ()) {
         print(urlString)
         let baseURL = "https://pokeapi.co/api/v2/pokemon"
         //https://pokeapi.co/api/v2/pokemon/19/
         
         guard let url = URL(string: baseURL + urlString) else {
-            return completionHandler(nil, nil)
+            return failure(NSError(domain: "The URL is nil", code: 0, userInfo: nil))
         }
         
         session.fetchData(from: url) { (data, error) in
             guard error == nil, let responseData = data else {
-                return completionHandler(nil, error)
+                return failure(error)
             }
-            completionHandler(responseData, nil)
+            success(responseData)
         }
     }
 }

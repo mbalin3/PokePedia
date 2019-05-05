@@ -9,10 +9,10 @@
 import Foundation
 
 typealias SuccessBlock = (_ responseModel: [PokemonModel]?) -> Void
-typealias FailureBlock = (_ error: NSError) -> Void
+//typealias FailureBlock = (_ error: NSError) -> Void
 
 protocol PokemonListBoundary {
     func fetchPokemonList(numberOfPokemons: String,
                           success: @escaping SuccessBlock,
-                          failure: @escaping FailureBlock)
+                          failure: @escaping (_ error: NSError?) -> Void)
 }

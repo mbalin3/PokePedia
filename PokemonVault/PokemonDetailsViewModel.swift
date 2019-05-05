@@ -25,9 +25,11 @@ class PokemonDetailsViewModel {
         guard let pokemonDetailsUrl = pokemonDetailsUrl.extractPokemonID() else { return }
         interactor.fetchPokemonDetails(fromUrl: pokemonDetailsUrl,
                                       success: { [weak self] (pokemonDetailsModel) in
-                                        self?.pokemonDetailsModel = pokemonDetailsModel
-                                        self?.delegate?.refreshViewContents()
+                                        guard let strongSelf = self else { return }
+                                        strongSelf.pokemonDetailsModel = pokemonDetailsModel
+                                        strongSelf.delegate?.refreshViewContents()
         }) { (error) in
+            guard let error = error else { return }
             print("failure....,==," + error.localizedDescription)
         }
     }

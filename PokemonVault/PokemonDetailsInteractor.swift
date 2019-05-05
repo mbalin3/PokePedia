@@ -13,15 +13,12 @@ class PokemonDetailsInteractor: PokemonDetailsBoundary {
     private let service: ServiceClient = ServiceClientImplementation()
     
     func fetchPokemonDetails(fromUrl: String,
-                             success: @escaping FetchPokemonDetailsSuccessBlock,
-                             failure: @escaping FailureBlock) {
+                             success: @escaping (_ response: PokemonDetailsModel?) -> Void,
+                             failure: @escaping (_ error: NSError?) -> Void) {
         // https://pokeapi.co/api/v2/pokemon/19/
         let query = "/\(fromUrl)"
-        service.fetchData(from: query) { (data, error) in
-            if let error = error {
-                return failure(error)
-            }
-            
+        
+        service.fetchData(from: query, success: { (data) in
             if let responseData = data {
                 self.createPokemonModel(from: responseData,
                                         keyDecodingStrategy: .useDefaultKeys,
@@ -29,13 +26,15 @@ class PokemonDetailsInteractor: PokemonDetailsBoundary {
                                             if let error = error {
                                                 return failure(error)
                                             }
-
+                                            
                                             guard let pokemonDetailsModel = pokemonDetailsModel else {
                                                 return failure(error!)
                                             }
                                             success(pokemonDetailsModel)
                 })
             }
+        }) { (error) in
+            failure(error)
         }
     }
     

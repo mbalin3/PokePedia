@@ -31,19 +31,19 @@ class HomeViewModelTests: XCTestCase {
         let mockPokemons = self.generateTestPokemons()
         typealias SuccessBlock = (_ response: PokemonDetailsModel?) -> Void
         
-        stub(mockInteractor) {
-            when($0.fetchPokemonList(numberOfPokemons: any(), success: SuccessBlock, failure: anyClosure())).then({ _, successBlock, _ in
-                successBlock(mockPokemons)
-                XCTAssertNotNil(successBlock)
-            })
-        }
+//        stub(mockInteractor) {
+//            when($0.fetchPokemonList(numberOfPokemons: any(), success: SuccessBlock, failure: anyClosure())).then({ _, successBlock, _ in
+//                successBlock(mockPokemons)
+//                XCTAssertNotNil(successBlock)
+//            })
+//        }
         
-        stub(mockDecorator) {
-            when($0.fetchPokemonList(numberOfPokemons: any(), success: SuccessBlock, failure: anyClosure())).then({ _, successBlock, _ in
-                successBlock(mockPokemons)
-                XCTAssertNotNil(successBlock)
-            })
-        }
+//        stub(mockDecorator) {
+           // when($0.fetchPokemonList(numberOfPokemons: any(), success: SuccessBlock, failure: anyClosure())).then({ _, successBlock, _ in
+              //  successBlock(mockPokemons)
+               // XCTAssertNotNil(successBlock)
+            //})
+//        }
         
         stub(mockDelegate) {
             when($0.refreshViewContents()).thenDoNothing()

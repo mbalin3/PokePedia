@@ -16,27 +16,25 @@ class PokemonListInteractor: PokemonListBoundary {
     
     func fetchPokemonList(numberOfPokemons: String,
                           success: @escaping SuccessBlock,
-                          failure: @escaping FailureBlock) {
+                          failure: @escaping (_ error: NSError?) -> Void) {
         
         let query = "?offset=1&limit=\(numberOfPokemons)"
-        service.fetchData(from: query) { (data, error) in
-            if let error = error {
-                return failure(error)
-            }
-            
+        service.fetchData(from: query, success: { (data) in
             if let responseData = data {
                 self.createPokemonModel(from: responseData,
                                         completionHandler: { (pokemonList, error) in
                                             if let error = error {
                                                 return failure(error)
                                             }
-                                        
+                                            
                                             guard let pokemonList = pokemonList?.results else {
                                                 return failure(error!)
                                             }
                                             success(pokemonList)
                 })
             }
+        }) { (error) in
+            failure(error)
         }
     }
     

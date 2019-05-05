@@ -11,14 +11,14 @@ import Foundation
 protocol PokemonListCacheDecorator: PokemonListBoundary {
     func fetchPokemonList(numberOfPokemons: String,
                           success: @escaping SuccessBlock,
-                          failure: @escaping FailureBlock)
+                          failure: @escaping (_ error: NSError?) -> Void)
 }
 
 class PokemonListInteractorCacheDecorator: PokemonListCacheDecorator {
     
     func fetchPokemonList(numberOfPokemons: String,
                           success: @escaping SuccessBlock,
-                          failure: @escaping FailureBlock) {
+                          failure: @escaping (_ error: NSError?) -> Void) {
         
         if let pokemonList = AppCache.sharedInstance.fetchCachedObject(for: .pokemonList) as? [PokemonModel] {
                 success(pokemonList)

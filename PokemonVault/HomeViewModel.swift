@@ -29,7 +29,7 @@ class HomeViewModel {
             strongSelf.delegate?.refreshViewContents()
         }) { (error) in
             // show error
-             print("failure....,==," + error.localizedDescription)
+            print("failure....,==," + (error?.localizedDescription ??  "Pokemon List was no found"))
         }
     }
 }

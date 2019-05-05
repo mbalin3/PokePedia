@@ -1,6 +1,6 @@
 # Define output file. Change "$PROJECT_DIR/Tests" to your test's root source folder, if it's not the default name.
 
-OUTPUT_FILE="/Users/user/Downloads/PokemonVault/PokemonVaultTests/Mocks/GeneratedMocks.swift"
+OUTPUT_FILE="$PROJECT_DIR/PokemonVaultTests/Mocks/GeneratedMocks.swift"
 
 echo "Project File: $PROJECT_DIR"
 echo "Generated Mocks File = $OUTPUT_FILE"
