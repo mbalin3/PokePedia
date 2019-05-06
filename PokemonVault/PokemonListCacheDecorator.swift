@@ -9,14 +9,14 @@
 import Foundation
 
 protocol PokemonListCacheDecorator: PokemonListBoundary {
-    func fetchPokemonList(numberOfPokemons: String,
+    func fetchPokemonList(numberOfPokemons: Int,
                           success: @escaping SuccessBlock,
                           failure: @escaping (_ error: NSError?) -> Void)
 }
 
 class PokemonListInteractorCacheDecorator: PokemonListCacheDecorator {
     
-    func fetchPokemonList(numberOfPokemons: String,
+    func fetchPokemonList(numberOfPokemons: Int,
                           success: @escaping SuccessBlock,
                           failure: @escaping (_ error: NSError?) -> Void) {
         

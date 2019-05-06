@@ -28,37 +28,48 @@ class HomeViewModelTests: XCTestCase {
     }
     
     func testWhenPokemonsArrayIsPopulatedThenReturnsPokemonAtIndex() {
-        let mockPokemons = self.generateTestPokemons()
-        typealias SuccessBlock = (_ response: PokemonDetailsModel?) -> Void
-        
-//        stub(mockInteractor) {
-//            when($0.fetchPokemonList(numberOfPokemons: any(), success: SuccessBlock, failure: anyClosure())).then({ _, successBlock, _ in
-//                successBlock(mockPokemons)
-//                XCTAssertNotNil(successBlock)
-//            })
-//        }
-        
-//        stub(mockDecorator) {
-           // when($0.fetchPokemonList(numberOfPokemons: any(), success: SuccessBlock, failure: anyClosure())).then({ _, successBlock, _ in
-              //  successBlock(mockPokemons)
-               // XCTAssertNotNil(successBlock)
-            //})
-//        }
+        var mockPokemons: [PokemonModel]? = nil
+
+        stub(mockDecorator) {
+            when($0.fetchPokemonList(numberOfPokemons: any(), success: anyClosure(), failure: anyClosure())).then({ _, success, _ in
+                mockPokemons = self.generateTestPokemons()
+                success(mockPokemons)
+            })
+        }
         
         stub(mockDelegate) {
             when($0.refreshViewContents()).thenDoNothing()
         }
         
-        _ = viewModelUnderTest.pokemon(at: 0)
-       // verify(mockDecorator).fetchPokemonList(numberOfPokemons: any(), success: anyClosure(), failure: anyClosure())
+        XCTAssertNotNil(mockPokemons)
     }
     
-    func testWhenPokemonsArrayIsPopulatedThenReturnsError() {
+    func testWhenFetchingPokemonsReturnsErrorPokemonsArrayReturnsNil() {
+        
+        let mockError = NSError(domain: "test", code: 000, userInfo: nil)
+        
+        stub(mockDecorator){
+            when($0.fetchPokemonList(numberOfPokemons: any(), success: anyClosure(), failure: anyClosure())).then({ _, _, failure in
+                failure(mockError)
+            })
+        }
+        
+        let pokemons = viewModelUnderTest.pokemon(at: 0)
+        XCTAssertNil(pokemons)
+    }
+    
+    func testWhenFetchingPokemonsReturnsErrorRefreshVIewContentsIsNotInvoked() {
+        
+        let mockError = NSError(domain: "test", code: 000, userInfo: nil)
+        
+        stub(mockDecorator){
+            when($0.fetchPokemonList(numberOfPokemons: any(), success: anyClosure(), failure: anyClosure())).then({ _, _, failure in
+                failure(mockError)
+            })
+        }
         
         _ = viewModelUnderTest.pokemon(at: 0)
-        
-        verify(mockDecorator).fetchPokemonList(numberOfPokemons: any(), success: anyClosure(), failure: anyClosure())
-        
+        verify(mockDelegate, never()).refreshViewContents()
     }
 
     

@@ -23,7 +23,7 @@ class HomeViewModel {
     }
     
     func fetchPokemonList() {
-        decorator.fetchPokemonList(numberOfPokemons: "100", success: { [weak self] pokemons in
+        decorator.fetchPokemonList(numberOfPokemons: 100, success: { [weak self] pokemons in
             guard let strongSelf = self else { return }
             strongSelf.pokemons = pokemons
             strongSelf.delegate?.refreshViewContents()

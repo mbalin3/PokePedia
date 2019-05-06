@@ -14,7 +14,7 @@ class PokemonListInteractor: PokemonListBoundary {
     
     private let service: ServiceClient = ServiceClientImplementation()
     
-    func fetchPokemonList(numberOfPokemons: String,
+    func fetchPokemonList(numberOfPokemons: Int,
                           success: @escaping SuccessBlock,
                           failure: @escaping (_ error: NSError?) -> Void) {
         

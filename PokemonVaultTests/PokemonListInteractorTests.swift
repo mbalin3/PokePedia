@@ -17,5 +17,9 @@ class PokemonListInteractorTests: XCTestCase {
     override func setUp() {
         
     }
+    
+    func testA() {
+//        interactorUnderTest.fetchPokemonList(numberOfPokemons: <#T##String#>, success: <#T##SuccessBlock##SuccessBlock##([PokemonModel]?) -> Void#>, failure: <#T##(NSError?) -> Void#>)
+    }
 
 }

@@ -15,7 +15,8 @@ class PokemonDetailsViewModel {
     private var pokemonDetailsUrl: String
     private(set) var pokemonDetailsModel: PokemonDetailsModel?
     
-    init(interactor: PokemonDetailsBoundary, pokemonDetailsUrl: String, delegate: BaseViewModelDelegate) {
+    init(interactor: PokemonDetailsBoundary, pokemonDetailsUrl: String,
+         delegate: BaseViewModelDelegate) {
         self.interactor = interactor
         self.pokemonDetailsUrl = pokemonDetailsUrl
         self.delegate = delegate

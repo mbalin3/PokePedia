@@ -15,6 +15,5 @@ class PokemonCell: UICollectionViewCell {
     func populateCell(with pokemon: PokemonModel) {
         pokemonName?.text = pokemon.name
         pokemonImageView?.downloadImage(imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/\(pokemon.pokemonDetailsUrl?.extractPokemonID() ?? "").png")
-        print("%%%%%%%%%%%%%%%%%%%%% %%%%%%%%%%%%%%%%% %%%%%%%%%%%\(pokemon.pokemonDetailsUrl)")
     }
 }
