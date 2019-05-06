@@ -37,7 +37,7 @@ class PokemonDetailsViewModel {
                                         StrongSelf.pokemonDetailsModel = pokemonDetailsModel
                                         StrongSelf.delegate?.refreshViewContents()
         }) { (error) in
-            print("failure....,==," + error.localizedDescription)
+            print("failure....,==," + (error?.localizedDescription ?? ""))
         }
     }
 }

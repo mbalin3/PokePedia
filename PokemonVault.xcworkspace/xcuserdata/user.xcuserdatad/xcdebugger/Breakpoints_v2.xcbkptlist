@@ -58,7 +58,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PokemonVaultTests/HomeViewModelTests.swift"
-            timestampString = "578752796.937484"
+            timestampString = "578850006.772899"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "52"
@@ -74,7 +74,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PokemonVault/HomeViewModel.swift"
-            timestampString = "578752796.9375581"
+            timestampString = "578850006.773043"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "27"
@@ -90,7 +90,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PokemonVault/PokemonListCacheDecorator.swift"
-            timestampString = "578752796.9376169"
+            timestampString = "578850006.773116"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "29"
@@ -106,7 +106,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PokemonVaultTests/HomeViewModelTests.swift"
-            timestampString = "578752796.937668"
+            timestampString = "578850006.7731791"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "58"
@@ -122,7 +122,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PokemonVaultTests/HomeViewModelTests.swift"
-            timestampString = "578752796.937719"
+            timestampString = "578850006.773241"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "27"
@@ -138,7 +138,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PokemonVaultTests/HomeViewModelTests.swift"
-            timestampString = "578752796.937775"
+            timestampString = "578850006.773302"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "42"
@@ -154,7 +154,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PokemonVault/HomeViewModel.swift"
-            timestampString = "578752796.93782"
+            timestampString = "578850006.7733639"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "26"
@@ -202,7 +202,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PokemonVault/PokemonListInteractor.swift"
-            timestampString = "578752796.939314"
+            timestampString = "578850006.775082"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "37"
@@ -218,60 +218,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PokemonVaultTests/PokemonDetailsInteractorTests.swift"
-            timestampString = "578752796.939366"
+            timestampString = "578850006.77513"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "39"
-            endingLineNumber = "39"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
             landmarkName = "testWhenFetchingPokemonListThenResponseDataAndErrorIsNotPopulated()"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "PokemonVaultTests.PokemonDetailsInteractorTests.testWhenFetchingPokemonListThenResponseDataAndErrorIsNotPopulated() -&gt; ()"
-                  moduleName = "PokemonVaultTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/user/Documents/HQ/Projects/PokePedia/PokemonVaultTests/PokemonDetailsInteractorTests.swift"
-                  timestampString = "578752797.568096"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "39"
-                  endingLineNumber = "39"
-                  offsetFromSymbolStart = "465">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #2 (Swift.Optional&lt;PokemonVault.PokemonDetailsModel&gt;) -&gt; () in PokemonVaultTests.PokemonDetailsInteractorTests.testWhenFetchingPokemonListThenResponseDataAndErrorIsNotPopulated() -&gt; ()"
-                  moduleName = "PokemonVaultTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/user/Documents/HQ/Projects/PokePedia/PokemonVaultTests/PokemonDetailsInteractorTests.swift"
-                  timestampString = "578752797.570011"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "39"
-                  endingLineNumber = "39"
-                  offsetFromSymbolStart = "4">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #3 (Swift.Optional&lt;__C.NSError&gt;) -&gt; () in PokemonVaultTests.PokemonDetailsInteractorTests.testWhenFetchingPokemonListThenResponseDataAndErrorIsNotPopulated() -&gt; ()"
-                  moduleName = "PokemonVaultTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/user/Documents/HQ/Projects/PokePedia/PokemonVaultTests/PokemonDetailsInteractorTests.swift"
-                  timestampString = "578752797.57227"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "39"
-                  endingLineNumber = "39"
-                  offsetFromSymbolStart = "4">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -281,7 +234,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PokemonVault/PokemonDetailsInteractor.swift"
-            timestampString = "578752814.986804"
+            timestampString = "578850006.775178"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "21"
@@ -297,12 +250,12 @@
                   moduleName = "PokemonVault"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/user/Documents/HQ/Projects/PokePedia/PokemonVault/PokemonDetailsInteractor.swift"
-                  timestampString = "578752814.995315"
+                  timestampString = "578849773.30225"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "21"
                   endingLineNumber = "21"
-                  offsetFromSymbolStart = "455">
+                  offsetFromSymbolStart = "438">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -312,12 +265,12 @@
                   moduleName = "PokemonVault"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/user/Documents/HQ/Projects/PokePedia/PokemonVault/PokemonDetailsInteractor.swift"
-                  timestampString = "578752814.9973969"
+                  timestampString = "578849773.304155"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "21"
-                  endingLineNumber = "21"
-                  offsetFromSymbolStart = "219">
+                  startingLineNumber = "22"
+                  endingLineNumber = "22"
+                  offsetFromSymbolStart = "205">
                </Location>
             </Locations>
          </BreakpointContent>
