@@ -9,14 +9,17 @@
 import UIKit
 
 class PokemonDetailsViewController: BaseViewController {
-    
-    @IBOutlet var heightValueLabel: UILabel?
-    @IBOutlet var weightValueLabel: UILabel?
-    @IBOutlet var baseExperienceValueLabel: UILabel?
-    @IBOutlet var baseStatisticValueLabel: UILabel?
-    @IBOutlet var baseExperienceStatNameLabel: UILabel?
-    @IBOutlet var baseExperienceStatSlier: UISlider?
-    @IBOutlet var abilityNameLabel: UILabel?
+    @IBOutlet var abilitiesStackView: UIStackView!
+    @IBOutlet var statisticsStackView: UIStackView!
+    @IBOutlet var heightValueLabel: UILabel!
+    @IBOutlet var weightValueLabel: UILabel!
+    @IBOutlet var baseExperienceValueLabel: UILabel!
+    @IBOutlet var baseStatisticValueLabel: UILabel!
+    @IBOutlet var baseExperienceStatNameLabel: UILabel!
+    @IBOutlet var abilityNameLabel: UILabel!
+    @IBOutlet var heightLineItemView: LineItemView!
+    @IBOutlet var weightLineItemView: LineItemView!
+    @IBOutlet var experienceItemView: LineItemView!
     
     @IBOutlet weak var pokemonImageView: CircleImageView? {
         didSet {
@@ -31,16 +34,6 @@ class PokemonDetailsViewController: BaseViewController {
     
     func set(pokemonModel model: PokemonModel) {
         self.pokemonModel = model
-    }
-    
-    func updateViewContent() {
-        self.heightValueLabel?.text = String(describing: self.viewModel.pokemonDetailsModel?.height ?? 0)
-        self.weightValueLabel?.text = String(describing: self.viewModel.pokemonDetailsModel?.weight ?? 0)
-        self.baseExperienceValueLabel?.text = String(describing: self.viewModel.pokemonDetailsModel?.baseExperience ?? 0)
-        self.baseStatisticValueLabel?.text = String(describing: self.viewModel.pokemonDetailsModel?.statistics.first?.baseStat ?? 0)
-        self.baseExperienceStatNameLabel?.text = String(describing: self.viewModel.pokemonDetailsModel?.statistics.first?.stat.name ?? "")
-        self.abilityNameLabel?.text = String(describing: self.viewModel.pokemonDetailsModel?.abilities.first?.ability.name ?? "")
-        //self.baseExperienceStatSlier?.value = Float(exactly: ((self.viewModel.pokemonDetailsModel?.statistics.first?.baseStat)!/100) ) ?? 0.0
     }
     
     override func viewDidLoad() {
@@ -60,4 +53,29 @@ class PokemonDetailsViewController: BaseViewController {
             self.updateViewContent()
         }
     }
+    
+    private func updateViewContent() {
+        heightLineItemView.populate(text: ("Height", String(describing: self.viewModel.pokemonDetailsModel?.height ?? 0)))
+        weightLineItemView.populate(text: ("Weight", String(describing: self.viewModel.pokemonDetailsModel?.weight ?? 0)))
+        experienceItemView.populate(text: ("Base Experience", String(describing: self.viewModel.pokemonDetailsModel?.baseExperience ?? 0)))
+        self.updateStatistics(statistics: viewModel.pokemonStatistics())
+        self.updateAbilities(abilities: viewModel.pokemonAbilities())
+    }
+    
+    private func updateAbilities(abilities: [Ability]) {
+        for ability in abilities {
+            let lineItemView = LineItemView()
+            lineItemView.populate(text: (ability.ability.name, ""))
+            abilitiesStackView.addArrangedSubview(lineItemView)
+        }
+    }
+    
+    private func updateStatistics(statistics: [Statistic]) {
+        for statistic in statistics {
+            let lineItemView = LineItemView()
+            lineItemView.populate(text: (statistic.stat.name, String(describing: statistic.baseStat)))
+            statisticsStackView.addArrangedSubview(lineItemView)
+        }
+    }
 }
+

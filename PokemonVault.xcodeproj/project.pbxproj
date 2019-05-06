@@ -53,6 +53,7 @@
 		D3D8B995227B42AC00DB1899 /* LineItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3D8B993227B42AC00DB1899 /* LineItemView.xib */; };
 		D3D8B996227B42AC00DB1899 /* LineItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D8B994227B42AC00DB1899 /* LineItemView.swift */; };
 		D3D8B998227B442500DB1899 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D8B997227B442500DB1899 /* UIView+Extensions.swift */; };
+		D3D8B9B22280830400DB1899 /* BaseLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D8B9B12280830300DB1899 /* BaseLabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -118,6 +119,7 @@
 		D3D8B993227B42AC00DB1899 /* LineItemView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LineItemView.xib; sourceTree = "<group>"; };
 		D3D8B994227B42AC00DB1899 /* LineItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineItemView.swift; sourceTree = "<group>"; };
 		D3D8B997227B442500DB1899 /* UIView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		D3D8B9B12280830300DB1899 /* BaseLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseLabel.swift; sourceTree = "<group>"; };
 		D731867EB7148412597F1DD9 /* Pods-PokemonVault.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PokemonVault.release.xcconfig"; path = "Pods/Target Support Files/Pods-PokemonVault/Pods-PokemonVault.release.xcconfig"; sourceTree = "<group>"; };
 		DB739193D1CB25663678E430 /* Pods-PokemonVaultTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PokemonVaultTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PokemonVaultTests/Pods-PokemonVaultTests.release.xcconfig"; sourceTree = "<group>"; };
 		FA4BB08E8952A53E578FE49E /* Pods-PokemonVault.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PokemonVault.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PokemonVault/Pods-PokemonVault.debug.xcconfig"; sourceTree = "<group>"; };
@@ -191,7 +193,7 @@
 				D32F47C42276DB6B00797900 /* Base Classes */,
 				CE70F86F2269FD8800FF1371 /* Extensions */,
 				CEC726A9227E6C1C00561365 /* Features */,
-				CE70F86C2269FCB900FF1371 /* Services */,
+				CE70F86C2269FCB900FF1371 /* Service Layer */,
 				D32F47C92276F00100797900 /* Reachability */,
 				CEC726852271F56F00561365 /* Cache */,
 			);
@@ -232,7 +234,7 @@
 			name = "Home Screen";
 			sourceTree = "<group>";
 		};
-		CE70F86C2269FCB900FF1371 /* Services */ = {
+		CE70F86C2269FCB900FF1371 /* Service Layer */ = {
 			isa = PBXGroup;
 			children = (
 				CE70F88D226B7E8D00FF1371 /* ServiceClient.swift */,
@@ -241,7 +243,7 @@
 				CE70F88F226B9B9600FF1371 /* JSONConverter.swift */,
 				CEC72697227B579600561365 /* JSONConverterImplementation.swift */,
 			);
-			name = Services;
+			name = "Service Layer";
 			sourceTree = "<group>";
 		};
 		CE70F86D2269FCE500FF1371 /* Pokemon Details */ = {
@@ -258,6 +260,7 @@
 		CE70F86E2269FD6700FF1371 /* IBDesignables */ = {
 			isa = PBXGroup;
 			children = (
+				D3D8B9B12280830300DB1899 /* BaseLabel.swift */,
 				CE70F87F226A02F200FF1371 /* CircleImageView.swift */,
 				CE70F882226A0DA000FF1371 /* TransparentView.swift */,
 			);
@@ -651,6 +654,7 @@
 				CE70F8782269FFEF00FF1371 /* PokemonListInteractor.swift in Sources */,
 				CE70F84D2269FBCF00FF1371 /* HomeViewController.swift in Sources */,
 				CE70F880226A02F200FF1371 /* CircleImageView.swift in Sources */,
+				D3D8B9B22280830400DB1899 /* BaseLabel.swift in Sources */,
 				D32F47C62276DB9B00797900 /* BaseViewController.swift in Sources */,
 				CE70F88C226B79DF00FF1371 /* NetworkSession.swift in Sources */,
 				CE70F89B226F066000FF1371 /* LoadingIndicatorView.swift in Sources */,

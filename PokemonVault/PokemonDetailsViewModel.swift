@@ -21,15 +21,22 @@ class PokemonDetailsViewModel {
         self.delegate = delegate
     }
     
+    func pokemonAbilities() -> [Ability] {
+        return pokemonDetailsModel?.abilities ?? [Ability]()
+    }
+    
+    func pokemonStatistics() -> [Statistic] {
+        return pokemonDetailsModel?.statistics ?? [Statistic]()
+    }
+    
     func fetchPokemonDetails() {
         guard let pokemonDetailsUrl = pokemonDetailsUrl.extractPokemonID() else { return }
         interactor.fetchPokemonDetails(fromUrl: pokemonDetailsUrl,
-                                      success: { [weak self] (pokemonDetailsModel) in
-                                        guard let strongSelf = self else { return }
-                                        strongSelf.pokemonDetailsModel = pokemonDetailsModel
-                                        strongSelf.delegate?.refreshViewContents()
+                                       success: { [weak self] (pokemonDetailsModel) in
+                                        guard let StrongSelf = self else { return }
+                                        StrongSelf.pokemonDetailsModel = pokemonDetailsModel
+                                        StrongSelf.delegate?.refreshViewContents()
         }) { (error) in
-            guard let error = error else { return }
             print("failure....,==," + error.localizedDescription)
         }
     }
