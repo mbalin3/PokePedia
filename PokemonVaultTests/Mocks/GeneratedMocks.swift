@@ -1,4 +1,4 @@
-// MARK: - Mocks generated from file: PokemonVault/BaseViewModelDelegate.swift at 2019-05-06 19:28:55 +0000
+// MARK: - Mocks generated from file: PokemonVault/BaseViewModelDelegate.swift at 2019-05-06 19:35:05 +0000
 
 //
 //  BaseViewModelDelegate.swift
@@ -99,7 +99,7 @@ class MockBaseViewModelDelegate: BaseViewModelDelegate, Cuckoo.ProtocolMock {
 }
 
 
-// MARK: - Mocks generated from file: PokemonVault/NetworkSession.swift at 2019-05-06 19:28:55 +0000
+// MARK: - Mocks generated from file: PokemonVault/NetworkSession.swift at 2019-05-06 19:35:05 +0000
 
 //
 //  NetworkSession.swift
@@ -200,7 +200,7 @@ class MockNetworkSession: NetworkSession, Cuckoo.ProtocolMock {
 }
 
 
-// MARK: - Mocks generated from file: PokemonVault/PokemonDetailsBoundary.swift at 2019-05-06 19:28:55 +0000
+// MARK: - Mocks generated from file: PokemonVault/PokemonDetailsBoundary.swift at 2019-05-06 19:35:05 +0000
 
 //
 //  PokemonDetailsBoundary.swift
@@ -301,7 +301,7 @@ class MockPokemonDetailsBoundary: PokemonDetailsBoundary, Cuckoo.ProtocolMock {
 }
 
 
-// MARK: - Mocks generated from file: PokemonVault/PokemonListBoundary.swift at 2019-05-06 19:28:55 +0000
+// MARK: - Mocks generated from file: PokemonVault/PokemonListBoundary.swift at 2019-05-06 19:35:05 +0000
 
 //
 //  PokemonListBoundary.swift
@@ -402,7 +402,7 @@ class MockPokemonListBoundary: PokemonListBoundary, Cuckoo.ProtocolMock {
 }
 
 
-// MARK: - Mocks generated from file: PokemonVault/PokemonListCacheDecorator.swift at 2019-05-06 19:28:55 +0000
+// MARK: - Mocks generated from file: PokemonVault/PokemonListCacheDecorator.swift at 2019-05-06 19:35:05 +0000
 
 //
 //  PokemonListCacheDecorator.swift
@@ -503,7 +503,7 @@ class MockPokemonListCacheDecorator: PokemonListCacheDecorator, Cuckoo.ProtocolM
 }
 
 
-// MARK: - Mocks generated from file: PokemonVault/ServiceClient.swift at 2019-05-06 19:28:55 +0000
+// MARK: - Mocks generated from file: PokemonVault/ServiceClient.swift at 2019-05-06 19:35:05 +0000
 
 //
 //  ServiceClient.swift

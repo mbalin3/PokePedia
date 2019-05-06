@@ -1,23 +1,20 @@
 PODS:
-  - Cuckoo (0.12.1)
+  - Cuckoo (0.12.0)
   - ReachabilitySwift (4.3.1)
 
 DEPENDENCIES:
-  - Cuckoo (from `../Cuckoo/`)
+  - Cuckoo (= 0.12.0)
   - ReachabilitySwift
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - Cuckoo
     - ReachabilitySwift
 
-EXTERNAL SOURCES:
-  Cuckoo:
-    :path: "../Cuckoo/"
-
 SPEC CHECKSUMS:
-  Cuckoo: 2f10364798baa4b0d4aacabfa475249cf29977bc
+  Cuckoo: d30b6c149e52ffbcfe6b4a9543e4627d08947274
   ReachabilitySwift: 4032e2f59586e11e3b0ebe15b167abdd587a388b
 
-PODFILE CHECKSUM: 3a67442af130838574eddbc2fdf7a5d59478524e
+PODFILE CHECKSUM: f97f91cdb8a2ea3b7c262e5cfebe99da67fd5a8b
 
 COCOAPODS: 1.6.0
