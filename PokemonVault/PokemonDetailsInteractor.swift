@@ -10,37 +10,33 @@ import Foundation
 
 class PokemonDetailsInteractor: PokemonDetailsBoundary {
     
-    private let service: ServiceClient = ServiceClientImplementation()
+    private var service: ServiceClient
+    weak var delegate: PokemonDetailsInteractorDelegate?
     
-    func fetchPokemonDetails(fromUrl: String,
-                             success: @escaping (_ response: PokemonDetailsModel?) -> Void,
-                             failure: @escaping (_ error: NSError?) -> Void) {
+    init(service: ServiceClient = ServiceClientImplementation()) {
+        self.service = service
+    }
+    
+    func fetchPokemonDetails(fromUrl: String) {
         // https://pokeapi.co/api/v2/pokemon/19/
-        let query = "/\(fromUrl)"
+        let query = "https://pokeapi.co/api/v2/pokemon/\(fromUrl)"
         
         service.fetchData(from: query, success: { (data) in
             if let responseData = data {
                 self.createPokemonModel(from: responseData,
                                         keyDecodingStrategy: .useDefaultKeys,
                                         completionHandler: { (pokemonDetailsModel, error) in
-                                            if let error = error {
-                                                return failure(error)
-                                            }
-                                            
-                                            guard let pokemonDetailsModel = pokemonDetailsModel else {
-                                                return failure(error!)
-                                            }
-                                            success(pokemonDetailsModel)
+                                            self.delegate?.fetchPokemonDetailsSuccess(successResponse: pokemonDetailsModel)
                 })
             }
-        }) { (error) in
-            failure(error)
-        }
+        }, failure: { (error) in
+            self.delegate?.fetchPokemonDetailsFailure(error: error)
+        })
     }
     
-    func createPokemonModel(from data: Data,
-                            keyDecodingStrategy: JSONDecoder.KeyDecodingStrategy,
-                            completionHandler: @escaping (_ model: PokemonDetailsModel?, _ error: NSError?) -> Void)  {
+    private func createPokemonModel(from data: Data,
+                                    keyDecodingStrategy: JSONDecoder.KeyDecodingStrategy,
+                                    completionHandler: @escaping (_ model: PokemonDetailsModel?, _ error: NSError?) -> Void)  {
         let jsonConverter: JSONConverter = JSONDecoder()
         jsonConverter.createModel(from: data, keyDecodingStrategy: keyDecodingStrategy) { (model, error) in
             return completionHandler(model, error)

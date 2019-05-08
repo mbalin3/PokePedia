@@ -25,13 +25,13 @@ class PokemonDetailsViewModelTests: XCTestCase {
     func testWhenPokemonDet() {
 //        let mockPokemons = self.generateTestPokemons()
         stub(mockInteractor) {
-            when($0.fetchPokemonDetails(fromUrl: any(), success: anyClosure(), failure: anyClosure())).then({ (_, successBlock, _) in
-                XCTAssertNotNil(successBlock)
+            when($0.fetchPokemonDetails(fromUrl: any())).then({ (url) in
+                XCTAssertNotNil(url)
             })
         }
         
         viewModelUnderTest.fetchPokemonDetails()
-        verify(mockInteractor).fetchPokemonDetails(fromUrl: any(), success: anyClosure(), failure: anyClosure())
+        verify(mockInteractor).fetchPokemonDetails(fromUrl: any())
         
 //            when($0.fetchPokemonList(numberOfPokemons: any(), success: anyClosure(), failure: anyClosure())).then({ _, successBlock, _ in
 //                successBlock(mockPokemons)

@@ -8,18 +8,20 @@
 
 import Foundation
 
-class PokemonDetailsViewModel {
+class PokemonDetailsViewModel: PokemonDetailsInteractorDelegate {
     
     weak var delegate: BaseViewModelDelegate?
     private var interactor: PokemonDetailsBoundary
     private var pokemonDetailsUrl: String
     private(set) var pokemonDetailsModel: PokemonDetailsModel?
     
-    init(interactor: PokemonDetailsBoundary, pokemonDetailsUrl: String,
+    init(interactor: PokemonDetailsBoundary,
+         pokemonDetailsUrl: String,
          delegate: BaseViewModelDelegate) {
         self.interactor = interactor
         self.pokemonDetailsUrl = pokemonDetailsUrl
         self.delegate = delegate
+        interactor.delegate = self
     }
     
     func pokemonAbilities() -> [Ability] {
@@ -32,13 +34,17 @@ class PokemonDetailsViewModel {
     
     func fetchPokemonDetails() {
         guard let pokemonDetailsUrl = pokemonDetailsUrl.extractPokemonID() else { return }
-        interactor.fetchPokemonDetails(fromUrl: pokemonDetailsUrl,
-                                       success: { [weak self] (pokemonDetailsModel) in
-                                        guard let StrongSelf = self else { return }
-                                        StrongSelf.pokemonDetailsModel = pokemonDetailsModel
-                                        StrongSelf.delegate?.refreshViewContents()
-        }) { (error) in
-            print("failure....,==," + (error?.localizedDescription ?? ""))
-        }
+        interactor.fetchPokemonDetails(fromUrl: pokemonDetailsUrl)
+    }
+    
+    func fetchPokemonDetailsSuccess(successResponse: PokemonDetailsModel?) {
+        pokemonDetailsModel = successResponse
+        delegate?.refreshViewContents()
+    }
+    
+    func fetchPokemonDetailsFailure(error: NSError?) {
+        
     }
 }
+
+

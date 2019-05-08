@@ -75,6 +75,7 @@
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="titleText" value=" "/>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="contentText" value=" "/>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="shouldShowImage" value="YES"/>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="383-JF-t39" customClass="LineItemView" customModule="PokemonVault" customModuleProvider="target">

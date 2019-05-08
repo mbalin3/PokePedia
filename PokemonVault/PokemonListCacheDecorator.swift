@@ -8,11 +8,7 @@
 
 import Foundation
 
-protocol PokemonListCacheDecorator: PokemonListBoundary {
-    func fetchPokemonList(numberOfPokemons: Int,
-                          success: @escaping SuccessBlock,
-                          failure: @escaping (_ error: NSError?) -> Void)
-}
+protocol PokemonListCacheDecorator: PokemonListBoundary { }
 
 class PokemonListInteractorCacheDecorator: PokemonListCacheDecorator {
     
@@ -21,12 +17,13 @@ class PokemonListInteractorCacheDecorator: PokemonListCacheDecorator {
                           failure: @escaping (_ error: NSError?) -> Void) {
         
         if let pokemonList = AppCache.sharedInstance.fetchCachedObject(for: .pokemonList) as? [PokemonModel] {
-                success(pokemonList)
+            success(pokemonList)
         } else {
             let pokemonListInteractor = PokemonListInteractor()
             pokemonListInteractor.fetchPokemonList(numberOfPokemons: numberOfPokemons,
                                                    success: { (pokemonList) in
-                                                    AppCache.sharedInstance.setCacheObject(pokemonList as AnyObject, for: .pokemonList)
+                                                    AppCache.sharedInstance.setCacheObject(pokemonList as AnyObject,
+                                                                                           for: .pokemonList)
                                                     success(pokemonList)
             }) { (error) in
                 failure(error)

@@ -18,7 +18,7 @@ class PokemonListInteractor: PokemonListBoundary {
                           success: @escaping SuccessBlock,
                           failure: @escaping (_ error: NSError?) -> Void) {
         
-        let query = "?offset=1&limit=\(numberOfPokemons)"
+        let query = "https://pokeapi.co/api/v2/pokemon?offset=1&limit=\(numberOfPokemons)"
         service.fetchData(from: query, success: { (data) in
             if let responseData = data {
                 self.createPokemonModel(from: responseData,

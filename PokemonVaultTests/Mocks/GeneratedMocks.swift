@@ -1,4 +1,4 @@
-// MARK: - Mocks generated from file: PokemonVault/BaseViewModelDelegate.swift at 2019-05-06 19:35:05 +0000
+// MARK: - Mocks generated from file: PokemonVault/BaseViewModelDelegate.swift at 2019-05-08 12:36:29 +0000
 
 //
 //  BaseViewModelDelegate.swift
@@ -99,7 +99,7 @@ class MockBaseViewModelDelegate: BaseViewModelDelegate, Cuckoo.ProtocolMock {
 }
 
 
-// MARK: - Mocks generated from file: PokemonVault/NetworkSession.swift at 2019-05-06 19:35:05 +0000
+// MARK: - Mocks generated from file: PokemonVault/NetworkSession.swift at 2019-05-08 12:36:29 +0000
 
 //
 //  NetworkSession.swift
@@ -200,7 +200,7 @@ class MockNetworkSession: NetworkSession, Cuckoo.ProtocolMock {
 }
 
 
-// MARK: - Mocks generated from file: PokemonVault/PokemonDetailsBoundary.swift at 2019-05-06 19:35:05 +0000
+// MARK: - Mocks generated from file: PokemonVault/PokemonDetailsBoundary.swift at 2019-05-08 12:36:29 +0000
 
 //
 //  PokemonDetailsBoundary.swift
@@ -230,21 +230,44 @@ class MockPokemonDetailsBoundary: PokemonDetailsBoundary, Cuckoo.ProtocolMock {
     }
 
     
-
     
-
-    
-    // ["name": "fetchPokemonDetails", "returnSignature": "", "fullyQualifiedName": "fetchPokemonDetails(fromUrl: String, success: @escaping (_ response: PokemonDetailsModel?) -> Void, failure: @escaping (_ error: NSError?) -> Void)", "parameterSignature": "fromUrl: String, success: @escaping (_ response: PokemonDetailsModel?) -> Void, failure: @escaping (_ error: NSError?) -> Void", "parameterSignatureWithoutNames": "fromUrl: String, success: @escaping (_ response: PokemonDetailsModel?) -> Void, failure: @escaping (_ error: NSError?) -> Void", "inputTypes": "String, (_ response: PokemonDetailsModel?) -> Void, (_ error: NSError?) -> Void", "isThrowing": false, "isInit": false, "isOverriding": false, "hasClosureParams": true, "@type": "ProtocolMethod", "accessibility": "", "parameterNames": "fromUrl, success, failure", "call": "fromUrl: fromUrl, success: success, failure: failure", "parameters": [CuckooGeneratorFramework.MethodParameter(label: Optional("fromUrl"), name: "fromUrl", type: "String", range: CountableRange(332..<347), nameRange: CountableRange(332..<339)), CuckooGeneratorFramework.MethodParameter(label: Optional("success"), name: "success", type: "@escaping (_ response: PokemonDetailsModel?) -> Void", range: CountableRange(378..<439), nameRange: CountableRange(378..<385)), CuckooGeneratorFramework.MethodParameter(label: Optional("failure"), name: "failure", type: "@escaping (_ error: NSError?) -> Void", range: CountableRange(470..<516), nameRange: CountableRange(470..<477))], "returnType": "Void", "isOptional": false, "escapingParameterNames": "fromUrl, success, failure", "stubFunction": "Cuckoo.ProtocolStubNoReturnFunction"]
-     func fetchPokemonDetails(fromUrl: String, success: @escaping (_ response: PokemonDetailsModel?) -> Void, failure: @escaping (_ error: NSError?) -> Void)  {
-        
-            return cuckoo_manager.call("fetchPokemonDetails(fromUrl: String, success: @escaping (_ response: PokemonDetailsModel?) -> Void, failure: @escaping (_ error: NSError?) -> Void)",
-                parameters: (fromUrl, success, failure),
-                escapingParameters: (fromUrl, success, failure),
+     var delegate: PokemonDetailsInteractorDelegate? {
+        get {
+            return cuckoo_manager.getter("delegate",
                 superclassCall:
                     
                     Cuckoo.MockManager.crashOnProtocolSuperclassCall()
                     ,
-                defaultCall: __defaultImplStub!.fetchPokemonDetails(fromUrl: fromUrl, success: success, failure: failure))
+                defaultCall: __defaultImplStub!.delegate)
+        }
+        
+        set {
+            cuckoo_manager.setter("delegate",
+                value: newValue,
+                superclassCall:
+                    
+                    Cuckoo.MockManager.crashOnProtocolSuperclassCall()
+                    ,
+                defaultCall: __defaultImplStub!.delegate = newValue)
+        }
+        
+    }
+    
+
+    
+
+    
+    // ["name": "fetchPokemonDetails", "returnSignature": "", "fullyQualifiedName": "fetchPokemonDetails(fromUrl: String)", "parameterSignature": "fromUrl: String", "parameterSignatureWithoutNames": "fromUrl: String", "inputTypes": "String", "isThrowing": false, "isInit": false, "isOverriding": false, "hasClosureParams": false, "@type": "ProtocolMethod", "accessibility": "", "parameterNames": "fromUrl", "call": "fromUrl: fromUrl", "parameters": [CuckooGeneratorFramework.MethodParameter(label: Optional("fromUrl"), name: "fromUrl", type: "String", range: CountableRange(404..<419), nameRange: CountableRange(404..<411))], "returnType": "Void", "isOptional": false, "escapingParameterNames": "fromUrl", "stubFunction": "Cuckoo.ProtocolStubNoReturnFunction"]
+     func fetchPokemonDetails(fromUrl: String)  {
+        
+            return cuckoo_manager.call("fetchPokemonDetails(fromUrl: String)",
+                parameters: (fromUrl),
+                escapingParameters: (fromUrl),
+                superclassCall:
+                    
+                    Cuckoo.MockManager.crashOnProtocolSuperclassCall()
+                    ,
+                defaultCall: __defaultImplStub!.fetchPokemonDetails(fromUrl: fromUrl))
         
     }
     
@@ -256,10 +279,14 @@ class MockPokemonDetailsBoundary: PokemonDetailsBoundary, Cuckoo.ProtocolMock {
 	        self.cuckoo_manager = manager
 	    }
 	    
+	    var delegate: Cuckoo.ProtocolToBeStubbedProperty<MockPokemonDetailsBoundary, PokemonDetailsInteractorDelegate?> {
+	        return .init(manager: cuckoo_manager, name: "delegate")
+	    }
 	    
-	    func fetchPokemonDetails<M1: Cuckoo.Matchable, M2: Cuckoo.Matchable, M3: Cuckoo.Matchable>(fromUrl: M1, success: M2, failure: M3) -> Cuckoo.ProtocolStubNoReturnFunction<(String, (_ response: PokemonDetailsModel?) -> Void, (_ error: NSError?) -> Void)> where M1.MatchedType == String, M2.MatchedType == (_ response: PokemonDetailsModel?) -> Void, M3.MatchedType == (_ error: NSError?) -> Void {
-	        let matchers: [Cuckoo.ParameterMatcher<(String, (_ response: PokemonDetailsModel?) -> Void, (_ error: NSError?) -> Void)>] = [wrap(matchable: fromUrl) { $0.0 }, wrap(matchable: success) { $0.1 }, wrap(matchable: failure) { $0.2 }]
-	        return .init(stub: cuckoo_manager.createStub(for: MockPokemonDetailsBoundary.self, method: "fetchPokemonDetails(fromUrl: String, success: @escaping (_ response: PokemonDetailsModel?) -> Void, failure: @escaping (_ error: NSError?) -> Void)", parameterMatchers: matchers))
+	    
+	    func fetchPokemonDetails<M1: Cuckoo.Matchable>(fromUrl: M1) -> Cuckoo.ProtocolStubNoReturnFunction<(String)> where M1.MatchedType == String {
+	        let matchers: [Cuckoo.ParameterMatcher<(String)>] = [wrap(matchable: fromUrl) { $0 }]
+	        return .init(stub: cuckoo_manager.createStub(for: MockPokemonDetailsBoundary.self, method: "fetchPokemonDetails(fromUrl: String)", parameterMatchers: matchers))
 	    }
 	    
 	}
@@ -276,12 +303,16 @@ class MockPokemonDetailsBoundary: PokemonDetailsBoundary, Cuckoo.ProtocolMock {
 	    }
 	
 	    
+	    var delegate: Cuckoo.VerifyProperty<PokemonDetailsInteractorDelegate?> {
+	        return .init(manager: cuckoo_manager, name: "delegate", callMatcher: callMatcher, sourceLocation: sourceLocation)
+	    }
+	    
 	
 	    
 	    @discardableResult
-	    func fetchPokemonDetails<M1: Cuckoo.Matchable, M2: Cuckoo.Matchable, M3: Cuckoo.Matchable>(fromUrl: M1, success: M2, failure: M3) -> Cuckoo.__DoNotUse<Void> where M1.MatchedType == String, M2.MatchedType == (_ response: PokemonDetailsModel?) -> Void, M3.MatchedType == (_ error: NSError?) -> Void {
-	        let matchers: [Cuckoo.ParameterMatcher<(String, (_ response: PokemonDetailsModel?) -> Void, (_ error: NSError?) -> Void)>] = [wrap(matchable: fromUrl) { $0.0 }, wrap(matchable: success) { $0.1 }, wrap(matchable: failure) { $0.2 }]
-	        return cuckoo_manager.verify("fetchPokemonDetails(fromUrl: String, success: @escaping (_ response: PokemonDetailsModel?) -> Void, failure: @escaping (_ error: NSError?) -> Void)", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+	    func fetchPokemonDetails<M1: Cuckoo.Matchable>(fromUrl: M1) -> Cuckoo.__DoNotUse<Void> where M1.MatchedType == String {
+	        let matchers: [Cuckoo.ParameterMatcher<(String)>] = [wrap(matchable: fromUrl) { $0 }]
+	        return cuckoo_manager.verify("fetchPokemonDetails(fromUrl: String)", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
 	    }
 	    
 	}
@@ -290,18 +321,157 @@ class MockPokemonDetailsBoundary: PokemonDetailsBoundary, Cuckoo.ProtocolMock {
 
  class PokemonDetailsBoundaryStub: PokemonDetailsBoundary {
     
-
+     var delegate: PokemonDetailsInteractorDelegate? {
+        get {
+            return DefaultValueRegistry.defaultValue(for: (PokemonDetailsInteractorDelegate?).self)
+        }
+        
+        set { }
+        
+    }
     
 
     
-     func fetchPokemonDetails(fromUrl: String, success: @escaping (_ response: PokemonDetailsModel?) -> Void, failure: @escaping (_ error: NSError?) -> Void)  {
+
+    
+     func fetchPokemonDetails(fromUrl: String)  {
         return DefaultValueRegistry.defaultValue(for: Void.self)
     }
     
 }
 
 
-// MARK: - Mocks generated from file: PokemonVault/PokemonListBoundary.swift at 2019-05-06 19:35:05 +0000
+// MARK: - Mocks generated from file: PokemonVault/PokemonDetailsInteractorDelegate.swift at 2019-05-08 12:36:29 +0000
+
+//
+//  PokemonDetailsInteractorDelegate.swift
+//  PokemonVault
+//
+//  Created by Mbalenhle Ndaba on 2019/05/08.
+//  Copyright © 2019 Mbalenhle. All rights reserved.
+//
+
+import Cuckoo
+@testable import PokemonVault
+
+import Foundation
+
+class MockPokemonDetailsInteractorDelegate: PokemonDetailsInteractorDelegate, Cuckoo.ProtocolMock {
+    typealias MocksType = PokemonDetailsInteractorDelegate
+    typealias Stubbing = __StubbingProxy_PokemonDetailsInteractorDelegate
+    typealias Verification = __VerificationProxy_PokemonDetailsInteractorDelegate
+
+    private var __defaultImplStub: PokemonDetailsInteractorDelegate?
+
+    let cuckoo_manager = Cuckoo.MockManager.preconfiguredManager ?? Cuckoo.MockManager(hasParent: false)
+
+    func enableDefaultImplementation(_ stub: PokemonDetailsInteractorDelegate) {
+        __defaultImplStub = stub
+        cuckoo_manager.enableDefaultStubImplementation()
+    }
+
+    
+
+    
+
+    
+    // ["name": "fetchPokemonDetailsSuccess", "returnSignature": "", "fullyQualifiedName": "fetchPokemonDetailsSuccess(successResponse: PokemonDetailsModel?)", "parameterSignature": "successResponse: PokemonDetailsModel?", "parameterSignatureWithoutNames": "successResponse: PokemonDetailsModel?", "inputTypes": "PokemonDetailsModel?", "isThrowing": false, "isInit": false, "isOverriding": false, "hasClosureParams": false, "@type": "ProtocolMethod", "accessibility": "", "parameterNames": "successResponse", "call": "successResponse: successResponse", "parameters": [CuckooGeneratorFramework.MethodParameter(label: Optional("successResponse"), name: "successResponse", type: "PokemonDetailsModel?", range: CountableRange(276..<313), nameRange: CountableRange(276..<291))], "returnType": "Void", "isOptional": false, "escapingParameterNames": "successResponse", "stubFunction": "Cuckoo.ProtocolStubNoReturnFunction"]
+     func fetchPokemonDetailsSuccess(successResponse: PokemonDetailsModel?)  {
+        
+            return cuckoo_manager.call("fetchPokemonDetailsSuccess(successResponse: PokemonDetailsModel?)",
+                parameters: (successResponse),
+                escapingParameters: (successResponse),
+                superclassCall:
+                    
+                    Cuckoo.MockManager.crashOnProtocolSuperclassCall()
+                    ,
+                defaultCall: __defaultImplStub!.fetchPokemonDetailsSuccess(successResponse: successResponse))
+        
+    }
+    
+    // ["name": "fetchPokemonDetailsFailure", "returnSignature": "", "fullyQualifiedName": "fetchPokemonDetailsFailure(error: NSError?)", "parameterSignature": "error: NSError?", "parameterSignatureWithoutNames": "error: NSError?", "inputTypes": "NSError?", "isThrowing": false, "isInit": false, "isOverriding": false, "hasClosureParams": false, "@type": "ProtocolMethod", "accessibility": "", "parameterNames": "error", "call": "error: error", "parameters": [CuckooGeneratorFramework.MethodParameter(label: Optional("error"), name: "error", type: "NSError?", range: CountableRange(351..<366), nameRange: CountableRange(351..<356))], "returnType": "Void", "isOptional": false, "escapingParameterNames": "error", "stubFunction": "Cuckoo.ProtocolStubNoReturnFunction"]
+     func fetchPokemonDetailsFailure(error: NSError?)  {
+        
+            return cuckoo_manager.call("fetchPokemonDetailsFailure(error: NSError?)",
+                parameters: (error),
+                escapingParameters: (error),
+                superclassCall:
+                    
+                    Cuckoo.MockManager.crashOnProtocolSuperclassCall()
+                    ,
+                defaultCall: __defaultImplStub!.fetchPokemonDetailsFailure(error: error))
+        
+    }
+    
+
+	struct __StubbingProxy_PokemonDetailsInteractorDelegate: Cuckoo.StubbingProxy {
+	    private let cuckoo_manager: Cuckoo.MockManager
+	
+	    init(manager: Cuckoo.MockManager) {
+	        self.cuckoo_manager = manager
+	    }
+	    
+	    
+	    func fetchPokemonDetailsSuccess<M1: Cuckoo.Matchable>(successResponse: M1) -> Cuckoo.ProtocolStubNoReturnFunction<(PokemonDetailsModel?)> where M1.MatchedType == PokemonDetailsModel? {
+	        let matchers: [Cuckoo.ParameterMatcher<(PokemonDetailsModel?)>] = [wrap(matchable: successResponse) { $0 }]
+	        return .init(stub: cuckoo_manager.createStub(for: MockPokemonDetailsInteractorDelegate.self, method: "fetchPokemonDetailsSuccess(successResponse: PokemonDetailsModel?)", parameterMatchers: matchers))
+	    }
+	    
+	    func fetchPokemonDetailsFailure<M1: Cuckoo.Matchable>(error: M1) -> Cuckoo.ProtocolStubNoReturnFunction<(NSError?)> where M1.MatchedType == NSError? {
+	        let matchers: [Cuckoo.ParameterMatcher<(NSError?)>] = [wrap(matchable: error) { $0 }]
+	        return .init(stub: cuckoo_manager.createStub(for: MockPokemonDetailsInteractorDelegate.self, method: "fetchPokemonDetailsFailure(error: NSError?)", parameterMatchers: matchers))
+	    }
+	    
+	}
+
+	struct __VerificationProxy_PokemonDetailsInteractorDelegate: Cuckoo.VerificationProxy {
+	    private let cuckoo_manager: Cuckoo.MockManager
+	    private let callMatcher: Cuckoo.CallMatcher
+	    private let sourceLocation: Cuckoo.SourceLocation
+	
+	    init(manager: Cuckoo.MockManager, callMatcher: Cuckoo.CallMatcher, sourceLocation: Cuckoo.SourceLocation) {
+	        self.cuckoo_manager = manager
+	        self.callMatcher = callMatcher
+	        self.sourceLocation = sourceLocation
+	    }
+	
+	    
+	
+	    
+	    @discardableResult
+	    func fetchPokemonDetailsSuccess<M1: Cuckoo.Matchable>(successResponse: M1) -> Cuckoo.__DoNotUse<Void> where M1.MatchedType == PokemonDetailsModel? {
+	        let matchers: [Cuckoo.ParameterMatcher<(PokemonDetailsModel?)>] = [wrap(matchable: successResponse) { $0 }]
+	        return cuckoo_manager.verify("fetchPokemonDetailsSuccess(successResponse: PokemonDetailsModel?)", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+	    }
+	    
+	    @discardableResult
+	    func fetchPokemonDetailsFailure<M1: Cuckoo.Matchable>(error: M1) -> Cuckoo.__DoNotUse<Void> where M1.MatchedType == NSError? {
+	        let matchers: [Cuckoo.ParameterMatcher<(NSError?)>] = [wrap(matchable: error) { $0 }]
+	        return cuckoo_manager.verify("fetchPokemonDetailsFailure(error: NSError?)", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+	    }
+	    
+	}
+
+}
+
+ class PokemonDetailsInteractorDelegateStub: PokemonDetailsInteractorDelegate {
+    
+
+    
+
+    
+     func fetchPokemonDetailsSuccess(successResponse: PokemonDetailsModel?)  {
+        return DefaultValueRegistry.defaultValue(for: Void.self)
+    }
+    
+     func fetchPokemonDetailsFailure(error: NSError?)  {
+        return DefaultValueRegistry.defaultValue(for: Void.self)
+    }
+    
+}
+
+
+// MARK: - Mocks generated from file: PokemonVault/PokemonListBoundary.swift at 2019-05-08 12:36:29 +0000
 
 //
 //  PokemonListBoundary.swift
@@ -402,7 +572,7 @@ class MockPokemonListBoundary: PokemonListBoundary, Cuckoo.ProtocolMock {
 }
 
 
-// MARK: - Mocks generated from file: PokemonVault/PokemonListCacheDecorator.swift at 2019-05-06 19:35:05 +0000
+// MARK: - Mocks generated from file: PokemonVault/PokemonListCacheDecorator.swift at 2019-05-08 12:36:29 +0000
 
 //
 //  PokemonListCacheDecorator.swift
@@ -436,7 +606,7 @@ class MockPokemonListCacheDecorator: PokemonListCacheDecorator, Cuckoo.ProtocolM
     
 
     
-    // ["name": "fetchPokemonList", "returnSignature": "", "fullyQualifiedName": "fetchPokemonList(numberOfPokemons: Int, success: @escaping SuccessBlock, failure: @escaping (_ error: NSError?) -> Void)", "parameterSignature": "numberOfPokemons: Int, success: @escaping SuccessBlock, failure: @escaping (_ error: NSError?) -> Void", "parameterSignatureWithoutNames": "numberOfPokemons: Int, success: @escaping SuccessBlock, failure: @escaping (_ error: NSError?) -> Void", "inputTypes": "Int, SuccessBlock, (_ error: NSError?) -> Void", "isThrowing": false, "isInit": false, "isOverriding": false, "hasClosureParams": true, "@type": "ProtocolMethod", "accessibility": "", "parameterNames": "numberOfPokemons, success, failure", "call": "numberOfPokemons: numberOfPokemons, success: success, failure: failure", "parameters": [CuckooGeneratorFramework.MethodParameter(label: Optional("numberOfPokemons"), name: "numberOfPokemons", type: "Int", range: CountableRange(266..<287), nameRange: CountableRange(266..<282)), CuckooGeneratorFramework.MethodParameter(label: Optional("success"), name: "success", type: "@escaping SuccessBlock", range: CountableRange(315..<346), nameRange: CountableRange(315..<322)), CuckooGeneratorFramework.MethodParameter(label: Optional("failure"), name: "failure", type: "@escaping (_ error: NSError?) -> Void", range: CountableRange(374..<420), nameRange: CountableRange(374..<381))], "returnType": "Void", "isOptional": false, "escapingParameterNames": "numberOfPokemons, success, failure", "stubFunction": "Cuckoo.ProtocolStubNoReturnFunction"]
+    // ["name": "fetchPokemonList", "returnSignature": "", "fullyQualifiedName": "fetchPokemonList(numberOfPokemons: Int, success: @escaping SuccessBlock, failure: @escaping (_ error: NSError?) -> Void)", "parameterSignature": "numberOfPokemons: Int, success: @escaping SuccessBlock, failure: @escaping (_ error: NSError?) -> Void", "parameterSignatureWithoutNames": "numberOfPokemons: Int, success: @escaping SuccessBlock, failure: @escaping (_ error: NSError?) -> Void", "inputTypes": "Int, SuccessBlock, (_ error: NSError?) -> Void", "isThrowing": false, "isInit": false, "isOverriding": false, "hasClosureParams": true, "@type": "ProtocolMethod", "accessibility": "", "parameterNames": "numberOfPokemons, success, failure", "call": "numberOfPokemons: numberOfPokemons, success: success, failure: failure", "parameters": [CuckooGeneratorFramework.MethodParameter(label: Optional("numberOfPokemons"), name: "numberOfPokemons", type: "Int", range: CountableRange(356..<377), nameRange: CountableRange(356..<372)), CuckooGeneratorFramework.MethodParameter(label: Optional("success"), name: "success", type: "@escaping SuccessBlock", range: CountableRange(405..<436), nameRange: CountableRange(405..<412)), CuckooGeneratorFramework.MethodParameter(label: Optional("failure"), name: "failure", type: "@escaping (_ error: NSError?) -> Void", range: CountableRange(464..<510), nameRange: CountableRange(464..<471))], "returnType": "Void", "isOptional": false, "escapingParameterNames": "numberOfPokemons, success, failure", "stubFunction": "Cuckoo.ProtocolStubNoReturnFunction"]
      func fetchPokemonList(numberOfPokemons: Int, success: @escaping SuccessBlock, failure: @escaping (_ error: NSError?) -> Void)  {
         
             return cuckoo_manager.call("fetchPokemonList(numberOfPokemons: Int, success: @escaping SuccessBlock, failure: @escaping (_ error: NSError?) -> Void)",
@@ -503,7 +673,7 @@ class MockPokemonListCacheDecorator: PokemonListCacheDecorator, Cuckoo.ProtocolM
 }
 
 
-// MARK: - Mocks generated from file: PokemonVault/ServiceClient.swift at 2019-05-06 19:35:05 +0000
+// MARK: - Mocks generated from file: PokemonVault/ServiceClient.swift at 2019-05-08 12:36:29 +0000
 
 //
 //  ServiceClient.swift
@@ -537,7 +707,7 @@ class MockServiceClient: ServiceClient, Cuckoo.ProtocolMock {
     
 
     
-    // ["name": "fetchData", "returnSignature": "", "fullyQualifiedName": "fetchData(from: String, success: @escaping (_ responseData: Data?) -> (), failure: @escaping (_ error: NSError?) -> ())", "parameterSignature": "from urlString: String, success: @escaping (_ responseData: Data?) -> (), failure: @escaping (_ error: NSError?) -> ()", "parameterSignatureWithoutNames": "urlString: String, success: @escaping (_ responseData: Data?) -> (), failure: @escaping (_ error: NSError?) -> ()", "inputTypes": "String, (_ responseData: Data?) -> (), (_ error: NSError?) -> ()", "isThrowing": false, "isInit": false, "isOverriding": false, "hasClosureParams": true, "@type": "ProtocolMethod", "accessibility": "", "parameterNames": "urlString, success, failure", "call": "from: urlString, success: success, failure: failure", "parameters": [CuckooGeneratorFramework.MethodParameter(label: Optional("from"), name: "urlString", type: "String", range: CountableRange(214..<236), nameRange: CountableRange(214..<218)), CuckooGeneratorFramework.MethodParameter(label: Optional("success"), name: "success", type: "@escaping (_ responseData: Data?) -> ()", range: CountableRange(257..<305), nameRange: CountableRange(257..<264)), CuckooGeneratorFramework.MethodParameter(label: Optional("failure"), name: "failure", type: "@escaping (_ error: NSError?) -> ()", range: CountableRange(326..<370), nameRange: CountableRange(326..<333))], "returnType": "Void", "isOptional": false, "escapingParameterNames": "urlString, success, failure", "stubFunction": "Cuckoo.ProtocolStubNoReturnFunction"]
+    // ["name": "fetchData", "returnSignature": "", "fullyQualifiedName": "fetchData(from: String, success: @escaping (_ responseData: Data?) -> (), failure: @escaping (_ error: NSError?) -> ())", "parameterSignature": "from urlString: String, success: @escaping (_ responseData: Data?) -> (), failure: @escaping (_ error: NSError?) -> ()", "parameterSignatureWithoutNames": "urlString: String, success: @escaping (_ responseData: Data?) -> (), failure: @escaping (_ error: NSError?) -> ()", "inputTypes": "String, (_ responseData: Data?) -> (), (_ error: NSError?) -> ()", "isThrowing": false, "isInit": false, "isOverriding": false, "hasClosureParams": true, "@type": "ProtocolMethod", "accessibility": "", "parameterNames": "urlString, success, failure", "call": "from: urlString, success: success, failure: failure", "parameters": [CuckooGeneratorFramework.MethodParameter(label: Optional("from"), name: "urlString", type: "String", range: CountableRange(221..<243), nameRange: CountableRange(221..<225)), CuckooGeneratorFramework.MethodParameter(label: Optional("success"), name: "success", type: "@escaping (_ responseData: Data?) -> ()", range: CountableRange(264..<312), nameRange: CountableRange(264..<271)), CuckooGeneratorFramework.MethodParameter(label: Optional("failure"), name: "failure", type: "@escaping (_ error: NSError?) -> ()", range: CountableRange(333..<377), nameRange: CountableRange(333..<340))], "returnType": "Void", "isOptional": false, "escapingParameterNames": "urlString, success, failure", "stubFunction": "Cuckoo.ProtocolStubNoReturnFunction"]
      func fetchData(from urlString: String, success: @escaping (_ responseData: Data?) -> (), failure: @escaping (_ error: NSError?) -> ())  {
         
             return cuckoo_manager.call("fetchData(from: String, success: @escaping (_ responseData: Data?) -> (), failure: @escaping (_ error: NSError?) -> ())",
@@ -623,7 +793,7 @@ class MockServiceClientImplementation: ServiceClientImplementation, Cuckoo.Class
     
 
     
-    // ["name": "fetchData", "returnSignature": "", "fullyQualifiedName": "fetchData(from: String, success: @escaping (_ responseData: Data?) -> (), failure: @escaping (_ error: NSError?) -> ())", "parameterSignature": "from urlString: String, success: @escaping (_ responseData: Data?) -> (), failure: @escaping (_ error: NSError?) -> ()", "parameterSignatureWithoutNames": "urlString: String, success: @escaping (_ responseData: Data?) -> (), failure: @escaping (_ error: NSError?) -> ()", "inputTypes": "String, (_ responseData: Data?) -> (), (_ error: NSError?) -> ()", "isThrowing": false, "isInit": false, "isOverriding": true, "hasClosureParams": true, "@type": "ClassMethod", "accessibility": "", "parameterNames": "urlString, success, failure", "call": "from: urlString, success: success, failure: failure", "parameters": [CuckooGeneratorFramework.MethodParameter(label: Optional("from"), name: "urlString", type: "String", range: CountableRange(588..<610), nameRange: CountableRange(588..<592)), CuckooGeneratorFramework.MethodParameter(label: Optional("success"), name: "success", type: "@escaping (_ responseData: Data?) -> ()", range: CountableRange(631..<679), nameRange: CountableRange(631..<638)), CuckooGeneratorFramework.MethodParameter(label: Optional("failure"), name: "failure", type: "@escaping (_ error: NSError?) -> ()", range: CountableRange(700..<744), nameRange: CountableRange(700..<707))], "returnType": "Void", "isOptional": false, "escapingParameterNames": "urlString, success, failure", "stubFunction": "Cuckoo.ClassStubNoReturnFunction"]
+    // ["name": "fetchData", "returnSignature": "", "fullyQualifiedName": "fetchData(from: String, success: @escaping (_ responseData: Data?) -> (), failure: @escaping (_ error: NSError?) -> ())", "parameterSignature": "from urlString: String, success: @escaping (_ responseData: Data?) -> (), failure: @escaping (_ error: NSError?) -> ()", "parameterSignatureWithoutNames": "urlString: String, success: @escaping (_ responseData: Data?) -> (), failure: @escaping (_ error: NSError?) -> ()", "inputTypes": "String, (_ responseData: Data?) -> (), (_ error: NSError?) -> ()", "isThrowing": false, "isInit": false, "isOverriding": true, "hasClosureParams": true, "@type": "ClassMethod", "accessibility": "", "parameterNames": "urlString, success, failure", "call": "from: urlString, success: success, failure: failure", "parameters": [CuckooGeneratorFramework.MethodParameter(label: Optional("from"), name: "urlString", type: "String", range: CountableRange(595..<617), nameRange: CountableRange(595..<599)), CuckooGeneratorFramework.MethodParameter(label: Optional("success"), name: "success", type: "@escaping (_ responseData: Data?) -> ()", range: CountableRange(638..<686), nameRange: CountableRange(638..<645)), CuckooGeneratorFramework.MethodParameter(label: Optional("failure"), name: "failure", type: "@escaping (_ error: NSError?) -> ()", range: CountableRange(707..<751), nameRange: CountableRange(707..<714))], "returnType": "Void", "isOptional": false, "escapingParameterNames": "urlString, success, failure", "stubFunction": "Cuckoo.ClassStubNoReturnFunction"]
      override func fetchData(from urlString: String, success: @escaping (_ responseData: Data?) -> (), failure: @escaping (_ error: NSError?) -> ())  {
         
             return cuckoo_manager.call("fetchData(from: String, success: @escaping (_ responseData: Data?) -> (), failure: @escaping (_ error: NSError?) -> ())",

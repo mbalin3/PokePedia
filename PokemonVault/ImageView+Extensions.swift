@@ -9,18 +9,19 @@
 import UIKit
 
 extension UIImageView {
-
+    
     func downloadImage(imageUrl: String) {
         let session: NetworkSession = URLSession.shared
         guard let url = URL(string: imageUrl) else { return }
         
         session.fetchData(from: url) { (data, error) in
-            guard let data = data else {
-                self.image = UIImage(named: "pokemon-ball")
-                return
-            }
-            
             DispatchQueue.main.async {
+                guard let data = data else {
+                    self.image = UIImage(named: "pokemon-ball")
+                    return
+                }
+                
+                
                 UIView.animate(withDuration: 0.3, animations: {
                     self.image = UIImage(data: data)
                 })

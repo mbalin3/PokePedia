@@ -57,7 +57,7 @@ class PokemonDetailsViewController: BaseViewController {
     private func updateViewContent() {
         heightLineItemView.populate(text: ("Height", String(describing: self.viewModel.pokemonDetailsModel?.height ?? 0)))
         weightLineItemView.populate(text: ("Weight", String(describing: self.viewModel.pokemonDetailsModel?.weight ?? 0)))
-        experienceItemView.populate(text: ("Base Experience", String(describing: self.viewModel.pokemonDetailsModel?.baseExperience ?? 0)))
+        experienceItemView.populate(text: ("Base Experience", "\(self.viewModel.pokemonDetailsModel?.baseExperience ?? 0)"))
         self.updateStatistics(statistics: viewModel.pokemonStatistics())
         self.updateAbilities(abilities: viewModel.pokemonAbilities())
     }
