@@ -15,15 +15,15 @@ extension UIImageView {
         guard let url = URL(string: imageUrl) else { return }
         
         session.fetchData(from: url) { (data, error) in
-            DispatchQueue.main.async {
+            DispatchQueue.main.async { [weak self] in
                 guard let data = data else {
-                    self.image = UIImage(named: "pokemon-ball")
+                    self?.image = UIImage(named: "pokemon-ball")
                     return
                 }
                 
                 
                 UIView.animate(withDuration: 0.3, animations: {
-                    self.image = UIImage(data: data)
+                    self?.image = UIImage(data: data)
                 })
             }
         }

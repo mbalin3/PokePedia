@@ -27,11 +27,11 @@ class AppCache {
         cache.updateValue(objectCache, forKey: component)
     }
     
-    func invalidateAllCache() {
-        cache.removeAll()
-    }
-    
     func invalidateCache(for component: AppCacheComponent) {
         cache.removeValue(forKey: component)
+    }
+    
+    func invalidateAllCache() {
+        cache.removeAll()
     }
 }

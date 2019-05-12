@@ -16,4 +16,9 @@ class PokemonCell: UICollectionViewCell {
         pokemonName?.text = pokemon.name
         pokemonImageView?.downloadImage(imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/\(pokemon.pokemonDetailsUrl?.extractPokemonID() ?? "").png")
     }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        pokemonImageView?.image = UIImage(named: "pokemonBall")
+    }
 }

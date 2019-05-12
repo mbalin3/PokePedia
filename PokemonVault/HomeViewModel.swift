@@ -8,28 +8,39 @@
 
 import Foundation
 
-class HomeViewModel {
-    private var decorator: PokemonListCacheDecorator
-    private weak var delegate: BaseViewModelDelegate?
+class HomeViewModel: PokemonListInteractorDelegate {
+    var interactor: PokemonListBoundary
+    unowned var delegate: BaseViewModelDelegate
+    weak var interactorDelegate: PokemonListInteractorDelegate?
     private(set) var pokemons: [PokemonModel]?
     
-    init(decorator: PokemonListCacheDecorator, delegate: BaseViewModelDelegate) {
-        self.decorator = decorator
+    init(interactor: PokemonListBoundary,
+         delegate: BaseViewModelDelegate) {
+        self.interactor = interactor
         self.delegate = delegate
+    }
+
+    convenience init(delegate: BaseViewModelDelegate) {
+        self.init(interactor: PokemonListInteractor(), delegate: delegate)
+        self.interactor.delegate = self
     }
     
     func pokemon(at index: Int) -> PokemonModel? {
         return pokemons?[index]
     }
     
-    func fetchPokemonList() {
-        decorator.fetchPokemonList(numberOfPokemons: 100, success: { [weak self] pokemons in
-            guard let strongSelf = self else { return }
-            strongSelf.pokemons = pokemons
-            strongSelf.delegate?.refreshViewContents()
-        }) { (error) in
-            // show error
-            print("failure....,==," + (error?.localizedDescription ??  "Pokemon List was no found"))
-        }
+    func fetchPokemonList(numberOfPokemons: Int) {
+        guard numberOfPokemons > 0 else { return }
+        interactor.fetchPokemonList(numberOfPokemons: numberOfPokemons)
+    }
+    
+    func fetchPokemonListSuccess(successResponse: [PokemonModel]?) {
+        pokemons = successResponse
+        self.delegate.refreshViewContents()
+    }
+    
+    func fetchPokemonListFailure(error: NSError?) {
+        print("ERROR*****************")
     }
 }
+

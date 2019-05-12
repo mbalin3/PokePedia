@@ -15,7 +15,6 @@ class PokemonDetailsInteractorTests: XCTestCase {
     var interactorUnderTest: PokemonDetailsInteractor!
     let mockServiceClient = MockServiceClient()
     let mockDelegate = MockPokemonDetailsInteractorDelegate()
-    let mockBoundary = MockPokemonDetailsBoundary()
     var mockPokemonDetails: PokemonDetailsModel? = nil
     
     override func setUp() {
@@ -23,24 +22,22 @@ class PokemonDetailsInteractorTests: XCTestCase {
         interactorUnderTest.delegate = mockDelegate
     }
     
-    func testServiceIsInvokedWhenFetchIsCalled() {
+    func testWhenFetchPokemonDetailsIsCalledThenServiceIsInvoked() {
         stub(mockServiceClient) { mock in
             when(mock.fetchData(from: anyString(), success: anyClosure(), failure: anyClosure())).thenDoNothing()
         }
         
-        stub(mockBoundary) { mock in
-            when(mock.fetchPokemonDetails(fromUrl: anyString())).then({ (_) in
-                
-            })
+        stub(mockDelegate) { mock in
+            when(mock.fetchPokemonDetailsSuccess(successResponse: any())).thenDoNothing()
         }
-        
+                
         interactorUnderTest.fetchPokemonDetails(fromUrl: "")
         verify(mockServiceClient).fetchData(from: anyString(), success: anyClosure(), failure: anyClosure())
         verify(mockDelegate, never()).fetchPokemonDetailsSuccess(successResponse: any())
         verify(mockDelegate, never()).fetchPokemonDetailsFailure(error: any())
     }
    
-    func testSuccessDelegateIsCalledWhenFetchReturnsSuccess() {
+    func testWhenFetchReturnsSuccessThenSuccessDelegateIsCalled() {
         stub(mockServiceClient) { mock in
             when(mock.fetchData(from: anyString(), success: anyClosure(), failure: anyClosure())).then({ _, data, _ in
                 data(Data())
@@ -74,15 +71,15 @@ class PokemonDetailsInteractorTests: XCTestCase {
     
     func testPokemonModelIsNotCreatedWhenInvalidDataIsReturned() {
         stub(mockServiceClient) { mock in
-            when(mock.fetchData(from: anyString(), success: anyClosure(), failure: anyClosure())).then({ _, data, _ in
+            when(mock.fetchData(from: anyString(), success: anyClosure(), failure: anyClosure())).then { _, data, _ in
                 data(Data())
-            })
+            }
         }
         
         stub(mockDelegate) { mock in
-            when(mock.fetchPokemonDetailsSuccess(successResponse: any())).then({ (pokemonDetailsModel) in
+            when(mock.fetchPokemonDetailsSuccess(successResponse: any())).then { (pokemonDetailsModel) in
                 XCTAssertNil(pokemonDetailsModel)
-            })
+            }
         }
         
         interactorUnderTest.fetchPokemonDetails(fromUrl: "")
