@@ -1,4 +1,192 @@
-// MARK: - Mocks generated from file: PokemonVault/BaseViewModelDelegate.swift at 2019-05-12 20:10:26 +0000
+// MARK: - Mocks generated from file: PokemonVault/AppCache.swift at 2019-05-12 20:46:18 +0000
+
+//
+//  AppCache.swift
+//  PokemonVault
+//
+//  Created by Mbalenhle Ndaba on 2019/04/25.
+//  Copyright © 2019 Mbalenhle. All rights reserved.
+//
+
+import Cuckoo
+@testable import PokemonVault
+
+import Foundation
+
+class MockAppCache: AppCache, Cuckoo.ClassMock {
+    typealias MocksType = AppCache
+    typealias Stubbing = __StubbingProxy_AppCache
+    typealias Verification = __VerificationProxy_AppCache
+
+    private var __defaultImplStub: AppCache?
+
+    let cuckoo_manager = Cuckoo.MockManager.preconfiguredManager ?? Cuckoo.MockManager(hasParent: true)
+
+    func enableDefaultImplementation(_ stub: AppCache) {
+        __defaultImplStub = stub
+        cuckoo_manager.enableDefaultStubImplementation()
+    }
+
+    
+
+    
+
+    
+    // ["name": "fetchCachedObject", "returnSignature": " -> AnyObject?", "fullyQualifiedName": "fetchCachedObject(for: AppCacheComponent) -> AnyObject?", "parameterSignature": "for component: AppCacheComponent", "parameterSignatureWithoutNames": "component: AppCacheComponent", "inputTypes": "AppCacheComponent", "isThrowing": false, "isInit": false, "isOverriding": true, "hasClosureParams": false, "@type": "ClassMethod", "accessibility": "", "parameterNames": "component", "call": "for: component", "parameters": [CuckooGeneratorFramework.MethodParameter(label: Optional("for"), name: "component", type: "AppCacheComponent", range: CountableRange(429..<461), nameRange: CountableRange(429..<432))], "returnType": "Optional<AnyObject>", "isOptional": false, "escapingParameterNames": "component", "stubFunction": "Cuckoo.ClassStubFunction"]
+     override func fetchCachedObject(for component: AppCacheComponent)  -> AnyObject? {
+        
+            return cuckoo_manager.call("fetchCachedObject(for: AppCacheComponent) -> AnyObject?",
+                parameters: (component),
+                escapingParameters: (component),
+                superclassCall:
+                    
+                    super.fetchCachedObject(for: component)
+                    ,
+                defaultCall: __defaultImplStub!.fetchCachedObject(for: component))
+        
+    }
+    
+    // ["name": "setCacheObject", "returnSignature": "", "fullyQualifiedName": "setCacheObject(_: AnyObject, for: AppCacheComponent)", "parameterSignature": "_ objectCache: AnyObject, for component: AppCacheComponent", "parameterSignatureWithoutNames": "objectCache: AnyObject, component: AppCacheComponent", "inputTypes": "AnyObject, AppCacheComponent", "isThrowing": false, "isInit": false, "isOverriding": true, "hasClosureParams": false, "@type": "ClassMethod", "accessibility": "", "parameterNames": "objectCache, component", "call": "objectCache, for: component", "parameters": [CuckooGeneratorFramework.MethodParameter(label: nil, name: "objectCache", type: "AnyObject", range: CountableRange(612..<636), nameRange: CountableRange(0..<0)), CuckooGeneratorFramework.MethodParameter(label: Optional("for"), name: "component", type: "AppCacheComponent", range: CountableRange(638..<670), nameRange: CountableRange(638..<641))], "returnType": "Void", "isOptional": false, "escapingParameterNames": "objectCache, component", "stubFunction": "Cuckoo.ClassStubNoReturnFunction"]
+     override func setCacheObject(_ objectCache: AnyObject, for component: AppCacheComponent)  {
+        
+            return cuckoo_manager.call("setCacheObject(_: AnyObject, for: AppCacheComponent)",
+                parameters: (objectCache, component),
+                escapingParameters: (objectCache, component),
+                superclassCall:
+                    
+                    super.setCacheObject(objectCache, for: component)
+                    ,
+                defaultCall: __defaultImplStub!.setCacheObject(objectCache, for: component))
+        
+    }
+    
+    // ["name": "invalidateCache", "returnSignature": "", "fullyQualifiedName": "invalidateCache(for: AppCacheComponent)", "parameterSignature": "for component: AppCacheComponent", "parameterSignatureWithoutNames": "component: AppCacheComponent", "inputTypes": "AppCacheComponent", "isThrowing": false, "isInit": false, "isOverriding": true, "hasClosureParams": false, "@type": "ClassMethod", "accessibility": "", "parameterNames": "component", "call": "for: component", "parameters": [CuckooGeneratorFramework.MethodParameter(label: Optional("for"), name: "component", type: "AppCacheComponent", range: CountableRange(768..<800), nameRange: CountableRange(768..<771))], "returnType": "Void", "isOptional": false, "escapingParameterNames": "component", "stubFunction": "Cuckoo.ClassStubNoReturnFunction"]
+     override func invalidateCache(for component: AppCacheComponent)  {
+        
+            return cuckoo_manager.call("invalidateCache(for: AppCacheComponent)",
+                parameters: (component),
+                escapingParameters: (component),
+                superclassCall:
+                    
+                    super.invalidateCache(for: component)
+                    ,
+                defaultCall: __defaultImplStub!.invalidateCache(for: component))
+        
+    }
+    
+    // ["name": "invalidateAllCache", "returnSignature": "", "fullyQualifiedName": "invalidateAllCache()", "parameterSignature": "", "parameterSignatureWithoutNames": "", "inputTypes": "", "isThrowing": false, "isInit": false, "isOverriding": true, "hasClosureParams": false, "@type": "ClassMethod", "accessibility": "", "parameterNames": "", "call": "", "parameters": [], "returnType": "Void", "isOptional": false, "escapingParameterNames": "", "stubFunction": "Cuckoo.ClassStubNoReturnFunction"]
+     override func invalidateAllCache()  {
+        
+            return cuckoo_manager.call("invalidateAllCache()",
+                parameters: (),
+                escapingParameters: (),
+                superclassCall:
+                    
+                    super.invalidateAllCache()
+                    ,
+                defaultCall: __defaultImplStub!.invalidateAllCache())
+        
+    }
+    
+
+	struct __StubbingProxy_AppCache: Cuckoo.StubbingProxy {
+	    private let cuckoo_manager: Cuckoo.MockManager
+	
+	    init(manager: Cuckoo.MockManager) {
+	        self.cuckoo_manager = manager
+	    }
+	    
+	    
+	    func fetchCachedObject<M1: Cuckoo.Matchable>(for component: M1) -> Cuckoo.ClassStubFunction<(AppCacheComponent), Optional<AnyObject>> where M1.MatchedType == AppCacheComponent {
+	        let matchers: [Cuckoo.ParameterMatcher<(AppCacheComponent)>] = [wrap(matchable: component) { $0 }]
+	        return .init(stub: cuckoo_manager.createStub(for: MockAppCache.self, method: "fetchCachedObject(for: AppCacheComponent) -> AnyObject?", parameterMatchers: matchers))
+	    }
+	    
+	    func setCacheObject<M1: Cuckoo.Matchable, M2: Cuckoo.Matchable>(_ objectCache: M1, for component: M2) -> Cuckoo.ClassStubNoReturnFunction<(AnyObject, AppCacheComponent)> where M1.MatchedType == AnyObject, M2.MatchedType == AppCacheComponent {
+	        let matchers: [Cuckoo.ParameterMatcher<(AnyObject, AppCacheComponent)>] = [wrap(matchable: objectCache) { $0.0 }, wrap(matchable: component) { $0.1 }]
+	        return .init(stub: cuckoo_manager.createStub(for: MockAppCache.self, method: "setCacheObject(_: AnyObject, for: AppCacheComponent)", parameterMatchers: matchers))
+	    }
+	    
+	    func invalidateCache<M1: Cuckoo.Matchable>(for component: M1) -> Cuckoo.ClassStubNoReturnFunction<(AppCacheComponent)> where M1.MatchedType == AppCacheComponent {
+	        let matchers: [Cuckoo.ParameterMatcher<(AppCacheComponent)>] = [wrap(matchable: component) { $0 }]
+	        return .init(stub: cuckoo_manager.createStub(for: MockAppCache.self, method: "invalidateCache(for: AppCacheComponent)", parameterMatchers: matchers))
+	    }
+	    
+	    func invalidateAllCache() -> Cuckoo.ClassStubNoReturnFunction<()> {
+	        let matchers: [Cuckoo.ParameterMatcher<Void>] = []
+	        return .init(stub: cuckoo_manager.createStub(for: MockAppCache.self, method: "invalidateAllCache()", parameterMatchers: matchers))
+	    }
+	    
+	}
+
+	struct __VerificationProxy_AppCache: Cuckoo.VerificationProxy {
+	    private let cuckoo_manager: Cuckoo.MockManager
+	    private let callMatcher: Cuckoo.CallMatcher
+	    private let sourceLocation: Cuckoo.SourceLocation
+	
+	    init(manager: Cuckoo.MockManager, callMatcher: Cuckoo.CallMatcher, sourceLocation: Cuckoo.SourceLocation) {
+	        self.cuckoo_manager = manager
+	        self.callMatcher = callMatcher
+	        self.sourceLocation = sourceLocation
+	    }
+	
+	    
+	
+	    
+	    @discardableResult
+	    func fetchCachedObject<M1: Cuckoo.Matchable>(for component: M1) -> Cuckoo.__DoNotUse<Optional<AnyObject>> where M1.MatchedType == AppCacheComponent {
+	        let matchers: [Cuckoo.ParameterMatcher<(AppCacheComponent)>] = [wrap(matchable: component) { $0 }]
+	        return cuckoo_manager.verify("fetchCachedObject(for: AppCacheComponent) -> AnyObject?", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+	    }
+	    
+	    @discardableResult
+	    func setCacheObject<M1: Cuckoo.Matchable, M2: Cuckoo.Matchable>(_ objectCache: M1, for component: M2) -> Cuckoo.__DoNotUse<Void> where M1.MatchedType == AnyObject, M2.MatchedType == AppCacheComponent {
+	        let matchers: [Cuckoo.ParameterMatcher<(AnyObject, AppCacheComponent)>] = [wrap(matchable: objectCache) { $0.0 }, wrap(matchable: component) { $0.1 }]
+	        return cuckoo_manager.verify("setCacheObject(_: AnyObject, for: AppCacheComponent)", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+	    }
+	    
+	    @discardableResult
+	    func invalidateCache<M1: Cuckoo.Matchable>(for component: M1) -> Cuckoo.__DoNotUse<Void> where M1.MatchedType == AppCacheComponent {
+	        let matchers: [Cuckoo.ParameterMatcher<(AppCacheComponent)>] = [wrap(matchable: component) { $0 }]
+	        return cuckoo_manager.verify("invalidateCache(for: AppCacheComponent)", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+	    }
+	    
+	    @discardableResult
+	    func invalidateAllCache() -> Cuckoo.__DoNotUse<Void> {
+	        let matchers: [Cuckoo.ParameterMatcher<Void>] = []
+	        return cuckoo_manager.verify("invalidateAllCache()", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+	    }
+	    
+	}
+
+}
+
+ class AppCacheStub: AppCache {
+    
+
+    
+
+    
+     override func fetchCachedObject(for component: AppCacheComponent)  -> AnyObject? {
+        return DefaultValueRegistry.defaultValue(for: Optional<AnyObject>.self)
+    }
+    
+     override func setCacheObject(_ objectCache: AnyObject, for component: AppCacheComponent)  {
+        return DefaultValueRegistry.defaultValue(for: Void.self)
+    }
+    
+     override func invalidateCache(for component: AppCacheComponent)  {
+        return DefaultValueRegistry.defaultValue(for: Void.self)
+    }
+    
+     override func invalidateAllCache()  {
+        return DefaultValueRegistry.defaultValue(for: Void.self)
+    }
+    
+}
+
+
+// MARK: - Mocks generated from file: PokemonVault/BaseViewModelDelegate.swift at 2019-05-12 20:46:18 +0000
 
 //
 //  BaseViewModelDelegate.swift
@@ -99,7 +287,7 @@ class MockBaseViewModelDelegate: BaseViewModelDelegate, Cuckoo.ProtocolMock {
 }
 
 
-// MARK: - Mocks generated from file: PokemonVault/NetworkSession.swift at 2019-05-12 20:10:26 +0000
+// MARK: - Mocks generated from file: PokemonVault/NetworkSession.swift at 2019-05-12 20:46:18 +0000
 
 //
 //  NetworkSession.swift
@@ -200,7 +388,7 @@ class MockNetworkSession: NetworkSession, Cuckoo.ProtocolMock {
 }
 
 
-// MARK: - Mocks generated from file: PokemonVault/PokemonDetailsBoundary.swift at 2019-05-12 20:10:26 +0000
+// MARK: - Mocks generated from file: PokemonVault/PokemonDetailsBoundary.swift at 2019-05-12 20:46:18 +0000
 
 //
 //  PokemonDetailsBoundary.swift
@@ -341,7 +529,7 @@ class MockPokemonDetailsBoundary: PokemonDetailsBoundary, Cuckoo.ProtocolMock {
 }
 
 
-// MARK: - Mocks generated from file: PokemonVault/PokemonDetailsInteractorDelegate.swift at 2019-05-12 20:10:26 +0000
+// MARK: - Mocks generated from file: PokemonVault/PokemonDetailsInteractorDelegate.swift at 2019-05-12 20:46:18 +0000
 
 //
 //  PokemonDetailsInteractorDelegate.swift
@@ -471,7 +659,7 @@ class MockPokemonDetailsInteractorDelegate: PokemonDetailsInteractorDelegate, Cu
 }
 
 
-// MARK: - Mocks generated from file: PokemonVault/PokemonListBoundary.swift at 2019-05-12 20:10:26 +0000
+// MARK: - Mocks generated from file: PokemonVault/PokemonListBoundary.swift at 2019-05-12 20:46:18 +0000
 
 //
 //  PokemonListBoundary.swift
@@ -612,7 +800,7 @@ class MockPokemonListBoundary: PokemonListBoundary, Cuckoo.ProtocolMock {
 }
 
 
-// MARK: - Mocks generated from file: PokemonVault/PokemonListInteractorDelegate.swift at 2019-05-12 20:10:26 +0000
+// MARK: - Mocks generated from file: PokemonVault/PokemonListInteractorDelegate.swift at 2019-05-12 20:46:18 +0000
 
 //
 //  PokemonListInteractorDelegate.swift
@@ -742,7 +930,7 @@ class MockPokemonListInteractorDelegate: PokemonListInteractorDelegate, Cuckoo.P
 }
 
 
-// MARK: - Mocks generated from file: PokemonVault/ServiceClient.swift at 2019-05-12 20:10:26 +0000
+// MARK: - Mocks generated from file: PokemonVault/ServiceClient.swift at 2019-05-12 20:46:18 +0000
 
 //
 //  ServiceClient.swift

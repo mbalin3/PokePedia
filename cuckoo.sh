@@ -22,5 +22,6 @@ ${PODS_ROOT}/Cuckoo/run generate --testable "$PROJECT_NAME" \
 "$INPUT_DIR/$(find . -name PokemonListBoundary.swift)" \
 "$INPUT_DIR/$(find . -name PokemonDetailsInteractorDelegate.swift)" \
 "$INPUT_DIR/$(find . -name PokemonListInteractorDelegate.swift)" \
+"$INPUT_DIR/$(find . -name AppCache.swift)" \
 "$INPUT_DIR/$(find . -name ServiceClient.swift)"
 

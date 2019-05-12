@@ -96,13 +96,13 @@ class PokemonListInteractorTests: XCTestCase {
         }
         
         stub(mockDelegate) { mock in
-            when(mock.fetchPokemonListSuccess(successResponse: any())).then({ (pokemonList) in
+            when(mock.fetchPokemonListSuccess(successResponse: any())).then { (pokemonList) in
                 XCTAssertNotNil(pokemonList)
-            })
+            }
         }
         
         populateAppCacheForPokemonList()
-        XCTAssertNotNil(AppCache.sharedInstance.fetchCachedObject(for: .pokemonList))
+        XCTAssertNotNil(MockAppCache.sharedInstance.fetchCachedObject(for: .pokemonList))
         
         interactorUnderTest.fetchPokemonList(numberOfPokemons: 40)
         verify(mockServiceClient, never()).fetchData(from: anyString(), success: anyClosure(), failure: anyClosure())
@@ -121,7 +121,7 @@ class PokemonListInteractorTests: XCTestCase {
             when(mock.fetchPokemonListSuccess(successResponse: any())).thenDoNothing()
         }
         
-        XCTAssertNil(AppCache.sharedInstance.fetchCachedObject(for: .pokemonList))
+        XCTAssertNil(MockAppCache.sharedInstance.fetchCachedObject(for: .pokemonList))
         
         interactorUnderTest.fetchPokemonList(numberOfPokemons: 50)
         verify(mockServiceClient).fetchData(from: anyString(), success: anyClosure(), failure: anyClosure())
@@ -130,7 +130,7 @@ class PokemonListInteractorTests: XCTestCase {
     }
     
     override func tearDown() {
-        AppCache.sharedInstance.invalidateAllCache()
+        MockAppCache.sharedInstance.invalidateAllCache()
         super.tearDown()
     }
     
@@ -141,6 +141,6 @@ class PokemonListInteractorTests: XCTestCase {
         let pokemon = PokemonModel(name: "Pikachu", pokemonDetailsUrl: "test/url/pokemon")
         pokemonList.append(pokemon)
         
-        AppCache.sharedInstance.setCacheObject(pokemonList as AnyObject, for: .pokemonList)
+        MockAppCache.sharedInstance.setCacheObject(pokemonList as AnyObject, for: .pokemonList)
     }
 }
