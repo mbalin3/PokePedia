@@ -44,7 +44,7 @@ class NetworkReachability {
                                       preferredStyle: .alert)
         
         alert.addAction(UIAlertAction(title: "Click", style: .default, handler: nil))
-        //self.present(alert, animated: true, completion: nil)
+    //    self.present(alert, animated: true, completion: nil)
         //self.navigationController?.present(alert, animated: true, completion: nil)
     }
     

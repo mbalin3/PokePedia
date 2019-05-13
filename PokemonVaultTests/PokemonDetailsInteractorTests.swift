@@ -28,13 +28,13 @@ class PokemonDetailsInteractorTests: XCTestCase {
         }
         
         stub(mockDelegate) { mock in
-            when(mock.fetchPokemonDetailsSuccess(successResponse: any())).thenDoNothing()
+            when(mock.fetchedPokemonDetailsWithSuccess(successResponse: any())).thenDoNothing()
         }
                 
         interactorUnderTest.fetchPokemonDetails(fromUrl: "")
         verify(mockServiceClient).fetchData(from: anyString(), success: anyClosure(), failure: anyClosure())
-        verify(mockDelegate, never()).fetchPokemonDetailsSuccess(successResponse: any())
-        verify(mockDelegate, never()).fetchPokemonDetailsFailure(error: any())
+        verify(mockDelegate, never()).fetchedPokemonDetailsWithSuccess(successResponse: any())
+        verify(mockDelegate, never()).fetchedPokemonDetailsWithFailure(error: any())
     }
    
     func testWhenFetchReturnsSuccessThenSuccessDelegateIsCalled() {
@@ -45,12 +45,12 @@ class PokemonDetailsInteractorTests: XCTestCase {
         }
         
         stub(mockDelegate) { mock in
-            when(mock.fetchPokemonDetailsSuccess(successResponse: any())).thenDoNothing()
+            when(mock.fetchedPokemonDetailsWithSuccess(successResponse: any())).thenDoNothing()
         }
         
         interactorUnderTest.fetchPokemonDetails(fromUrl: "")
         verify(mockServiceClient).fetchData(from: anyString(), success: anyClosure(), failure: anyClosure())
-        verify(mockDelegate).fetchPokemonDetailsSuccess(successResponse: any())
+        verify(mockDelegate).fetchedPokemonDetailsWithSuccess(successResponse: any())
     }
     
     func testFailureDelegateIsCalledWhenFetchReturnsError() {
@@ -61,12 +61,12 @@ class PokemonDetailsInteractorTests: XCTestCase {
         }
         
         stub(mockDelegate) { mock in
-            when(mock.fetchPokemonDetailsFailure(error: any())).thenDoNothing()
+            when(mock.fetchedPokemonDetailsWithFailure(error: any())).thenDoNothing()
         }
         
         interactorUnderTest.fetchPokemonDetails(fromUrl: "")
         verify(mockServiceClient).fetchData(from: anyString(), success: anyClosure(), failure: anyClosure())
-        verify(mockDelegate).fetchPokemonDetailsFailure(error: any())
+        verify(mockDelegate).fetchedPokemonDetailsWithFailure(error: any())
     }
     
     func testPokemonModelIsNotCreatedWhenInvalidDataIsReturned() {
@@ -77,14 +77,14 @@ class PokemonDetailsInteractorTests: XCTestCase {
         }
         
         stub(mockDelegate) { mock in
-            when(mock.fetchPokemonDetailsSuccess(successResponse: any())).then { (pokemonDetailsModel) in
+            when(mock.fetchedPokemonDetailsWithSuccess(successResponse: any())).then { (pokemonDetailsModel) in
                 XCTAssertNil(pokemonDetailsModel)
             }
         }
         
         interactorUnderTest.fetchPokemonDetails(fromUrl: "")
         verify(mockServiceClient).fetchData(from: anyString(), success: anyClosure(), failure: anyClosure())
-        verify(mockDelegate).fetchPokemonDetailsSuccess(successResponse: any())
+        verify(mockDelegate).fetchedPokemonDetailsWithSuccess(successResponse: any())
     }
 
 }

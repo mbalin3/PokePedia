@@ -8,38 +8,42 @@
 import UIKit
 
 class HomeViewController: BaseViewController {
-
+    
     @IBOutlet weak var pokemonCollectionView: UICollectionView? {
         didSet {
             pokemonCollectionView?.delegate = self
             pokemonCollectionView?.dataSource = self
         }
     }
-
+    
     lazy var viewModel = HomeViewModel(delegate: self)
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "PokePedia"
     }
-
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         showLoadingIndicator(shouldShow: true)
         viewModel.fetchPokemonList(numberOfPokemons: 100)
     }
-
-     override func refreshViewContents() {
+    
+    override func refreshViewContents() {
         DispatchQueue.main.async { [weak self] in
             self?.showLoadingIndicator(shouldShow: false)
             self?.pokemonCollectionView?.reloadData()
         }
     }
-
+    
+    override func showError() {
+        
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "PokemonDetailsSegue" {
             if let pokemonDetailsViewController = segue.destination as? PokemonDetailsViewController {
-                guard let pokemonModel = sender as? PokemonModel else { return }
+                guard let pokemonModel = sender as? PokemonData else { return }
                 pokemonDetailsViewController.set(pokemonModel: pokemonModel)
             }
         }
@@ -56,13 +60,13 @@ extension HomeViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return viewModel.pokemons?.count ?? 0
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let pokemonCell = collectionView.dequeueReusableCell(withReuseIdentifier: "PokemonCell",
                                                                    for: indexPath) as? PokemonCell else {
-            return UICollectionViewCell()
+                                                                    return UICollectionViewCell()
         }
-
+        
         if let pokemon = viewModel.pokemon(at: indexPath.item) {
             pokemonCell.populateCell(with: pokemon)
         }
@@ -74,11 +78,11 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 5
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 110, height: 150)
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
     }

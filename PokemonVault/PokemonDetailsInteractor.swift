@@ -26,11 +26,11 @@ class PokemonDetailsInteractor: PokemonDetailsBoundary {
                 self.createPokemonModel(from: responseData,
                                         keyDecodingStrategy: .useDefaultKeys,
                                         completionHandler: { (pokemonDetailsModel, error) in
-                                            self.delegate?.fetchPokemonDetailsSuccess(successResponse: pokemonDetailsModel)
+                                            self.delegate?.fetchedPokemonDetailsWithSuccess(successResponse: pokemonDetailsModel)
                 })
             }
         }, failure: { (error) in
-            self.delegate?.fetchPokemonDetailsFailure(error: error)
+            self.delegate?.fetchedPokemonDetailsWithFailure(error: error)
         })
     }
     

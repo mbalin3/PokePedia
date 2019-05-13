@@ -8,6 +8,11 @@
 
 import Foundation
 
+protocol PokemonTraitModel {
+    var name: String { get set }
+    var traitValue: String { get set }
+}
+
 struct PokemonDetailsModel: Codable {
     let id: Int
     let name: String
@@ -76,3 +81,5 @@ struct Move: Codable {
         case move = "move"
     }
 }
+
+

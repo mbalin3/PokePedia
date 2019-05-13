@@ -10,40 +10,71 @@ import XCTest
 import Cuckoo
 @testable import PokemonVault
 
-class PokemonDetailsViewModelTests: XCTestCase {
+class PomockkemonDetailsViewModelTests: XCTestCase {
     
     var viewModelUnderTest: PokemonDetailsViewModel!
-    let mockInteractor = MockPokemonDetailsBoundary()
-    //let mockDelegate = MockBaseViewModelDelegate()
+    var mockInteractor = MockPokemonDetailsBoundary()
+    var mockViewModelDelegate = MockBaseViewModelDelegate()
+    var mockInteractorDelegate = MockPokemonDetailsInteractorDelegate()
 
     override func setUp() {
-//        viewModelUnderTest = PokemonDetailsViewModel(interactor: mockInteractor,
-//                                                     pokemonDetailsUrl: "mock/Url",
-//                                                     delegate: mockDelegate)
-    }
-
-    func testWhenPokemonDet() {
-//        let mockPokemons = self.generateTestPokemons()
-//        stub(mockInteractor) {
-//            when($0.fetchPokemonDetails(fromUrl: any())).then({ (url) in
-//                XCTAssertNotNil(url)
-//            })
-//        }
-//        
-//        viewModelUnderTest.fetchPokemonDetails()
-//        verify(mockInteractor).fetchPokemonDetails(fromUrl: any())
-        
-//            when($0.fetchPokemonList(numberOfPokemons: any(), success: anyClosure(), failure: anyClosure())).then({ _, successBlock, _ in
-//                successBlock(mockPokemons)
-//            })
-//
-//        let pokemon = viewModelUnderTest.pokemon(at: 0)
-//        XCTAssertNotNil(pokemon)
+        viewModelUnderTest = PokemonDetailsViewModel(interactor: mockInteractor,
+                                                     pokemonDetailsUrl: "",
+                                                     delegate: mockViewModelDelegate)
     }
     
-    func generateTestPokemons() -> PokemonDetailsModel {
-        let pokemon = PokemonDetailsModel(id: 4, name: "dfgevg", height: 7, weight: 5, baseExperience: 70, statistics: [Statistic](), moves: [Move](), abilities: [Ability](), heldItems: [HeldItem]())
+    func testWhenFetchPokemonDetailsIsCalledThenInteractorFetchIsCalled() {
+        stub(mockInteractor) { mock in
+            when(mock.fetchPokemonDetails(fromUrl: any())).thenDoNothing()
+        }
         
-        return pokemon
+        viewModelUnderTest.fetchPokemonDetails(pokemonDetailsUrl: "pokemonDetail/test/url")
+        
+        verify(mockInteractor).fetchPokemonDetails(fromUrl: any())
+    }
+    
+    func testInteractorIsNotCalledWhenPokemonDetailsUrlIsEmpty() {
+        stub(mockInteractor) { mock in
+            when(mock.fetchPokemonDetails(fromUrl: any())).thenDoNothing()
+        }
+        
+        viewModelUnderTest.fetchPokemonDetails(pokemonDetailsUrl: "")
+        
+        verify(mockInteractor, never()).fetchPokemonDetails(fromUrl: any())
+    }
+    
+    func testWhenFetchIsSuccessfulThenRefreshViewContentIsCalled() {
+        stub(mockViewModelDelegate) { mock in
+            when(mock.refreshViewContents()).thenDoNothing()
+        }
+        
+        viewModelUnderTest.fetchedPokemonDetailsWithSuccess(successResponse: nil)
+    
+        verify(mockViewModelDelegate).refreshViewContents()
+    }
+    
+    func testWhenFetchFailsThenShowErrorIsInvoked() {
+        stub(mockViewModelDelegate) { mock in
+            when(mock.showError()).thenDoNothing()
+        }
+        
+        viewModelUnderTest.fetchedPokemonDetailsWithFailure(error: NSError(domain: "testError", code: 00099, userInfo: nil))
+        
+        verify(mockViewModelDelegate).showError()
+    }
+    
+    func testWhenPokemonDetailsIsNilThenReturnAnEmptyArrayOfAbilities() {
+        let pokemonAbilities = viewModelUnderTest.pokemonAbilities()
+        XCTAssert(pokemonAbilities.count == 0)
+    }
+    
+    func testWhenPokemonDetailsIsNilThenReturnAnEmptyArrayOfStatistics() {
+        let pokemonStatistics = viewModelUnderTest.pokemonStatistics()
+        XCTAssert(pokemonStatistics.count == 0)
+    }
+    
+    func testWhenPokemonDetailsIsNilThenReturnAnEmptyArrayOfHeldItems() {
+        let pokemonStatistics = viewModelUnderTest.heldItems()
+        XCTAssert(pokemonStatistics.count == 0)
     }
 }

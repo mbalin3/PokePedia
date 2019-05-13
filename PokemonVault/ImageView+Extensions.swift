@@ -21,7 +21,6 @@ extension UIImageView {
                     return
                 }
                 
-                
                 UIView.animate(withDuration: 0.3, animations: {
                     self?.image = UIImage(data: data)
                 })

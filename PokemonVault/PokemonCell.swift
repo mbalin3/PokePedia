@@ -12,7 +12,7 @@ class PokemonCell: UICollectionViewCell {
     @IBOutlet weak var pokemonImageView: CircleImageView?
     @IBOutlet weak var pokemonName: UILabel?
     
-    func populateCell(with pokemon: PokemonModel) {
+    func populateCell(with pokemon: PokemonData) {
         pokemonName?.text = pokemon.name
         pokemonImageView?.downloadImage(imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/\(pokemon.pokemonDetailsUrl?.extractPokemonID() ?? "").png")
     }

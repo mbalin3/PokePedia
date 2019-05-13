@@ -8,7 +8,7 @@
 
 import Foundation
 
-class PokemonDetailsViewModel: PokemonDetailsInteractorDelegate {
+class PokemonDetailsViewModel {
     
     weak var delegate: BaseViewModelDelegate?
     private var interactor: PokemonDetailsBoundary
@@ -21,7 +21,12 @@ class PokemonDetailsViewModel: PokemonDetailsInteractorDelegate {
         self.interactor = interactor
         self.pokemonDetailsUrl = pokemonDetailsUrl
         self.delegate = delegate
-        interactor.delegate = self
+    }
+    
+    convenience init(pokemonDetailsUrl: String, delegate: BaseViewModelDelegate) {
+        self.init(interactor: PokemonDetailsInteractor(), pokemonDetailsUrl: pokemonDetailsUrl, delegate: delegate)
+        self.pokemonDetailsUrl = pokemonDetailsUrl
+        self.interactor.delegate = self
     }
     
     func pokemonAbilities() -> [Ability] {
@@ -32,19 +37,25 @@ class PokemonDetailsViewModel: PokemonDetailsInteractorDelegate {
         return pokemonDetailsModel?.statistics ?? [Statistic]()
     }
     
-    func fetchPokemonDetails() {
-        guard let pokemonDetailsUrl = pokemonDetailsUrl.extractPokemonID() else { return }
+    func heldItems() -> [HeldItem] {
+        return pokemonDetailsModel?.heldItems ?? [HeldItem]()
+    }
+    
+    func fetchPokemonDetails(pokemonDetailsUrl: String?) {
+        guard let pokemonDetailsUrl = pokemonDetailsUrl?.extractPokemonID(), !pokemonDetailsUrl.isEmpty else { return }
         interactor.fetchPokemonDetails(fromUrl: pokemonDetailsUrl)
-    }
-    
-    func fetchPokemonDetailsSuccess(successResponse: PokemonDetailsModel?) {
-        pokemonDetailsModel = successResponse
-        delegate?.refreshViewContents()
-    }
-    
-    func fetchPokemonDetailsFailure(error: NSError?) {
-        
     }
 }
 
+extension PokemonDetailsViewModel: PokemonDetailsInteractorDelegate {
+    
+    func fetchedPokemonDetailsWithSuccess(successResponse: PokemonDetailsModel?) {
+        pokemonDetailsModel = successResponse
+        self.delegate?.refreshViewContents()
+    }
+    
+    func fetchedPokemonDetailsWithFailure(error: NSError?) {
+        self.delegate?.showError()
+    }
+}
 

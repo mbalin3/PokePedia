@@ -9,6 +9,6 @@
 import Foundation
 
 protocol PokemonListInteractorDelegate: class {
-    func fetchPokemonListSuccess(successResponse: [PokemonModel]?)
-    func fetchPokemonListFailure(error: NSError?)
+    func fetchedPokemonListWithSuccess(successResponse: [PokemonData]?)
+    func fetchedPokemonListWithFailure(error: NSError?)
 }

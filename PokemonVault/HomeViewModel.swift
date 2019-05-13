@@ -8,24 +8,24 @@
 
 import Foundation
 
-class HomeViewModel: PokemonListInteractorDelegate {
+class HomeViewModel {
     var interactor: PokemonListBoundary
     unowned var delegate: BaseViewModelDelegate
     weak var interactorDelegate: PokemonListInteractorDelegate?
-    private(set) var pokemons: [PokemonModel]?
+    private(set) var pokemons: [PokemonData]?
     
     init(interactor: PokemonListBoundary,
          delegate: BaseViewModelDelegate) {
         self.interactor = interactor
         self.delegate = delegate
     }
-
+    
     convenience init(delegate: BaseViewModelDelegate) {
         self.init(interactor: PokemonListInteractor(), delegate: delegate)
         self.interactor.delegate = self
     }
     
-    func pokemon(at index: Int) -> PokemonModel? {
+    func pokemon(at index: Int) -> PokemonData? {
         return pokemons?[index]
     }
     
@@ -33,14 +33,17 @@ class HomeViewModel: PokemonListInteractorDelegate {
         guard numberOfPokemons > 0 else { return }
         interactor.fetchPokemonList(numberOfPokemons: numberOfPokemons)
     }
-    
-    func fetchPokemonListSuccess(successResponse: [PokemonModel]?) {
+}
+
+extension HomeViewModel: PokemonListInteractorDelegate {
+    func fetchedPokemonListWithSuccess(successResponse: [PokemonData]?) {
         pokemons = successResponse
         self.delegate.refreshViewContents()
     }
     
-    func fetchPokemonListFailure(error: NSError?) {
+    func fetchedPokemonListWithFailure(error: NSError?) {
         print("ERROR*****************")
+        self.delegate.showError()
     }
 }
 

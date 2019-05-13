@@ -8,8 +8,6 @@
 
 import Foundation
 
-//typealias FetchPokemonDetailsSuccessBlock = (_ response: PokemonDetailsModel?) -> Void
-
 protocol PokemonDetailsBoundary: class {
     var delegate: PokemonDetailsInteractorDelegate? { get set }
 

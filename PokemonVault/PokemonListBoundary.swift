@@ -8,11 +8,8 @@
 
 import Foundation
 
-typealias SuccessBlock = (_ responseModel: [PokemonModel]?) -> Void
-//typealias FailureBlock = (_ error: NSError) -> Void
-
 protocol PokemonListBoundary {
     var delegate: PokemonListInteractorDelegate? { get set }
     
-    func fetchPokemonList(numberOfPokemons: Int)
+    func fetchPokemonList(numberOfPokemons: Int) 
 }

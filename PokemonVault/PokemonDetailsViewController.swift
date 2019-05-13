@@ -9,17 +9,18 @@
 import UIKit
 
 class PokemonDetailsViewController: BaseViewController {
-    @IBOutlet var abilitiesStackView: UIStackView!
-    @IBOutlet var statisticsStackView: UIStackView!
-    @IBOutlet var heightValueLabel: UILabel!
-    @IBOutlet var weightValueLabel: UILabel!
-    @IBOutlet var baseExperienceValueLabel: UILabel!
-    @IBOutlet var baseStatisticValueLabel: UILabel!
+    
     @IBOutlet var baseExperienceStatNameLabel: UILabel!
-    @IBOutlet var abilityNameLabel: UILabel!
+    @IBOutlet var baseExperienceValueLabel: UILabel!
+    @IBOutlet var statisticsStackView: UIStackView!
+    @IBOutlet var baseStatisticValueLabel: UILabel!
     @IBOutlet var heightLineItemView: LineItemView!
     @IBOutlet var weightLineItemView: LineItemView!
     @IBOutlet var experienceItemView: LineItemView!
+    @IBOutlet var abilitiesStackView: UIStackView!
+    @IBOutlet var heightValueLabel: UILabel!
+    @IBOutlet var weightValueLabel: UILabel!
+    @IBOutlet var abilityNameLabel: UILabel!
     
     @IBOutlet weak var pokemonImageView: CircleImageView? {
         didSet {
@@ -27,12 +28,11 @@ class PokemonDetailsViewController: BaseViewController {
         }
     }
     
-    private var pokemonModel: PokemonModel?
-    lazy var viewModel = PokemonDetailsViewModel(interactor: PokemonDetailsInteractor(),
-                                                 pokemonDetailsUrl: pokemonModel?.pokemonDetailsUrl ?? "",
+    private var pokemonModel: PokemonData?
+    lazy var viewModel = PokemonDetailsViewModel(pokemonDetailsUrl: pokemonModel?.pokemonDetailsUrl ?? "",
                                                  delegate: self)
     
-    func set(pokemonModel model: PokemonModel) {
+    func set(pokemonModel model: PokemonData) {
         self.pokemonModel = model
     }
     
@@ -44,20 +44,26 @@ class PokemonDetailsViewController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         showLoadingIndicator(shouldShow: true)
-        viewModel.fetchPokemonDetails()
+        viewModel.fetchPokemonDetails(pokemonDetailsUrl: pokemonModel?.pokemonDetailsUrl)
     }
     
     override func refreshViewContents() {
         showLoadingIndicator(shouldShow: false)
-        DispatchQueue.main.async {
-            self.updateViewContent()
+        DispatchQueue.main.async { [weak self] in
+            self?.updateViewContent()
+        }
+    }
+    
+    override func showError() {
+        DispatchQueue.main.async { [weak self] in
+            
         }
     }
     
     private func updateViewContent() {
-        heightLineItemView.populate(text: ("Height", String(describing: self.viewModel.pokemonDetailsModel?.height ?? 0)))
-        weightLineItemView.populate(text: ("Weight", String(describing: self.viewModel.pokemonDetailsModel?.weight ?? 0)))
-        experienceItemView.populate(text: ("Base Experience", "\(self.viewModel.pokemonDetailsModel?.baseExperience ?? 0)"))
+        heightLineItemView.populate(with: ("Height", String(describing: self.viewModel.pokemonDetailsModel?.height ?? 0)))
+        weightLineItemView.populate(with: ("Weight", String(describing: self.viewModel.pokemonDetailsModel?.weight ?? 0)))
+        experienceItemView.populate(with: ("Base Experience", "\(self.viewModel.pokemonDetailsModel?.baseExperience ?? 0)"))
         self.updateStatistics(statistics: viewModel.pokemonStatistics())
         self.updateAbilities(abilities: viewModel.pokemonAbilities())
     }
@@ -65,7 +71,7 @@ class PokemonDetailsViewController: BaseViewController {
     private func updateAbilities(abilities: [Ability]) {
         for ability in abilities {
             let lineItemView = LineItemView()
-            lineItemView.populate(text: (ability.ability.name, ""))
+            lineItemView.populate(with: (ability.ability.name, ""))
             abilitiesStackView.addArrangedSubview(lineItemView)
         }
     }
@@ -73,7 +79,15 @@ class PokemonDetailsViewController: BaseViewController {
     private func updateStatistics(statistics: [Statistic]) {
         for statistic in statistics {
             let lineItemView = LineItemView()
-            lineItemView.populate(text: (statistic.stat.name, String(describing: statistic.baseStat)))
+            lineItemView.populate(with: (statistic.stat.name, String(describing: statistic.baseStat)))
+            statisticsStackView.addArrangedSubview(lineItemView)
+        }
+    }
+    
+    private func updateTraits<T: PokemonTraitModel>(traits: [T]) {
+        for trait in traits {
+            let lineItemView = LineItemView()
+            lineItemView.populate(with: (String(describing: trait.name), String(describing:trait.traitValue)))
             statisticsStackView.addArrangedSubview(lineItemView)
         }
     }

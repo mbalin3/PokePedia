@@ -64,7 +64,7 @@ class LineItemView: UIView {
         self.setupViewFromNib(name: "LineItemView")
     }
     
-    func populate(text: (title: String?, content: String?)) {
+    func populate(with text: (title: String?, content: String?)) {
         lineTitleLabel.text = text.title ?? ""
         contentTextLabel.text = text.content ?? ""
     }

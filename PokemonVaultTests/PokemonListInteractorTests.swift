@@ -27,13 +27,13 @@ class PokemonListInteractorTests: XCTestCase {
         }
         
         stub(mockDelegate) { mock in
-            when(mock.fetchPokemonListSuccess(successResponse: any())).thenDoNothing()
+            when(mock.fetchedPokemonListWithSuccess(successResponse: any())).thenDoNothing()
         }
         
         interactorUnderTest.fetchPokemonList(numberOfPokemons: 18)
         verify(mockServiceClient).fetchData(from: anyString(), success: anyClosure(), failure: anyClosure())
-        verify(mockDelegate, never()).fetchPokemonListSuccess(successResponse: any())
-        verify(mockDelegate, never()).fetchPokemonListFailure(error: any())
+        verify(mockDelegate, never()).fetchedPokemonListWithSuccess(successResponse: any())
+        verify(mockDelegate, never()).fetchedPokemonListWithFailure(error: any())
     }
     
     func testWhenFetchPokemonListReturnsSuccessThenSuccessDelegateIsCalled() {
@@ -45,13 +45,13 @@ class PokemonListInteractorTests: XCTestCase {
         }
         
         stub(mockDelegate) { mock in
-            when(mock.fetchPokemonListSuccess(successResponse: any())).thenDoNothing()
+            when(mock.fetchedPokemonListWithSuccess(successResponse: any())).thenDoNothing()
         }
         
         interactorUnderTest.fetchPokemonList(numberOfPokemons: 30)
         verify(mockServiceClient).fetchData(from: anyString(), success: anyClosure(), failure: anyClosure())
-        verify(mockDelegate).fetchPokemonListSuccess(successResponse: any())
-        verify(mockDelegate, never()).fetchPokemonListFailure(error: any())
+        verify(mockDelegate).fetchedPokemonListWithSuccess(successResponse: any())
+        verify(mockDelegate, never()).fetchedPokemonListWithFailure(error: any())
     }
     
     func testWhenFetchPokemonListReturnsFailureThenFailureDelegateIsCalled() {
@@ -62,13 +62,13 @@ class PokemonListInteractorTests: XCTestCase {
         }
         
         stub(mockDelegate) { mock in
-            when(mock.fetchPokemonListFailure(error: any())).thenDoNothing()
+            when(mock.fetchedPokemonListWithFailure(error: any())).thenDoNothing()
         }
         
         interactorUnderTest.fetchPokemonList(numberOfPokemons: 1)
         verify(mockServiceClient).fetchData(from: anyString(), success: anyClosure(), failure: anyClosure())
-        verify(mockDelegate).fetchPokemonListFailure(error: any())
-        verify(mockDelegate, never()).fetchPokemonListSuccess(successResponse: any())
+        verify(mockDelegate).fetchedPokemonListWithFailure(error: any())
+        verify(mockDelegate, never()).fetchedPokemonListWithSuccess(successResponse: any())
     }
     
     func testWhenInvalidDataIsReturnedThenPokemonListModelIsNotCreated() {
@@ -79,15 +79,15 @@ class PokemonListInteractorTests: XCTestCase {
         }
         
         stub(mockDelegate) { mock in
-            when(mock.fetchPokemonListSuccess(successResponse: any())).then { (pokemonList) in
+            when(mock.fetchedPokemonListWithSuccess(successResponse: any())).then { (pokemonList) in
                 XCTAssertNil(pokemonList)
             }
         }
         
         interactorUnderTest.fetchPokemonList(numberOfPokemons: 50)
         verify(mockServiceClient).fetchData(from: anyString(), success: anyClosure(), failure: anyClosure())
-        verify(mockDelegate).fetchPokemonListSuccess(successResponse: any())
-        verify(mockDelegate, never()).fetchPokemonListFailure(error: any())
+        verify(mockDelegate).fetchedPokemonListWithSuccess(successResponse: any())
+        verify(mockDelegate, never()).fetchedPokemonListWithFailure(error: any())
     }
     
     func testWhenCacheHasPokemonListThenFetchPokemonListIsNotCalled() {
@@ -96,7 +96,7 @@ class PokemonListInteractorTests: XCTestCase {
         }
         
         stub(mockDelegate) { mock in
-            when(mock.fetchPokemonListSuccess(successResponse: any())).then { (pokemonList) in
+            when(mock.fetchedPokemonListWithSuccess(successResponse: any())).then { (pokemonList) in
                 XCTAssertNotNil(pokemonList)
             }
         }
@@ -106,8 +106,8 @@ class PokemonListInteractorTests: XCTestCase {
         
         interactorUnderTest.fetchPokemonList(numberOfPokemons: 40)
         verify(mockServiceClient, never()).fetchData(from: anyString(), success: anyClosure(), failure: anyClosure())
-        verify(mockDelegate).fetchPokemonListSuccess(successResponse: any())
-        verify(mockDelegate, never()).fetchPokemonListFailure(error: any())
+        verify(mockDelegate).fetchedPokemonListWithSuccess(successResponse: any())
+        verify(mockDelegate, never()).fetchedPokemonListWithFailure(error: any())
     }
     
     func testWhenCacheDoesNotHavePokemonListThenFetchPokemonListIsCalled() {
@@ -118,15 +118,15 @@ class PokemonListInteractorTests: XCTestCase {
         }
         
         stub(mockDelegate) { mock in
-            when(mock.fetchPokemonListSuccess(successResponse: any())).thenDoNothing()
+            when(mock.fetchedPokemonListWithSuccess(successResponse: any())).thenDoNothing()
         }
         
         XCTAssertNil(MockAppCache.sharedInstance.fetchCachedObject(for: .pokemonList))
         
         interactorUnderTest.fetchPokemonList(numberOfPokemons: 50)
         verify(mockServiceClient).fetchData(from: anyString(), success: anyClosure(), failure: anyClosure())
-        verify(mockDelegate).fetchPokemonListSuccess(successResponse: any())
-        verify(mockDelegate, never()).fetchPokemonListFailure(error: any())
+        verify(mockDelegate).fetchedPokemonListWithSuccess(successResponse: any())
+        verify(mockDelegate, never()).fetchedPokemonListWithFailure(error: any())
     }
     
     override func tearDown() {
@@ -137,8 +137,8 @@ class PokemonListInteractorTests: XCTestCase {
     // Mark : Helpers functions
     
     func populateAppCacheForPokemonList() {
-        var pokemonList = [PokemonModel]()
-        let pokemon = PokemonModel(name: "Pikachu", pokemonDetailsUrl: "test/url/pokemon")
+        var pokemonList = [PokemonData]()
+        let pokemon = PokemonData(name: "Pikachu", pokemonDetailsUrl: "test/url/pokemon")
         pokemonList.append(pokemon)
         
         MockAppCache.sharedInstance.setCacheObject(pokemonList as AnyObject, for: .pokemonList)

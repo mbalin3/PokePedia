@@ -10,7 +10,7 @@ import UIKit
 
 @IBDesignable
 class CircleImageView: UIImageView {
-
+    
     @IBInspectable var isCircleView: Bool = false {
         didSet {
             if isCircleView {

@@ -6,43 +6,11 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "PokemonVault/BaseViewController.swift"
-            timestampString = "578256328.4714971"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "15"
-            endingLineNumber = "15"
-            landmarkName = "BaseViewController"
-            landmarkType = "3">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "PokemonVault/BaseViewController.swift"
-            timestampString = "578256328.471945"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "20"
-            endingLineNumber = "20"
-            landmarkName = "BaseViewController"
-            landmarkType = "3">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PokemonVault/HomeViewModel.swift"
-            timestampString = "579386789.8881381"
+            timestampString = "579469337.1488"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "34"
@@ -90,7 +58,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PokemonVault/PokemonListInteractor.swift"
-            timestampString = "579386789.888586"
+            timestampString = "579469337.153703"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "38"
@@ -102,11 +70,11 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PokemonVault/PokemonDetailsInteractor.swift"
-            timestampString = "579377616.625906"
+            timestampString = "579469337.154974"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "24"
@@ -115,14 +83,14 @@
             landmarkType = "7">
             <Locations>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "PokemonVault.PokemonDetailsInteractor.fetchPokemonDetails(fromUrl: Swift.String) -&gt; ()"
                   moduleName = "PokemonVault"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/user/Documents/HQ/Projects/PokePedia/PokemonVault/PokemonDetailsInteractor.swift"
-                  timestampString = "579383624.74305"
+                  timestampString = "579463960.617499"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "24"
@@ -130,14 +98,14 @@
                   offsetFromSymbolStart = "395">
                </Location>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;) -&gt; () in PokemonVault.PokemonDetailsInteractor.fetchPokemonDetails(fromUrl: Swift.String) -&gt; ()"
                   moduleName = "PokemonVault"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/user/Documents/HQ/Projects/PokePedia/PokemonVault/PokemonDetailsInteractor.swift"
-                  timestampString = "579383624.744989"
+                  timestampString = "579463960.6195771"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "25"
@@ -150,11 +118,11 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PokemonVault/PokemonDetailsInteractor.swift"
-            timestampString = "579377616.626128"
+            timestampString = "579469337.155869"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "29"
@@ -166,27 +134,11 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "PokemonVault/PokemonDetailsViewModel.swift"
-            timestampString = "579376774.989342"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42"
-            landmarkName = "fetchPokemonDetailsSuccess(successResponse:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PokemonVault/PokemonDetailsInteractor.swift"
-            timestampString = "579377616.626251"
+            timestampString = "579469337.156273"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "33"
@@ -202,12 +154,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PokemonVault/PokemonDetailsViewModel.swift"
-            timestampString = "579376774.989597"
+            timestampString = "579469337.156623"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "37"
-            endingLineNumber = "37"
-            landmarkName = "fetchPokemonDetails()"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
+            landmarkName = "fetchPokemonDetails(pokemonDetailsUrl:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -218,7 +170,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PokemonVaultTests/PokemonDetailsInteractorTests.swift"
-            timestampString = "579386789.889715"
+            timestampString = "579469337.1575789"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "34"
@@ -234,7 +186,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PokemonVaultTests/PokemonDetailsInteractorTests.swift"
-            timestampString = "579386789.8899831"
+            timestampString = "579469337.158625"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "51"
@@ -250,7 +202,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PokemonVaultTests/PokemonDetailsInteractorTests.swift"
-            timestampString = "579386789.890066"
+            timestampString = "579469337.159198"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "85"
@@ -265,40 +217,8 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "PokemonVault/PokemonDetailsInteractor.swift"
-            timestampString = "579377616.6267591"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "37"
-            endingLineNumber = "37"
-            landmarkName = "createPokemonModel(from:keyDecodingStrategy:completionHandler:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "PokemonVault/PokemonDetailsInteractor.swift"
-            timestampString = "579377616.626815"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42"
-            landmarkName = "createPokemonModel(from:keyDecodingStrategy:completionHandler:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "PokemonVaultTests/PokemonDetailsInteractorTests.swift"
-            timestampString = "579386789.8902791"
+            timestampString = "579469337.160228"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "73"
@@ -310,11 +230,75 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PokemonVault/PokemonListInteractor.swift"
-            timestampString = "579386789.890361"
+            timestampString = "579469337.160583"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "fetchPokemonList(numberOfPokemons:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PokemonVaultTests/HomeViewModelTests.swift"
+            timestampString = "579469337.168211"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "testWhenPokemonListIsNilThenReturnsNil()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PokemonVault/HomeViewModel.swift"
+            timestampString = "579469337.1694731"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "pokemon(at:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PokemonVault/HomeViewModel.swift"
+            timestampString = "579469337.170114"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
+            landmarkName = "pokemon(at:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PokemonVault/HomeViewModel.swift"
+            timestampString = "579469337.170614"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "34"
@@ -329,13 +313,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "PokemonVaultTests/HomeViewModelTests.swift"
-            timestampString = "579386789.893823"
+            filePath = "PokemonVaultTests/PokemonDetailsViewModelTests.swift"
+            timestampString = "579469337.171946"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "29"
-            endingLineNumber = "29"
-            landmarkName = "testWhenPokemonListIsNilThenReturnsNil()"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
+            landmarkName = "testInteractorIsNotCalledWhenPokemonDetailsUrlIsEmpty()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -345,46 +329,62 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "PokemonVault/HomeViewModel.swift"
-            timestampString = "579386789.8941571"
+            filePath = "PokemonVaultTests/PokemonDetailsViewModelTests.swift"
+            timestampString = "579469337.17282"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "29"
-            endingLineNumber = "29"
-            landmarkName = "pokemon(at:)"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
+            landmarkName = "testWhenFetchIsSuccessfulThenRefreshViewContentIsCalled()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "PokemonVault/HomeViewModel.swift"
-            timestampString = "579386789.894273"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "28"
-            endingLineNumber = "28"
-            landmarkName = "pokemon(at:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "PokemonVault/HomeViewModel.swift"
-            timestampString = "579386789.894367"
+            filePath = "PokemonVault/PokemonDetailsInteractor.swift"
+            timestampString = "579469337.173125"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "32"
             endingLineNumber = "32"
-            landmarkName = "fetchPokemonList(numberOfPokemons:)"
+            landmarkName = "fetchPokemonDetails(fromUrl:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;) -&gt; () in PokemonVault.PokemonDetailsInteractor.fetchPokemonDetails(fromUrl: Swift.String) -&gt; ()"
+                  moduleName = "PokemonVault"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/user/Documents/HQ/Projects/PokePedia/PokemonVault/PokemonDetailsInteractor.swift"
+                  timestampString = "579463991.868371"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "32"
+                  endingLineNumber = "32"
+                  offsetFromSymbolStart = "377">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (Swift.Optional&lt;__C.NSError&gt;) -&gt; () in PokemonVault.PokemonDetailsInteractor.fetchPokemonDetails(fromUrl: Swift.String) -&gt; ()"
+                  moduleName = "PokemonVault"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/user/Documents/HQ/Projects/PokePedia/PokemonVault/PokemonDetailsInteractor.swift"
+                  timestampString = "579463991.8717771"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "33"
+                  endingLineNumber = "33"
+                  offsetFromSymbolStart = "83">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -393,13 +393,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "PokemonVault/HomeViewModel.swift"
-            timestampString = "579386789.894461"
+            filePath = "PokemonVault/NetworkReachability.swift"
+            timestampString = "579469337.1733069"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "37"
-            endingLineNumber = "37"
-            landmarkName = "fetchPokemonListSuccess(successResponse:)"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
+            landmarkName = "networkStatusChanged(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

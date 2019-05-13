@@ -34,7 +34,7 @@ class HomeViewModelTests: XCTestCase {
             when(mock.fetchPokemonList(numberOfPokemons: any())).thenDoNothing()
         }
         
-        _ = viewModelUnderTest.fetchPokemonList(numberOfPokemons: 1)
+        viewModelUnderTest.fetchPokemonList(numberOfPokemons: 1)
         
         verify(mockInteractor).fetchPokemonList(numberOfPokemons: any())
     }
@@ -44,7 +44,7 @@ class HomeViewModelTests: XCTestCase {
             when(mock.fetchPokemonList(numberOfPokemons: any())).thenDoNothing()
         }
         
-        _ = viewModelUnderTest.fetchPokemonList(numberOfPokemons: 0)
+        viewModelUnderTest.fetchPokemonList(numberOfPokemons: 0)
         
         verify(mockInteractor, never()).fetchPokemonList(numberOfPokemons: any())
     }
@@ -54,24 +54,18 @@ class HomeViewModelTests: XCTestCase {
             when(mock.refreshViewContents()).thenDoNothing()
         }
         
-        _ = viewModelUnderTest.fetchPokemonListSuccess(successResponse: nil)
+        viewModelUnderTest.fetchedPokemonListWithSuccess(successResponse: nil)
         
         verify(mockViewModelDelegate).refreshViewContents()
     }
 
     func testThatWhenFetchFailsThenShowErrorIsInvoked() {
         stub(mockViewModelDelegate) { mock in
-            when(mock.refreshViewContents()).thenDoNothing()
+            when(mock.showError()).thenDoNothing()
         }
         
-        _ = viewModelUnderTest.fetchPokemonListSuccess(successResponse: nil)
+        viewModelUnderTest.fetchedPokemonListWithFailure(error: NSError(domain: "testError", code: 0000, userInfo: nil))
         
-        verify(mockViewModelDelegate).refreshViewContents()
-    }
-    
-    // Mark : Helpers functions
-    
-    func generateTestPokemons() -> Pokemons.Results {
-        return PokemonModel(name: "test", pokemonDetailsUrl: "example.url.tes")
+        verify(mockViewModelDelegate).showError()
     }
 }

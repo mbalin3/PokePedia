@@ -9,28 +9,29 @@
 import UIKit
 
 class BaseViewController: UIViewController, BaseViewModelDelegate {
-
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//        NetworkReachability.isReachable { (_) in
-//            print("isReachable***************")
-//           
-//        }
-//        
-//        NetworkReachability.isReachable { (_) in
-//            print("#######dsfsdgdsgfd***************")
-//            self.showOfflineScreen()
-//        }
-//    }
-//    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        NetworkReachability.startNotifier()
+        if NetworkReachability.isReachable() {
+            print("* * * * *    * * * * *")
+        } else {
+            self.showOfflineScreen()
+        }
+    }
+    
     func refreshViewContents() {
         showLoadingIndicator(shouldShow: false)
     }
-//    
-//    private func showOfflineScreen() {
-//        guard let offlineScreen = UIStoryboard.init(name: "OfflineScreen",
-//                                                    bundle: nil).instantiateInitialViewController() else { return }
-//        
-//        self.navigationController?.pushViewController(offlineScreen, animated: true)
-//    }
+    
+    func showError() {
+        showLoadingIndicator(shouldShow: false)
+    }
+    
+    private func showOfflineScreen() {
+        guard let offlineScreen = UIStoryboard.init(name: "OfflineScreen",
+                                                    bundle: nil).instantiateInitialViewController() else { return }
+        
+        self.navigationController?.pushViewController(offlineScreen, animated: true)
+    }
 }

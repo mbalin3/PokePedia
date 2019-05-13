@@ -8,25 +8,21 @@
 
 import Foundation
 
-typealias PokemonModel = Pokemons.Results
-
 struct Pokemons: Codable {
-    struct Results: Codable {
-        let name: String?
-        let pokemonDetailsUrl: String?
-
-        enum CodingKeys: String, CodingKey {
-            case name = "name"
-            case pokemonDetailsUrl = "url"
-        }
-    }
+    var results: [PokemonData]?
     
     enum CodingKeys: String, CodingKey {
         case results = "results"
     }
-
-    var results: [Results]?
 }
 
-// https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/132.png
+struct PokemonData: Codable {
+    let name: String?
+    let pokemonDetailsUrl: String?
+    
+    enum CodingKeys: String, CodingKey {
+        case name = "name"
+        case pokemonDetailsUrl = "url"
+    }
+}
 

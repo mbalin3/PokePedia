@@ -20,8 +20,8 @@ class PokemonListInteractor: PokemonListBoundary {
     }
     
     func fetchPokemonList(numberOfPokemons: Int) {
-        if let pokemonList = AppCache.sharedInstance.fetchCachedObject(for: .pokemonList) as? [PokemonModel] {
-            delegate?.fetchPokemonListSuccess(successResponse: pokemonList)
+        if let pokemonList = AppCache.sharedInstance.fetchCachedObject(for: .pokemonList) as? [PokemonData] {
+            delegate?.fetchedPokemonListWithSuccess(successResponse: pokemonList)
         } else {
             
             let query = "https://pokeapi.co/api/v2/pokemon?offset=1&limit=\(numberOfPokemons)"
@@ -31,16 +31,17 @@ class PokemonListInteractor: PokemonListBoundary {
                     self.createPokemonModel(from: responseData,
                                             completionHandler: { (pokemonList, error) in
                                                 AppCache.sharedInstance.setCacheObject(pokemonList as AnyObject, for: .pokemonList)
-                                                self.delegate?.fetchPokemonListSuccess(successResponse: pokemonList?.results)
+                                                self.delegate?.fetchedPokemonListWithSuccess(successResponse: pokemonList?.results)
                     })
                 }
             }) { (error) in
-                self.delegate?.fetchPokemonListFailure(error: error)
+                self.delegate?.fetchedPokemonListWithFailure(error: error)
             }
         }
     }
     
-    private func createPokemonModel(from data: Data, completionHandler: @escaping (_ model: Pokemons?, _ error: NSError?) -> Void)  {
+    private func createPokemonModel(from data: Data,
+                                    completionHandler: @escaping (_ model: Pokemons?, _ error: NSError?) -> Void)  {
         let jsonConverter: JSONConverter = JSONDecoder()
         jsonConverter.createModel(from: data, keyDecodingStrategy: .useDefaultKeys) { (model, error) in
             return completionHandler(model, error)
