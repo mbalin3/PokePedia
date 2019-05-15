@@ -30,14 +30,14 @@
                                 </view>
                                 <blurEffect style="light"/>
                             </visualEffectView>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ga4-s0-eHH">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" showsHorizontalScrollIndicator="NO" contentInsetAdjustmentBehavior="never" translatesAutoresizingMaskIntoConstraints="NO" id="Ga4-s0-eHH">
                                 <rect key="frame" x="0.0" y="44" width="375" height="734"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bdx-Le-bqP">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="644.66666666666663"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="724" height="645"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hik-Ve-FKH" customClass="TransparentView" customModule="PokemonVault" customModuleProvider="target">
-                                                <rect key="frame" x="20" y="85" width="335" height="539.66666666666663"/>
+                                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hik-Ve-FKH" customClass="TransparentView" customModule="PokemonVault" customModuleProvider="target">
+                                                <rect key="frame" x="20" y="85" width="683" height="540"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isTransparentView" value="YES"/>
@@ -143,11 +143,12 @@
                             <constraint firstItem="Ga4-s0-eHH" firstAttribute="leading" secondItem="coC-XL-auA" secondAttribute="leading" id="IYj-ND-KMj"/>
                             <constraint firstItem="INM-yh-YrN" firstAttribute="leading" secondItem="coC-XL-auA" secondAttribute="leading" id="R3I-lO-Um7"/>
                             <constraint firstItem="Bdx-Le-bqP" firstAttribute="height" secondItem="GB1-h4-14s" secondAttribute="height" priority="750" id="T5L-Dc-rPY"/>
+                            <constraint firstItem="Ga4-s0-eHH" firstAttribute="width" secondItem="GB1-h4-14s" secondAttribute="width" id="TZm-fD-Bil"/>
                             <constraint firstItem="okK-CN-5uk" firstAttribute="leading" secondItem="coC-XL-auA" secondAttribute="leading" id="ZdN-6J-BXT"/>
                             <constraint firstItem="coC-XL-auA" firstAttribute="trailing" secondItem="Ga4-s0-eHH" secondAttribute="trailing" id="ZqS-Kd-Zzl"/>
                             <constraint firstItem="coC-XL-auA" firstAttribute="trailing" secondItem="okK-CN-5uk" secondAttribute="trailing" id="bU8-rk-ijf"/>
                             <constraint firstItem="Ga4-s0-eHH" firstAttribute="top" secondItem="coC-XL-auA" secondAttribute="top" id="di4-45-REW"/>
-                            <constraint firstItem="Bdx-Le-bqP" firstAttribute="width" secondItem="GB1-h4-14s" secondAttribute="width" id="iew-rU-BQb"/>
+                            <constraint firstItem="Bdx-Le-bqP" firstAttribute="width" secondItem="coC-XL-auA" secondAttribute="width" id="eb5-tr-XdO"/>
                             <constraint firstItem="coC-XL-auA" firstAttribute="trailing" secondItem="INM-yh-YrN" secondAttribute="trailing" id="l1C-Jn-LE2"/>
                             <constraint firstAttribute="bottom" secondItem="okK-CN-5uk" secondAttribute="bottom" id="nWv-se-PSO"/>
                             <constraint firstItem="coC-XL-auA" firstAttribute="bottom" secondItem="Ga4-s0-eHH" secondAttribute="bottom" id="rkw-PQ-7G7"/>
@@ -161,11 +162,20 @@
                         <outlet property="pokemonImageView" destination="wou-80-jH1" id="RMl-Gb-AkG"/>
                         <outlet property="statisticsStackView" destination="4lo-xb-cJM" id="Wol-Ur-Bey"/>
                         <outlet property="weightLineItemView" destination="YzB-0c-lgD" id="w7f-Ee-24i"/>
+                        <segue destination="Yl8-1K-X1G" kind="show" identifier="showErrorScreenSegue" id="oaV-La-lKQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Ff-DG-PDj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="52" y="79.064039408867004"/>
+            <point key="canvasLocation" x="51.724137931034484" y="77.599999999999994"/>
+        </scene>
+        <!--ErrorScreen-->
+        <scene sceneID="0zx-wT-5Nr">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ErrorScreen" id="Yl8-1K-X1G" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5N1-zU-0EG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="676" y="78"/>
         </scene>
     </scenes>
     <resources>

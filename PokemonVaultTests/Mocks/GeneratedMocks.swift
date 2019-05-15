@@ -1,4 +1,4 @@
-// MARK: - Mocks generated from file: PokemonVault/AppCache.swift at 2019-05-13 19:13:54 +0000
+// MARK: - Mocks generated from file: PokemonVault/AppCache.swift at 2019-05-15 06:33:48 +0000
 
 //
 //  AppCache.swift
@@ -186,7 +186,7 @@ class MockAppCache: AppCache, Cuckoo.ClassMock {
 }
 
 
-// MARK: - Mocks generated from file: PokemonVault/BaseViewModelDelegate.swift at 2019-05-13 19:13:54 +0000
+// MARK: - Mocks generated from file: PokemonVault/BaseViewModelDelegate.swift at 2019-05-15 06:33:48 +0000
 
 //
 //  BaseViewModelDelegate.swift
@@ -234,17 +234,17 @@ class MockBaseViewModelDelegate: BaseViewModelDelegate, Cuckoo.ProtocolMock {
         
     }
     
-    // ["name": "showError", "returnSignature": "", "fullyQualifiedName": "showError()", "parameterSignature": "", "parameterSignatureWithoutNames": "", "inputTypes": "", "isThrowing": false, "isInit": false, "isOverriding": false, "hasClosureParams": false, "@type": "ProtocolMethod", "accessibility": "", "parameterNames": "", "call": "", "parameters": [], "returnType": "Void", "isOptional": false, "escapingParameterNames": "", "stubFunction": "Cuckoo.ProtocolStubNoReturnFunction"]
-     func showError()  {
+    // ["name": "showError", "returnSignature": "", "fullyQualifiedName": "showError(errorMessage: String)", "parameterSignature": "errorMessage: String", "parameterSignatureWithoutNames": "errorMessage: String", "inputTypes": "String", "isThrowing": false, "isInit": false, "isOverriding": false, "hasClosureParams": false, "@type": "ProtocolMethod", "accessibility": "", "parameterNames": "errorMessage", "call": "errorMessage: errorMessage", "parameters": [CuckooGeneratorFramework.MethodParameter(label: Optional("errorMessage"), name: "errorMessage", type: "String", range: CountableRange(268..<288), nameRange: CountableRange(268..<280))], "returnType": "Void", "isOptional": false, "escapingParameterNames": "errorMessage", "stubFunction": "Cuckoo.ProtocolStubNoReturnFunction"]
+     func showError(errorMessage: String)  {
         
-            return cuckoo_manager.call("showError()",
-                parameters: (),
-                escapingParameters: (),
+            return cuckoo_manager.call("showError(errorMessage: String)",
+                parameters: (errorMessage),
+                escapingParameters: (errorMessage),
                 superclassCall:
                     
                     Cuckoo.MockManager.crashOnProtocolSuperclassCall()
                     ,
-                defaultCall: __defaultImplStub!.showError())
+                defaultCall: __defaultImplStub!.showError(errorMessage: errorMessage))
         
     }
     
@@ -262,9 +262,9 @@ class MockBaseViewModelDelegate: BaseViewModelDelegate, Cuckoo.ProtocolMock {
 	        return .init(stub: cuckoo_manager.createStub(for: MockBaseViewModelDelegate.self, method: "refreshViewContents()", parameterMatchers: matchers))
 	    }
 	    
-	    func showError() -> Cuckoo.ProtocolStubNoReturnFunction<()> {
-	        let matchers: [Cuckoo.ParameterMatcher<Void>] = []
-	        return .init(stub: cuckoo_manager.createStub(for: MockBaseViewModelDelegate.self, method: "showError()", parameterMatchers: matchers))
+	    func showError<M1: Cuckoo.Matchable>(errorMessage: M1) -> Cuckoo.ProtocolStubNoReturnFunction<(String)> where M1.MatchedType == String {
+	        let matchers: [Cuckoo.ParameterMatcher<(String)>] = [wrap(matchable: errorMessage) { $0 }]
+	        return .init(stub: cuckoo_manager.createStub(for: MockBaseViewModelDelegate.self, method: "showError(errorMessage: String)", parameterMatchers: matchers))
 	    }
 	    
 	}
@@ -290,9 +290,9 @@ class MockBaseViewModelDelegate: BaseViewModelDelegate, Cuckoo.ProtocolMock {
 	    }
 	    
 	    @discardableResult
-	    func showError() -> Cuckoo.__DoNotUse<Void> {
-	        let matchers: [Cuckoo.ParameterMatcher<Void>] = []
-	        return cuckoo_manager.verify("showError()", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+	    func showError<M1: Cuckoo.Matchable>(errorMessage: M1) -> Cuckoo.__DoNotUse<Void> where M1.MatchedType == String {
+	        let matchers: [Cuckoo.ParameterMatcher<(String)>] = [wrap(matchable: errorMessage) { $0 }]
+	        return cuckoo_manager.verify("showError(errorMessage: String)", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
 	    }
 	    
 	}
@@ -309,14 +309,14 @@ class MockBaseViewModelDelegate: BaseViewModelDelegate, Cuckoo.ProtocolMock {
         return DefaultValueRegistry.defaultValue(for: Void.self)
     }
     
-     func showError()  {
+     func showError(errorMessage: String)  {
         return DefaultValueRegistry.defaultValue(for: Void.self)
     }
     
 }
 
 
-// MARK: - Mocks generated from file: PokemonVault/NetworkSession.swift at 2019-05-13 19:13:54 +0000
+// MARK: - Mocks generated from file: PokemonVault/NetworkSession.swift at 2019-05-15 06:33:48 +0000
 
 //
 //  NetworkSession.swift
@@ -417,7 +417,7 @@ class MockNetworkSession: NetworkSession, Cuckoo.ProtocolMock {
 }
 
 
-// MARK: - Mocks generated from file: PokemonVault/PokemonDetailsBoundary.swift at 2019-05-13 19:13:54 +0000
+// MARK: - Mocks generated from file: PokemonVault/PokemonDetailsBoundary.swift at 2019-05-15 06:33:48 +0000
 
 //
 //  PokemonDetailsBoundary.swift
@@ -474,7 +474,7 @@ class MockPokemonDetailsBoundary: PokemonDetailsBoundary, Cuckoo.ProtocolMock {
     
 
     
-    // ["name": "fetchPokemonDetails", "returnSignature": "", "fullyQualifiedName": "fetchPokemonDetails(fromUrl: String)", "parameterSignature": "fromUrl: String", "parameterSignatureWithoutNames": "fromUrl: String", "inputTypes": "String", "isThrowing": false, "isInit": false, "isOverriding": false, "hasClosureParams": false, "@type": "ProtocolMethod", "accessibility": "", "parameterNames": "fromUrl", "call": "fromUrl: fromUrl", "parameters": [CuckooGeneratorFramework.MethodParameter(label: Optional("fromUrl"), name: "fromUrl", type: "String", range: CountableRange(404..<419), nameRange: CountableRange(404..<411))], "returnType": "Void", "isOptional": false, "escapingParameterNames": "fromUrl", "stubFunction": "Cuckoo.ProtocolStubNoReturnFunction"]
+    // ["name": "fetchPokemonDetails", "returnSignature": "", "fullyQualifiedName": "fetchPokemonDetails(fromUrl: String)", "parameterSignature": "fromUrl: String", "parameterSignatureWithoutNames": "fromUrl: String", "inputTypes": "String", "isThrowing": false, "isInit": false, "isOverriding": false, "hasClosureParams": false, "@type": "ProtocolMethod", "accessibility": "", "parameterNames": "fromUrl", "call": "fromUrl: fromUrl", "parameters": [CuckooGeneratorFramework.MethodParameter(label: Optional("fromUrl"), name: "fromUrl", type: "String", range: CountableRange(314..<329), nameRange: CountableRange(314..<321))], "returnType": "Void", "isOptional": false, "escapingParameterNames": "fromUrl", "stubFunction": "Cuckoo.ProtocolStubNoReturnFunction"]
      func fetchPokemonDetails(fromUrl: String)  {
         
             return cuckoo_manager.call("fetchPokemonDetails(fromUrl: String)",
@@ -558,7 +558,7 @@ class MockPokemonDetailsBoundary: PokemonDetailsBoundary, Cuckoo.ProtocolMock {
 }
 
 
-// MARK: - Mocks generated from file: PokemonVault/PokemonDetailsInteractorDelegate.swift at 2019-05-13 19:13:54 +0000
+// MARK: - Mocks generated from file: PokemonVault/PokemonDetailsInteractorDelegate.swift at 2019-05-15 06:33:48 +0000
 
 //
 //  PokemonDetailsInteractorDelegate.swift
@@ -688,7 +688,7 @@ class MockPokemonDetailsInteractorDelegate: PokemonDetailsInteractorDelegate, Cu
 }
 
 
-// MARK: - Mocks generated from file: PokemonVault/PokemonListBoundary.swift at 2019-05-13 19:13:54 +0000
+// MARK: - Mocks generated from file: PokemonVault/PokemonListBoundary.swift at 2019-05-15 06:33:48 +0000
 
 //
 //  PokemonListBoundary.swift
@@ -829,7 +829,7 @@ class MockPokemonListBoundary: PokemonListBoundary, Cuckoo.ProtocolMock {
 }
 
 
-// MARK: - Mocks generated from file: PokemonVault/PokemonListInteractorDelegate.swift at 2019-05-13 19:13:54 +0000
+// MARK: - Mocks generated from file: PokemonVault/PokemonListInteractorDelegate.swift at 2019-05-15 06:33:48 +0000
 
 //
 //  PokemonListInteractorDelegate.swift
@@ -959,7 +959,7 @@ class MockPokemonListInteractorDelegate: PokemonListInteractorDelegate, Cuckoo.P
 }
 
 
-// MARK: - Mocks generated from file: PokemonVault/ServiceClient.swift at 2019-05-13 19:13:54 +0000
+// MARK: - Mocks generated from file: PokemonVault/ServiceClient.swift at 2019-05-15 06:33:48 +0000
 
 //
 //  ServiceClient.swift

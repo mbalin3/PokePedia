@@ -10,5 +10,5 @@ import Foundation
 
 protocol BaseViewModelDelegate: class {
     func refreshViewContents()
-    func showError()
+    func showError(errorMessage: String)
 }

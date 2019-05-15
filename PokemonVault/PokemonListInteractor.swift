@@ -8,18 +8,23 @@
 
 import Foundation
 
-// https://pokeapi.co/api/v2/pokemon?offset=1&limit=100
-
 class PokemonListInteractor: PokemonListBoundary {
     
     private var service: ServiceClient
     weak var delegate: PokemonListInteractorDelegate?
+    private static var fetchPokemonListLock = NSLock()
     
     init(service: ServiceClient = ServiceClientImplementation()) {
         self.service = service
     }
     
     func fetchPokemonList(numberOfPokemons: Int) {
+        PokemonListInteractor.fetchPokemonListLock.lock()
+        
+        defer {
+            PokemonListInteractor.fetchPokemonListLock.unlock()
+        }
+        
         if let pokemonList = AppCache.sharedInstance.fetchCachedObject(for: .pokemonList) as? [PokemonData] {
             delegate?.fetchedPokemonListWithSuccess(successResponse: pokemonList)
         } else {
@@ -30,7 +35,8 @@ class PokemonListInteractor: PokemonListBoundary {
                     AppCache.sharedInstance.invalidateCache(for: .pokemonList)
                     self.createPokemonModel(from: responseData,
                                             completionHandler: { (pokemonList, error) in
-                                                AppCache.sharedInstance.setCacheObject(pokemonList as AnyObject, for: .pokemonList)
+                                                AppCache.sharedInstance.setCacheObject(pokemonList as AnyObject,
+                                                                                       for: .pokemonList)
                                                 self.delegate?.fetchedPokemonListWithSuccess(successResponse: pokemonList?.results)
                     })
                 }

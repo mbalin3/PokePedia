@@ -25,6 +25,10 @@ class HomeViewController: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        guard NetworkReachability.isInternetAvailable() else {
+            showOfflineAlert()
+            return
+        }
         showLoadingIndicator(shouldShow: true)
         viewModel.fetchPokemonList(numberOfPokemons: 100)
     }
@@ -36,16 +40,27 @@ class HomeViewController: BaseViewController {
         }
     }
     
-    override func showError() {
-        
+    override func showError(errorMessage: String) {
+        DispatchQueue.main.async { [weak self] in
+            self?.performSegue(withIdentifier: "showErrorSegue", sender: errorMessage)
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "PokemonDetailsSegue" {
-            if let pokemonDetailsViewController = segue.destination as? PokemonDetailsViewController {
-                guard let pokemonModel = sender as? PokemonData else { return }
-                pokemonDetailsViewController.set(pokemonModel: pokemonModel)
-            }
+        switch segue.identifier {
+        case "PokemonDetailsSegue":
+            guard let pokemonDetailsViewController = segue.destination as? PokemonDetailsViewController else { return }
+            guard let pokemonModel = sender as? PokemonData else { return }
+            pokemonDetailsViewController.set(pokemonModel: pokemonModel)
+            
+        case "showErrorSegue":
+            guard let errorViewController = segue.destination as? ErrorViewController else { return }
+            let contentModel = ErrorContentModel(errorTitle: "Pokemon List",
+                                                 errorDescription: sender as? String,
+                                                 errorImageName: "error-icon")
+            errorViewController.set(with: contentModel)
+        default:
+            break
         }
     }
 }

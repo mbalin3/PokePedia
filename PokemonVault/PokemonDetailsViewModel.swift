@@ -55,7 +55,6 @@ extension PokemonDetailsViewModel: PokemonDetailsInteractorDelegate {
     }
     
     func fetchedPokemonDetailsWithFailure(error: NSError?) {
-        self.delegate?.showError()
+        self.delegate?.showError(errorMessage: "Could not retrieve Pokemon Details")
     }
 }
-

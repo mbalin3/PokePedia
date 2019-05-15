@@ -27,7 +27,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="OBS-WI-kHV">
+                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="OBS-WI-kHV">
                                             <rect key="frame" x="-2" y="136" width="414" height="704"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="GSc-ju-dxg">
@@ -112,11 +112,20 @@
                     <connections>
                         <outlet property="pokemonCollectionView" destination="OBS-WI-kHV" id="RYs-gn-rko"/>
                         <segue destination="YK9-cc-Jpe" kind="show" identifier="PokemonDetailsSegue" id="uzg-4C-qKp"/>
+                        <segue destination="ZSI-mx-SlJ" kind="show" identifier="showErrorSegue" id="0Wn-P8-BeJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="937.68115942028987" y="-670.98214285714278"/>
+        </scene>
+        <!--ErrorScreen-->
+        <scene sceneID="DDc-Tm-uiU">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ErrorScreen" id="ZSI-mx-SlJ" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BQL-96-GLb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1621" y="-729"/>
         </scene>
         <!--PokemonDetailsScreen-->
         <scene sceneID="dlS-ag-Eat">
@@ -124,7 +133,7 @@
                 <viewControllerPlaceholder storyboardName="PokemonDetailsScreen" id="YK9-cc-Jpe" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oQV-y4-O7X" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1670" y="-671"/>
+            <point key="canvasLocation" x="1670" y="-599"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="g6k-Gr-gcm">

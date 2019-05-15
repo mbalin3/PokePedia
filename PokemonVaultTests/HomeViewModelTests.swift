@@ -61,11 +61,11 @@ class HomeViewModelTests: XCTestCase {
 
     func testThatWhenFetchFailsThenShowErrorIsInvoked() {
         stub(mockViewModelDelegate) { mock in
-            when(mock.showError()).thenDoNothing()
+            when(mock.showError(errorMessage: any())).thenDoNothing()
         }
         
         viewModelUnderTest.fetchedPokemonListWithFailure(error: NSError(domain: "testError", code: 0000, userInfo: nil))
         
-        verify(mockViewModelDelegate).showError()
+        verify(mockViewModelDelegate).showError(errorMessage: any())
     }
 }

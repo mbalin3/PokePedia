@@ -9,12 +9,14 @@
 import UIKit
 
 class PokemonCell: UICollectionViewCell {
-    @IBOutlet weak var pokemonImageView: CircleImageView?
-    @IBOutlet weak var pokemonName: UILabel?
+    @IBOutlet weak var pokemonImageView: CircleImageView!
+    @IBOutlet weak var pokemonName: UILabel!
+    
+    private let imageUrlString = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/%@.png"
     
     func populateCell(with pokemon: PokemonData) {
-        pokemonName?.text = pokemon.name
-        pokemonImageView?.downloadImage(imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/\(pokemon.pokemonDetailsUrl?.extractPokemonID() ?? "").png")
+        pokemonName.text = pokemon.name
+        pokemonImageView.downloadImage(imageUrl:String(format: imageUrlString, pokemon.pokemonDetailsUrl?.extractPokemonID() ?? ""))
     }
     
     override func prepareForReuse() {

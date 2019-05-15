@@ -12,26 +12,21 @@ class BaseViewController: UIViewController, BaseViewModelDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        NetworkReachability.startNotifier()
-        if NetworkReachability.isReachable() {
-            print("* * * * *    * * * * *")
-        } else {
-            self.showOfflineScreen()
-        }
     }
     
     func refreshViewContents() {
         showLoadingIndicator(shouldShow: false)
     }
     
-    func showError() {
+    func showError(errorMessage: String) {
         showLoadingIndicator(shouldShow: false)
     }
     
-    private func showOfflineScreen() {
-        guard let offlineScreen = UIStoryboard.init(name: "OfflineScreen",
-                                                    bundle: nil).instantiateInitialViewController() else { return }
-        
-        self.navigationController?.pushViewController(offlineScreen, animated: true)
+    func showOfflineAlert() {
+        let offlineAlert = UIAlertController(title: "No Internet Connection",
+                                             message: "Please ensure you are connected to the internet",
+                                             preferredStyle: .alert)
+        offlineAlert.addAction(UIAlertAction(title: "Okay", style: .default, handler: nil))
+        self.present(offlineAlert, animated: true, completion: nil)
     }
 }

@@ -121,6 +121,7 @@ class PokemonListInteractorTests: XCTestCase {
             when(mock.fetchedPokemonListWithSuccess(successResponse: any())).thenDoNothing()
         }
         
+        MockAppCache.sharedInstance.invalidateCache(for: .pokemonList)
         XCTAssertNil(MockAppCache.sharedInstance.fetchCachedObject(for: .pokemonList))
         
         interactorUnderTest.fetchPokemonList(numberOfPokemons: 50)

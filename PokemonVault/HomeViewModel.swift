@@ -42,8 +42,7 @@ extension HomeViewModel: PokemonListInteractorDelegate {
     }
     
     func fetchedPokemonListWithFailure(error: NSError?) {
-        print("ERROR*****************")
-        self.delegate.showError()
+        self.delegate.showError(errorMessage: "Could not retrieve the List of Pokemons")
     }
 }
 

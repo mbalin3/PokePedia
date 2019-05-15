@@ -21,10 +21,11 @@ class PokemonDetailsViewController: BaseViewController {
     @IBOutlet var heightValueLabel: UILabel!
     @IBOutlet var weightValueLabel: UILabel!
     @IBOutlet var abilityNameLabel: UILabel!
+    private let imageUrlString = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/%@.png"
     
     @IBOutlet weak var pokemonImageView: CircleImageView? {
         didSet {
-            pokemonImageView?.downloadImage(imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/\(pokemonModel?.pokemonDetailsUrl?.extractPokemonID() ?? "").png")
+            pokemonImageView?.downloadImage(imageUrl: String(format: imageUrlString, pokemonModel?.pokemonDetailsUrl?.extractPokemonID() ?? ""))
         }
     }
     
@@ -54,9 +55,19 @@ class PokemonDetailsViewController: BaseViewController {
         }
     }
     
-    override func showError() {
+    override func showError(errorMessage: String) {
         DispatchQueue.main.async { [weak self] in
-            
+            self?.performSegue(withIdentifier: "showErrorScreenSegue", sender: errorMessage)
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showErrorScreenSegue" {
+            guard let errorViewController = segue.destination as? ErrorViewController else { return }
+            let contentModel = ErrorContentModel(errorTitle: "Pokemon Details",
+                                                 errorDescription: sender as? String,
+                                                 errorImageName: "error-icon")
+            errorViewController.set(with: contentModel)
         }
     }
     
@@ -83,13 +94,4 @@ class PokemonDetailsViewController: BaseViewController {
             statisticsStackView.addArrangedSubview(lineItemView)
         }
     }
-    
-    private func updateTraits<T: PokemonTraitModel>(traits: [T]) {
-        for trait in traits {
-            let lineItemView = LineItemView()
-            lineItemView.populate(with: (String(describing: trait.name), String(describing:trait.traitValue)))
-            statisticsStackView.addArrangedSubview(lineItemView)
-        }
-    }
 }
-

@@ -55,12 +55,12 @@ class PomockkemonDetailsViewModelTests: XCTestCase {
     
     func testWhenFetchFailsThenShowErrorIsInvoked() {
         stub(mockViewModelDelegate) { mock in
-            when(mock.showError()).thenDoNothing()
+            when(mock.showError(errorMessage: any())).thenDoNothing()
         }
         
         viewModelUnderTest.fetchedPokemonDetailsWithFailure(error: NSError(domain: "testError", code: 00099, userInfo: nil))
         
-        verify(mockViewModelDelegate).showError()
+        verify(mockViewModelDelegate).showError(errorMessage: any())
     }
     
     func testWhenPokemonDetailsIsNilThenReturnAnEmptyArrayOfAbilities() {

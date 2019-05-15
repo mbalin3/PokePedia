@@ -3,13 +3,11 @@
 
 target 'PokemonVault' do
   use_frameworks!
-
-  pod 'ReachabilitySwift'
+  
   pod 'Cuckoo', '0.12.0'
 
   target 'PokemonVaultTests' do
     inherit! :search_paths
-    # Pods for testing
   end
 
 end

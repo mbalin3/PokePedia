@@ -12,16 +12,22 @@ class PokemonDetailsInteractor: PokemonDetailsBoundary {
     
     private var service: ServiceClient
     weak var delegate: PokemonDetailsInteractorDelegate?
+    private static var fetchPokemonDetailsLock = NSLock()
     
     init(service: ServiceClient = ServiceClientImplementation()) {
         self.service = service
     }
     
     func fetchPokemonDetails(fromUrl: String) {
-        // https://pokeapi.co/api/v2/pokemon/19/
-        let query = "https://pokeapi.co/api/v2/pokemon/\(fromUrl)"
+        PokemonDetailsInteractor.fetchPokemonDetailsLock.lock()
         
-        service.fetchData(from: query, success: { (data) in
+        defer {
+            PokemonDetailsInteractor.fetchPokemonDetailsLock.unlock()
+        }
+        
+        let url = "https://pokeapi.co/api/v2/pokemon/\(fromUrl)"
+        
+        service.fetchData(from: url, success: { (data) in
             if let responseData = data {
                 self.createPokemonModel(from: responseData,
                                         keyDecodingStrategy: .useDefaultKeys,
