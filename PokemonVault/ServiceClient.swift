@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol ServiceClient {
+protocol ServiceClient: class {
     func fetchData(from urlString: String,
                    success: @escaping (_ responseData: Data?) -> (),
                    failure: @escaping (_ error: NSError?) -> ())
@@ -24,11 +24,8 @@ class ServiceClientImplementation: ServiceClient {
     func fetchData(from urlString: String,
                    success: @escaping (_ responseData: Data?) -> (),
                    failure: @escaping (_ error: NSError?) -> ()) {
-        print(urlString)
-        let baseURL = "https://pokeapi.co/api/v2/pokemon"
-        //https://pokeapi.co/api/v2/pokemon/19/
         
-        guard let url = URL(string: baseURL + urlString) else {
+        guard let url = URL(string: urlString) else {
             return failure(NSError(domain: "The URL is nil", code: 0, userInfo: nil))
         }
         

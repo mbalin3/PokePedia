@@ -7,49 +7,27 @@
 //
 
 import Foundation
-import Reachability
+import SystemConfiguration
 
 class NetworkReachability {
     
-    private lazy var reachability = Reachability()
-    static let sharedInstance = NetworkReachability()
-    
-    private init() {
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(networkStatusChanged(_:)),
-                                               name: .reachabilityChanged,
-                                               object: reachability)
-    }
-    
-    static func startNotifier() -> Void {
-        do {
-            try (NetworkReachability.sharedInstance.reachability)?.startNotifier()
-        } catch {
-            print("Unable to start notifier")
-        }
-    }
-    
-    static func stopNotifier() -> Void {
-        do {
-            try (NetworkReachability.sharedInstance.reachability)?.startNotifier()
-        } catch {
-            print("Error stopping notifier")
-        }
-    }
-    
-    @objc func networkStatusChanged(_ notification: Notification) {
-        print("networkStatusChanged....notification *****************" + notification.description)
-        let alert = UIAlertController(title: "Alert",
-                                      message: "Message",
-                                      preferredStyle: .alert)
+    class func isInternetAvailable() -> Bool {
+        var zeroAddress = sockaddr_in()
+        zeroAddress.sin_len = UInt8(MemoryLayout.size(ofValue: zeroAddress))
+        zeroAddress.sin_family = sa_family_t(AF_INET)
         
-        alert.addAction(UIAlertAction(title: "Click", style: .default, handler: nil))
-        //self.present(alert, animated: true, completion: nil)
-        //self.navigationController?.present(alert, animated: true, completion: nil)
+        let defaultRouteReachability = withUnsafePointer(to: &zeroAddress) {
+            $0.withMemoryRebound(to: sockaddr.self, capacity: 1) {zeroSockAddress in
+                SCNetworkReachabilityCreateWithAddress(nil, zeroSockAddress)
+            }
+        }
+        
+        var flags = SCNetworkReachabilityFlags()
+        if !SCNetworkReachabilityGetFlags(defaultRouteReachability!, &flags) {
+            return false
+        }
+        let isReachable = (flags.rawValue & UInt32(kSCNetworkFlagsReachable)) != 0
+        let needsConnection = (flags.rawValue & UInt32(kSCNetworkFlagsConnectionRequired)) != 0
+        return (isReachable && !needsConnection)
     }
-    
-    static func isReachable() -> Bool {
-        return (NetworkReachability.sharedInstance.reachability)?.connection != .none ? true : false
-    }
-    
 }

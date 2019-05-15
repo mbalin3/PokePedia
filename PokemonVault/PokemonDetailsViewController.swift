@@ -10,37 +10,31 @@ import UIKit
 
 class PokemonDetailsViewController: BaseViewController {
     
-    @IBOutlet var heightValueLabel: UILabel?
-    @IBOutlet var weightValueLabel: UILabel?
-    @IBOutlet var baseExperienceValueLabel: UILabel?
-    @IBOutlet var baseStatisticValueLabel: UILabel?
-    @IBOutlet var baseExperienceStatNameLabel: UILabel?
-    @IBOutlet var baseExperienceStatSlier: UISlider?
-    @IBOutlet var abilityNameLabel: UILabel?
+    @IBOutlet var baseExperienceStatNameLabel: UILabel!
+    @IBOutlet var baseExperienceValueLabel: UILabel!
+    @IBOutlet var statisticsStackView: UIStackView!
+    @IBOutlet var baseStatisticValueLabel: UILabel!
+    @IBOutlet var heightLineItemView: LineItemView!
+    @IBOutlet var weightLineItemView: LineItemView!
+    @IBOutlet var experienceItemView: LineItemView!
+    @IBOutlet var abilitiesStackView: UIStackView!
+    @IBOutlet var heightValueLabel: UILabel!
+    @IBOutlet var weightValueLabel: UILabel!
+    @IBOutlet var abilityNameLabel: UILabel!
+    private let imageUrlString = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/%@.png"
     
     @IBOutlet weak var pokemonImageView: CircleImageView? {
         didSet {
-            pokemonImageView?.downloadImage(imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/\(pokemonModel?.pokemonDetailsUrl?.extractPokemonID() ?? "").png")
+            pokemonImageView?.downloadImage(imageUrl: String(format: imageUrlString, pokemonModel?.pokemonDetailsUrl?.extractPokemonID() ?? ""))
         }
     }
     
-    private var pokemonModel: PokemonModel?
-    lazy var viewModel = PokemonDetailsViewModel(interactor: PokemonDetailsInteractor(),
-                                                 pokemonDetailsUrl: pokemonModel?.pokemonDetailsUrl ?? "",
+    private var pokemonModel: PokemonData?
+    lazy var viewModel = PokemonDetailsViewModel(pokemonDetailsUrl: pokemonModel?.pokemonDetailsUrl ?? "",
                                                  delegate: self)
     
-    func set(pokemonModel model: PokemonModel) {
+    func set(pokemonModel model: PokemonData) {
         self.pokemonModel = model
-    }
-    
-    func updateViewContent() {
-        self.heightValueLabel?.text = String(describing: self.viewModel.pokemonDetailsModel?.height ?? 0)
-        self.weightValueLabel?.text = String(describing: self.viewModel.pokemonDetailsModel?.weight ?? 0)
-        self.baseExperienceValueLabel?.text = String(describing: self.viewModel.pokemonDetailsModel?.baseExperience ?? 0)
-        self.baseStatisticValueLabel?.text = String(describing: self.viewModel.pokemonDetailsModel?.statistics.first?.baseStat ?? 0)
-        self.baseExperienceStatNameLabel?.text = String(describing: self.viewModel.pokemonDetailsModel?.statistics.first?.stat.name ?? "")
-        self.abilityNameLabel?.text = String(describing: self.viewModel.pokemonDetailsModel?.abilities.first?.ability.name ?? "")
-        //self.baseExperienceStatSlier?.value = Float(exactly: ((self.viewModel.pokemonDetailsModel?.statistics.first?.baseStat)!/100) ) ?? 0.0
     }
     
     override func viewDidLoad() {
@@ -51,13 +45,53 @@ class PokemonDetailsViewController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         showLoadingIndicator(shouldShow: true)
-        viewModel.fetchPokemonDetails()
+        viewModel.fetchPokemonDetails(pokemonDetailsUrl: pokemonModel?.pokemonDetailsUrl)
     }
     
     override func refreshViewContents() {
         showLoadingIndicator(shouldShow: false)
-        DispatchQueue.main.async {
-            self.updateViewContent()
+        DispatchQueue.main.async { [weak self] in
+            self?.updateViewContent()
+        }
+    }
+    
+    override func showError(errorMessage: String) {
+        DispatchQueue.main.async { [weak self] in
+            self?.performSegue(withIdentifier: "showErrorScreenSegue", sender: errorMessage)
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showErrorScreenSegue" {
+            guard let errorViewController = segue.destination as? ErrorViewController else { return }
+            let contentModel = ErrorContentModel(errorTitle: "Pokemon Details",
+                                                 errorDescription: sender as? String,
+                                                 errorImageName: "error-icon")
+            errorViewController.set(with: contentModel)
+        }
+    }
+    
+    private func updateViewContent() {
+        heightLineItemView.populate(with: ("Height", String(describing: self.viewModel.pokemonDetailsModel?.height ?? 0)))
+        weightLineItemView.populate(with: ("Weight", String(describing: self.viewModel.pokemonDetailsModel?.weight ?? 0)))
+        experienceItemView.populate(with: ("Base Experience", "\(self.viewModel.pokemonDetailsModel?.baseExperience ?? 0)"))
+        self.updateStatistics(statistics: viewModel.pokemonStatistics())
+        self.updateAbilities(abilities: viewModel.pokemonAbilities())
+    }
+    
+    private func updateAbilities(abilities: [Ability]) {
+        for ability in abilities {
+            let lineItemView = LineItemView()
+            lineItemView.populate(with: (ability.ability.name, ""))
+            abilitiesStackView.addArrangedSubview(lineItemView)
+        }
+    }
+    
+    private func updateStatistics(statistics: [Statistic]) {
+        for statistic in statistics {
+            let lineItemView = LineItemView()
+            lineItemView.populate(with: (statistic.stat.name, String(describing: statistic.baseStat)))
+            statisticsStackView.addArrangedSubview(lineItemView)
         }
     }
 }

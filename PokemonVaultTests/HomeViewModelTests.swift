@@ -13,64 +13,59 @@ import Cuckoo
 class HomeViewModelTests: XCTestCase {
 
     var viewModelUnderTest: HomeViewModel!
-    let mockDecorator = MockPokemonListCacheDecorator()
-    let mockDelegate = MockBaseViewModelDelegate()
-    let mockInteractor = MockPokemonListBoundary()
+    var mockViewModelDelegate = MockBaseViewModelDelegate()
+    var mockInteractorDelegate = MockPokemonListInteractorDelegate()
+    var mockInteractor = MockPokemonListBoundary()
+    var mockServiceClient = MockServiceClient()
 
     override func setUp() {
-       viewModelUnderTest = HomeViewModel(decorator: mockDecorator,
-                                          delegate: mockDelegate)
+        viewModelUnderTest = HomeViewModel(interactor: mockInteractor,
+                                           delegate: mockViewModelDelegate)
+        viewModelUnderTest.interactorDelegate = mockInteractorDelegate
     }
     
-    func testWhenPokemonsArrayIsNilThenReturnsNil() {
+    func testWhenPokemonListIsNilThenReturnsNil() {
         let pokemon = viewModelUnderTest.pokemon(at: 4)
         XCTAssertNil(pokemon)
     }
     
-    func testWhenPokemonsArrayIsPopulatedThenReturnsPokemonAtIndex() {
-        let mockPokemons = self.generateTestPokemons()
-        typealias SuccessBlock = (_ response: PokemonDetailsModel?) -> Void
-        
-//        stub(mockInteractor) {
-//            when($0.fetchPokemonList(numberOfPokemons: any(), success: SuccessBlock, failure: anyClosure())).then({ _, successBlock, _ in
-//                successBlock(mockPokemons)
-//                XCTAssertNotNil(successBlock)
-//            })
-//        }
-        
-//        stub(mockDecorator) {
-           // when($0.fetchPokemonList(numberOfPokemons: any(), success: SuccessBlock, failure: anyClosure())).then({ _, successBlock, _ in
-              //  successBlock(mockPokemons)
-               // XCTAssertNotNil(successBlock)
-            //})
-//        }
-        
-        stub(mockDelegate) {
-            when($0.refreshViewContents()).thenDoNothing()
+    func testWhenFetchPokemonListIsCalledThenInteractorFetchIsCalled() {
+        stub(mockInteractor) { mock in
+            when(mock.fetchPokemonList(numberOfPokemons: any())).thenDoNothing()
         }
         
-        _ = viewModelUnderTest.pokemon(at: 0)
-       // verify(mockDecorator).fetchPokemonList(numberOfPokemons: any(), success: anyClosure(), failure: anyClosure())
+        viewModelUnderTest.fetchPokemonList(numberOfPokemons: 1)
+        
+        verify(mockInteractor).fetchPokemonList(numberOfPokemons: any())
     }
     
-    func testWhenPokemonsArrayIsPopulatedThenReturnsError() {
+    func testInteractorFetchIsNotCalledWhenFetchPokemonListIsCalledAndZeroPokemonsAreRequested() {
+        stub(mockInteractor) { mock in
+            when(mock.fetchPokemonList(numberOfPokemons: any())).thenDoNothing()
+        }
         
-        _ = viewModelUnderTest.pokemon(at: 0)
+        viewModelUnderTest.fetchPokemonList(numberOfPokemons: 0)
         
-        verify(mockDecorator).fetchPokemonList(numberOfPokemons: any(), success: anyClosure(), failure: anyClosure())
+        verify(mockInteractor, never()).fetchPokemonList(numberOfPokemons: any())
+    }
+    
+    func testThatWhenFetchIsSuccessfulThenRefreshViewContentsIsInvoked() {
+        stub(mockViewModelDelegate) { mock in
+            when(mock.refreshViewContents()).thenDoNothing()
+        }
         
+        viewModelUnderTest.fetchedPokemonListWithSuccess(successResponse: nil)
+        
+        verify(mockViewModelDelegate).refreshViewContents()
     }
 
-    
-    // Mark : Helpers functions
-    
-    func generateTestPokemons() -> [PokemonModel] {
-        var pokemonsModelArray = [PokemonModel]()
-        let testPokemonModel = PokemonModel(name: "test", pokemonDetailsUrl: "example.url.tes")
+    func testThatWhenFetchFailsThenShowErrorIsInvoked() {
+        stub(mockViewModelDelegate) { mock in
+            when(mock.showError(errorMessage: any())).thenDoNothing()
+        }
         
-        pokemonsModelArray.append(testPokemonModel)
+        viewModelUnderTest.fetchedPokemonListWithFailure(error: NSError(domain: "testError", code: 0000, userInfo: nil))
         
-        return pokemonsModelArray
+        verify(mockViewModelDelegate).showError(errorMessage: any())
     }
-
 }

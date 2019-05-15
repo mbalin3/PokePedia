@@ -9,7 +9,7 @@
 import UIKit
 
 class LoadingIndicatorView: UIView {
-
+    
     private var activityIndicator: UIActivityIndicatorView?
     private var backgroundView = TransparentView()
     

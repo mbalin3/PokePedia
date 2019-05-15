@@ -9,27 +9,40 @@
 import Foundation
 
 class HomeViewModel {
-    private var decorator: PokemonListCacheDecorator
-    private weak var delegate: BaseViewModelDelegate?
-    private(set) var pokemons: [PokemonModel]?
+    var interactor: PokemonListBoundary
+    unowned var delegate: BaseViewModelDelegate
+    weak var interactorDelegate: PokemonListInteractorDelegate?
+    private(set) var pokemons: [PokemonData]?
     
-    init(decorator: PokemonListCacheDecorator, delegate: BaseViewModelDelegate) {
-        self.decorator = decorator
+    init(interactor: PokemonListBoundary,
+         delegate: BaseViewModelDelegate) {
+        self.interactor = interactor
         self.delegate = delegate
     }
     
-    func pokemon(at index: Int) -> PokemonModel? {
+    convenience init(delegate: BaseViewModelDelegate) {
+        self.init(interactor: PokemonListInteractor(), delegate: delegate)
+        self.interactor.delegate = self
+    }
+    
+    func pokemon(at index: Int) -> PokemonData? {
         return pokemons?[index]
     }
     
-    func fetchPokemonList() {
-        decorator.fetchPokemonList(numberOfPokemons: "100", success: { [weak self] pokemons in
-            guard let strongSelf = self else { return }
-            strongSelf.pokemons = pokemons
-            strongSelf.delegate?.refreshViewContents()
-        }) { (error) in
-            // show error
-            print("failure....,==," + (error?.localizedDescription ??  "Pokemon List was no found"))
-        }
+    func fetchPokemonList(numberOfPokemons: Int) {
+        guard numberOfPokemons > 0 else { return }
+        interactor.fetchPokemonList(numberOfPokemons: numberOfPokemons)
     }
 }
+
+extension HomeViewModel: PokemonListInteractorDelegate {
+    func fetchedPokemonListWithSuccess(successResponse: [PokemonData]?) {
+        pokemons = successResponse
+        self.delegate.refreshViewContents()
+    }
+    
+    func fetchedPokemonListWithFailure(error: NSError?) {
+        self.delegate.showError(errorMessage: "Could not retrieve the List of Pokemons")
+    }
+}
+

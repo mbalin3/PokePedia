@@ -15,7 +15,7 @@ enum AppCacheComponent {
 
 class AppCache {
     
-    private var cache = [AppCacheComponent: AnyObject]()
+    private var cache: [AppCacheComponent: AnyObject] = [AppCacheComponent: AnyObject]()
     static let sharedInstance = AppCache()
     
     func fetchCachedObject(for component: AppCacheComponent) -> AnyObject? {
@@ -27,11 +27,11 @@ class AppCache {
         cache.updateValue(objectCache, forKey: component)
     }
     
-    func invalidateAllCache() {
-        cache.removeAll()
-    }
-    
     func invalidateCache(for component: AppCacheComponent) {
         cache.removeValue(forKey: component)
+    }
+    
+    func invalidateAllCache() {
+        cache.removeAll()
     }
 }

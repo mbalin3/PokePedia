@@ -14,44 +14,77 @@ class PokemonDetailsInteractorTests: XCTestCase {
     
     var interactorUnderTest: PokemonDetailsInteractor!
     let mockServiceClient = MockServiceClient()
+    let mockDelegate = MockPokemonDetailsInteractorDelegate()
     var mockPokemonDetails: PokemonDetailsModel? = nil
-
+    
     override func setUp() {
-        interactorUnderTest = PokemonDetailsInteractor()
+        interactorUnderTest = PokemonDetailsInteractor(service: mockServiceClient)
+        interactorUnderTest.delegate = mockDelegate
     }
     
-    func testWhenFetchingPokemonListAndReturnsNilThenResponseDataAndErrorIsNotPopulated() {
-        
-        interactorUnderTest.fetchPokemonDetails(fromUrl: "", success: { (pokemonDetails) in
-            XCTAssertNil(pokemonDetails)
-        }, failure: { (error) in
-            XCTAssertNil(error)
-        })
-    }
-    
-    func testWhenFetchingPokemonListThenResponseDataAndErrorIsNotPopulated() {
-        var pokemonDetails = generateMockPokemonDetailsModel()
-        typealias mockSuccessBlock = (_ responseModel: PokemonDetailsModel?) -> ()
-        typealias mockFailureBlock = (_ error: NSError?) -> ()
-        var mockUrl = "urlString.com"
-        
-        stub(mockServiceClient) {
-            when($0.fetchData(from: mockUrl, success: { (success) in
-                XCTAssertNil(success)
-            }, failure: { (error) in
-                XCTAssertNil(error)
-            }))
+    func testWhenFetchPokemonDetailsIsCalledThenServiceIsInvoked() {
+        stub(mockServiceClient) { mock in
+            when(mock.fetchData(from: anyString(), success: anyClosure(), failure: anyClosure())).thenDoNothing()
         }
         
-        interactorUnderTest.fetchPokemonDetails(fromUrl: "", success: { (_) in }, failure: { (_) in })
-        verify(mockServiceClient).fetchData(from: any(), success: anyClosure(), failure: anyClosure())
+        stub(mockDelegate) { mock in
+            when(mock.fetchedPokemonDetailsWithSuccess(successResponse: any())).thenDoNothing()
+        }
+                
+        interactorUnderTest.fetchPokemonDetails(fromUrl: "")
+        verify(mockServiceClient).fetchData(from: anyString(), success: anyClosure(), failure: anyClosure())
+        verify(mockDelegate, never()).fetchedPokemonDetailsWithSuccess(successResponse: any())
+        verify(mockDelegate, never()).fetchedPokemonDetailsWithFailure(error: any())
+    }
+   
+    func testWhenFetchReturnsSuccessThenSuccessDelegateIsCalled() {
+        stub(mockServiceClient) { mock in
+            when(mock.fetchData(from: anyString(), success: anyClosure(), failure: anyClosure())).then({ _, data, _ in
+                data(Data())
+            })
+        }
+        
+        stub(mockDelegate) { mock in
+            when(mock.fetchedPokemonDetailsWithSuccess(successResponse: any())).thenDoNothing()
+        }
+        
+        interactorUnderTest.fetchPokemonDetails(fromUrl: "")
+        verify(mockServiceClient).fetchData(from: anyString(), success: anyClosure(), failure: anyClosure())
+        verify(mockDelegate).fetchedPokemonDetailsWithSuccess(successResponse: any())
     }
     
-    func generateMockPokemonDetailsModel() -> PokemonDetailsModel {
-        let pokemonDetailsModel = PokemonDetailsModel(id: 1, name: "Pikachu", height: 45, weight: 63, baseExperience: 74, statistics: [PokemonDetailsModel.Statistic](), moves: [PokemonDetailsModel.Move](), abilities: [PokemonDetailsModel.Abiilities](), heldItems: [PokemonDetailsModel.HeldItem]())
+    func testFailureDelegateIsCalledWhenFetchReturnsError() {
+        stub(mockServiceClient) { mock in
+            when(mock.fetchData(from: anyString(), success: anyClosure(), failure: anyClosure())).then({ (_, _, error) in
+                error(NSError(domain: "test Error", code: 0000, userInfo: nil))
+            })
+        }
         
-        return pokemonDetailsModel
+        stub(mockDelegate) { mock in
+            when(mock.fetchedPokemonDetailsWithFailure(error: any())).thenDoNothing()
+        }
+        
+        interactorUnderTest.fetchPokemonDetails(fromUrl: "")
+        verify(mockServiceClient).fetchData(from: anyString(), success: anyClosure(), failure: anyClosure())
+        verify(mockDelegate).fetchedPokemonDetailsWithFailure(error: any())
     }
-
+    
+    func testPokemonModelIsNotCreatedWhenInvalidDataIsReturned() {
+        stub(mockServiceClient) { mock in
+            when(mock.fetchData(from: anyString(), success: anyClosure(), failure: anyClosure())).then { _, data, _ in
+                data(Data())
+            }
+        }
+        
+        stub(mockDelegate) { mock in
+            when(mock.fetchedPokemonDetailsWithSuccess(successResponse: any())).then { (pokemonDetailsModel) in
+                XCTAssertNil(pokemonDetailsModel)
+            }
+        }
+        
+        interactorUnderTest.fetchPokemonDetails(fromUrl: "")
+        verify(mockServiceClient).fetchData(from: anyString(), success: anyClosure(), failure: anyClosure())
+        verify(mockDelegate).fetchedPokemonDetailsWithSuccess(successResponse: any())
+    }
 
 }

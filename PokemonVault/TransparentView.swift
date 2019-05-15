@@ -10,7 +10,7 @@ import UIKit
 
 @IBDesignable
 class TransparentView: UIView {
-
+    
     @IBInspectable var isDarkTransparentView: Bool = false {
         didSet {
             if isDarkTransparentView {
@@ -34,5 +34,4 @@ class TransparentView: UIView {
             }
         }
     }
-
 }

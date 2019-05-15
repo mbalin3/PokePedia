@@ -8,6 +8,11 @@
 
 import Foundation
 
+protocol PokemonTraitModel {
+    var name: String { get set }
+    var traitValue: String { get set }
+}
+
 struct PokemonDetailsModel: Codable {
     let id: Int
     let name: String
@@ -16,7 +21,7 @@ struct PokemonDetailsModel: Codable {
     let baseExperience: Int
     let statistics: [Statistic]
     let moves: [Move]
-    let abilities: [Abiilities]
+    let abilities: [Ability]
     let heldItems: [HeldItem]
     
     enum CodingKeys: String, CodingKey {
@@ -30,53 +35,51 @@ struct PokemonDetailsModel: Codable {
         case abilities = "abilities"
         case heldItems = "held_items"
     }
+}
+
+struct Ability: Codable {
+    let ability: Species
+    let isHidden: Bool
     
-    struct Abiilities: Codable {
-        let ability: Species
-        let isHidden: Bool
-        
-        enum CodingKeys: String, CodingKey {
-            case ability = "ability"
-            case isHidden = "is_hidden"
-        }
+    enum CodingKeys: String, CodingKey {
+        case ability = "ability"
+        case isHidden = "is_hidden"
     }
+}
+
+struct Species: Codable {
+    let name: String
     
-    struct Species: Codable {
-        let name: String
-        
-        enum CodingKeys: String, CodingKey {
-            case name = "name"
-        }
+    enum CodingKeys: String, CodingKey {
+        case name = "name"
     }
+}
+
+struct HeldItem: Codable {
+    let item: Species
     
-    struct HeldItem: Codable {
-        let item: Species
-        
-        enum CodingKeys: String, CodingKey {
-            case item = "item"
-        }
+    enum CodingKeys: String, CodingKey {
+        case item = "item"
     }
+}
+
+struct Statistic: Codable {
+    let baseStat: Int
+    let effort: Int
+    let stat: Species
     
-    struct Statistic: Codable {
-        let baseStat: Int
-        let effort: Int
-        let stat: Species
-        
-        enum CodingKeys: String, CodingKey {
-            case baseStat = "base_stat"
-            case effort = "effort"
-            case stat = "stat"
-        }
+    enum CodingKeys: String, CodingKey {
+        case baseStat = "base_stat"
+        case effort = "effort"
+        case stat = "stat"
     }
-    
-    struct Move: Codable {
-        let move: Species
-        //  let versionGroupDetails: [VersionGroupDetail]
-        enum CodingKeys: String, CodingKey {
-            case move = "move"
-        }
+}
+
+struct Move: Codable {
+    let move: Species
+    enum CodingKeys: String, CodingKey {
+        case move = "move"
     }
-    
 }
 
 

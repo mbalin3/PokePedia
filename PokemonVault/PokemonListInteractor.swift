@@ -8,37 +8,46 @@
 
 import Foundation
 
-// https://pokeapi.co/api/v2/pokemon?offset=1&limit=100
-
 class PokemonListInteractor: PokemonListBoundary {
     
-    private let service: ServiceClient = ServiceClientImplementation()
+    private var service: ServiceClient
+    weak var delegate: PokemonListInteractorDelegate?
+    private static var fetchPokemonListLock = NSLock()
     
-    func fetchPokemonList(numberOfPokemons: String,
-                          success: @escaping SuccessBlock,
-                          failure: @escaping (_ error: NSError?) -> Void) {
+    init(service: ServiceClient = ServiceClientImplementation()) {
+        self.service = service
+    }
+    
+    func fetchPokemonList(numberOfPokemons: Int) {
+        PokemonListInteractor.fetchPokemonListLock.lock()
         
-        let query = "?offset=1&limit=\(numberOfPokemons)"
-        service.fetchData(from: query, success: { (data) in
-            if let responseData = data {
-                self.createPokemonModel(from: responseData,
-                                        completionHandler: { (pokemonList, error) in
-                                            if let error = error {
-                                                return failure(error)
-                                            }
-                                            
-                                            guard let pokemonList = pokemonList?.results else {
-                                                return failure(error!)
-                                            }
-                                            success(pokemonList)
-                })
+        defer {
+            PokemonListInteractor.fetchPokemonListLock.unlock()
+        }
+        
+        if let pokemonList = AppCache.sharedInstance.fetchCachedObject(for: .pokemonList) as? [PokemonData] {
+            delegate?.fetchedPokemonListWithSuccess(successResponse: pokemonList)
+        } else {
+            
+            let query = "https://pokeapi.co/api/v2/pokemon?offset=1&limit=\(numberOfPokemons)"
+            service.fetchData(from: query, success: { (data) in
+                if let responseData = data {
+                    AppCache.sharedInstance.invalidateCache(for: .pokemonList)
+                    self.createPokemonModel(from: responseData,
+                                            completionHandler: { (pokemonList, error) in
+                                                AppCache.sharedInstance.setCacheObject(pokemonList as AnyObject,
+                                                                                       for: .pokemonList)
+                                                self.delegate?.fetchedPokemonListWithSuccess(successResponse: pokemonList?.results)
+                    })
+                }
+            }) { (error) in
+                self.delegate?.fetchedPokemonListWithFailure(error: error)
             }
-        }) { (error) in
-            failure(error)
         }
     }
     
-    func createPokemonModel(from data: Data, completionHandler: @escaping (_ model: Pokemons?, _ error: NSError?) -> Void)  {
+    private func createPokemonModel(from data: Data,
+                                    completionHandler: @escaping (_ model: Pokemons?, _ error: NSError?) -> Void)  {
         let jsonConverter: JSONConverter = JSONDecoder()
         jsonConverter.createModel(from: data, keyDecodingStrategy: .useDefaultKeys) { (model, error) in
             return completionHandler(model, error)

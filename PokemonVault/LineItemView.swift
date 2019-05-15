@@ -16,9 +16,13 @@ class LineItemView: UIView {
     @IBOutlet private var lineImageView: UIImageView!
     @IBOutlet private var backgroundView: TransparentView!
     
-    @IBInspectable var shouldShowImage: Bool = false {
+    @IBInspectable var iconImage: UIImage? {
         didSet {
-            lineImageView.isHidden = !shouldShowImage
+            guard iconImage != nil else {
+                lineImageView.isHidden = true
+                return
+            }
+            lineImageView.image = iconImage
         }
     }
     
@@ -58,5 +62,10 @@ class LineItemView: UIView {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         self.setupViewFromNib(name: "LineItemView")
+    }
+    
+    func populate(with text: (title: String?, content: String?)) {
+        lineTitleLabel.text = text.title ?? ""
+        contentTextLabel.text = text.content ?? ""
     }
 }

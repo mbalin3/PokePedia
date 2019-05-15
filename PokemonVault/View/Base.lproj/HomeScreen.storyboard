@@ -27,9 +27,8 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="OBS-WI-kHV">
+                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="OBS-WI-kHV">
                                             <rect key="frame" x="-2" y="136" width="414" height="704"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="GSc-ju-dxg">
                                                 <size key="itemSize" width="177" height="182"/>
@@ -68,7 +67,7 @@
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstItem="jHu-AN-mRd" firstAttribute="top" secondItem="d23-Yd-ade" secondAttribute="bottom" constant="5" id="1vc-WB-eCw"/>
-                                                        <constraint firstAttribute="trailingMargin" secondItem="jHu-AN-mRd" secondAttribute="trailing" constant="5" id="Dzw-rT-I1g"/>
+                                                        <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="jHu-AN-mRd" secondAttribute="trailing" id="Dzw-rT-I1g"/>
                                                         <constraint firstItem="jHu-AN-mRd" firstAttribute="centerX" secondItem="xWt-ZZ-bH9" secondAttribute="centerX" id="MaO-7X-ElJ"/>
                                                         <constraint firstItem="d23-Yd-ade" firstAttribute="top" secondItem="xWt-ZZ-bH9" secondAttribute="top" constant="16" id="SnV-K8-W1K"/>
                                                         <constraint firstItem="d23-Yd-ade" firstAttribute="centerX" secondItem="xWt-ZZ-bH9" secondAttribute="centerX" id="i31-1I-D2y"/>
@@ -83,15 +82,15 @@
                                             </cells>
                                         </collectionView>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="OBS-WI-kHV" firstAttribute="top" secondItem="iVe-mb-gfa" secondAttribute="top" id="AoF-mH-D0x"/>
+                                        <constraint firstAttribute="bottom" secondItem="OBS-WI-kHV" secondAttribute="bottom" id="Jh6-5j-guk"/>
+                                        <constraint firstItem="OBS-WI-kHV" firstAttribute="leading" secondItem="iVe-mb-gfa" secondAttribute="leading" id="P2T-tI-YQP"/>
+                                        <constraint firstAttribute="trailing" secondItem="OBS-WI-kHV" secondAttribute="trailing" id="oaO-vN-8eM"/>
+                                    </constraints>
                                 </view>
                                 <blurEffect style="dark"/>
                             </visualEffectView>
-                            <searchBar contentMode="redraw" misplaced="YES" barStyle="black" searchBarStyle="prominent" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aEG-qz-Vn9">
-                                <rect key="frame" x="0.0" y="88" width="414" height="44"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="barTintColor" red="0.0" green="0.15146368709999999" blue="0.26779818080000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="search" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
-                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                         <constraints>
@@ -99,12 +98,9 @@
                             <constraint firstItem="E6R-cv-uOZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="7Yw-JV-66u"/>
                             <constraint firstItem="RYK-xS-VON" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Lmq-kx-LVa"/>
                             <constraint firstItem="RYK-xS-VON" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="MNj-Ah-BtY"/>
-                            <constraint firstItem="aEG-qz-Vn9" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="SPp-GV-fjI"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="RYK-xS-VON" secondAttribute="bottom" id="g9A-Qs-Fpt"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="RYK-xS-VON" secondAttribute="trailing" id="iMM-fQ-0XD"/>
                             <constraint firstItem="E6R-cv-uOZ" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="lP4-iL-Oj0"/>
-                            <constraint firstItem="aEG-qz-Vn9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="x0c-lB-zwb"/>
-                            <constraint firstItem="aEG-qz-Vn9" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="yKk-Tb-Wyl"/>
                             <constraint firstItem="E6R-cv-uOZ" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="yc0-Yj-HB8"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -116,11 +112,20 @@
                     <connections>
                         <outlet property="pokemonCollectionView" destination="OBS-WI-kHV" id="RYs-gn-rko"/>
                         <segue destination="YK9-cc-Jpe" kind="show" identifier="PokemonDetailsSegue" id="uzg-4C-qKp"/>
+                        <segue destination="ZSI-mx-SlJ" kind="show" identifier="showErrorSegue" id="0Wn-P8-BeJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="937.68115942028987" y="-670.98214285714278"/>
+        </scene>
+        <!--ErrorScreen-->
+        <scene sceneID="DDc-Tm-uiU">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ErrorScreen" id="ZSI-mx-SlJ" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BQL-96-GLb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1621" y="-729"/>
         </scene>
         <!--PokemonDetailsScreen-->
         <scene sceneID="dlS-ag-Eat">
@@ -128,7 +133,7 @@
                 <viewControllerPlaceholder storyboardName="PokemonDetailsScreen" id="YK9-cc-Jpe" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oQV-y4-O7X" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1670" y="-671"/>
+            <point key="canvasLocation" x="1670" y="-599"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="g6k-Gr-gcm">
